@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.InputSystem;
 public class Arrow : MonoBehaviour
 {
     public float speed;
@@ -23,20 +23,24 @@ public class Arrow : MonoBehaviour
         else if (collision.gameObject.tag == "DeleteArrow") { minigameManager.DeleteArrow(gameObject, arrowType); }
     }
 
+    int distanceResult;
+    float absPos;
+
     private void DetectInput()
     {
-        int distanceResult;
         switch (arrowType)
         {
             case 0: // left
                 {
-                    if (Input.GetKeyDown(KeyCode.LeftArrow))
+                    if (InputSystem.actions.FindAction("LeftArrow").WasPressedThisFrame())
                     {
                         // detect how close to the centre the arrow is
                         // send this info to the game manager
-                        if (Mathf.Abs(transform.position.y) >= 150) { distanceResult = 0; } // this is a miss
-                        else if (Mathf.Abs(transform.position.y) >= 100) { distanceResult = 1; } // this is bad
-                        else if (Mathf.Abs(transform.position.y) >= 50) { distanceResult = 2; } // this is good
+                        absPos = Mathf.Abs(transform.localPosition.y);
+                        Debug.Log("Distance = " + absPos);
+                        if (absPos >= 150) { distanceResult = 0; } // this is a miss
+                        else if (absPos >= 100) { distanceResult = 1; } // this is bad
+                        else if (absPos >= 50) { distanceResult = 2; } // this is good
                         else { distanceResult = 3; } // this is perfect
                         minigameManager.GetInputResult(distanceResult);
                         minigameManager.DeleteArrow(gameObject, arrowType);
@@ -45,11 +49,13 @@ public class Arrow : MonoBehaviour
                 }
             case 1: // down
                 {
-                    if (Input.GetKeyDown(KeyCode.DownArrow))
+                    if (InputSystem.actions.FindAction("DownArrow").WasPressedThisFrame())
                     {
-                        if (Mathf.Abs(transform.position.y) >= 150) { distanceResult = 0; } // this is a miss
-                        else if (Mathf.Abs(transform.position.y) >= 100) { distanceResult = 1; } // this is bad
-                        else if (Mathf.Abs(transform.position.y) >= 50) { distanceResult = 2; } // this is good
+                        absPos = Mathf.Abs(transform.localPosition.y);
+                        Debug.Log("Distance = " + absPos);
+                        if (absPos >= 150) { distanceResult = 0; } // this is a miss
+                        else if (absPos >= 100) { distanceResult = 1; } // this is bad
+                        else if (absPos >= 50) { distanceResult = 2; } // this is good
                         else { distanceResult = 3; } // this is perfect
                         minigameManager.GetInputResult(distanceResult);
                         minigameManager.DeleteArrow(gameObject, arrowType);
@@ -58,11 +64,13 @@ public class Arrow : MonoBehaviour
                 }
             case 2: // up
                 {
-                    if (Input.GetKeyDown(KeyCode.UpArrow))
+                    if (InputSystem.actions.FindAction("UpArrow").WasPressedThisFrame())
                     {
-                        if (Mathf.Abs(transform.position.y) >= 150) { distanceResult = 0; } // this is a miss
-                        else if (Mathf.Abs(transform.position.y) >= 100) { distanceResult = 1; } // this is bad
-                        else if (Mathf.Abs(transform.position.y) >= 50) { distanceResult = 2; } // this is good
+                        absPos = Mathf.Abs(transform.localPosition.y);
+                        Debug.Log("Distance = " + absPos);
+                        if (absPos >= 150) { distanceResult = 0; } // this is a miss
+                        else if (absPos >= 100) { distanceResult = 1; } // this is bad
+                        else if (absPos >= 50) { distanceResult = 2; } // this is good
                         else { distanceResult = 3; } // this is perfect
                         minigameManager.GetInputResult(distanceResult);
                         minigameManager.DeleteArrow(gameObject, arrowType);
@@ -71,11 +79,13 @@ public class Arrow : MonoBehaviour
                 }
             case 3: // right
                 {
-                    if (Input.GetKeyDown(KeyCode.RightArrow))
+                    if (InputSystem.actions.FindAction("RightArrow").WasPressedThisFrame())
                     {
-                        if (Mathf.Abs(transform.position.y) >= 150) { distanceResult = 0; } // this is a miss
-                        else if (Mathf.Abs(transform.position.y) >= 100) { distanceResult = 1; } // this is bad
-                        else if (Mathf.Abs(transform.position.y) >= 50) { distanceResult = 2; } // this is good
+                        absPos = Mathf.Abs(transform.localPosition.y);
+                        Debug.Log("Distance = " + absPos);
+                        if (absPos >= 150) { distanceResult = 0; } // this is a miss
+                        else if (absPos >= 100) { distanceResult = 1; } // this is bad
+                        else if (absPos >= 50) { distanceResult = 2; } // this is good
                         else { distanceResult = 3; } // this is perfect
                         minigameManager.GetInputResult(distanceResult);
                         minigameManager.DeleteArrow(gameObject, arrowType);

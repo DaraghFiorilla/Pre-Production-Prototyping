@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 
@@ -26,13 +25,16 @@ public class RhythmMinigame : MonoBehaviour
     [SerializeField] GameObject arrowPrefab;
     [SerializeField] private Transform[] arrowParents; // for some reason, this array breaks the inspector, apparently this is a known bug in this version of unity, i fixed it by going into preferences and setting the editor font to system font
     [SerializeField] private TextMeshProUGUI comboDisplay;
-    [SerializeField] private TextMeshProUGUI[] textResultPrefabs;
+    [SerializeField] private TextMeshProUGUI textResultDisplay;
+
+    [Header("Debug")]
+    [SerializeField] private bool pauseTimer;
 
     float timer = 0;
 
     void Update()
     {
-        timer += Time.deltaTime;
+        if (!pauseTimer) { timer += Time.deltaTime; }
         if (timer >= timeBetweenArrows)
         {
             InstantiateArrow();
@@ -72,6 +74,7 @@ public class RhythmMinigame : MonoBehaviour
                     upNoteList.RemoveAll(GameObject => GameObject == null);
                     obj.transform.rotation = Quaternion.Euler(0, 0, 180);
                     upNoteList.Add(obj);
+                    TrimList(i);
                     break;
                 }
             case 3: // right
@@ -79,6 +82,7 @@ public class RhythmMinigame : MonoBehaviour
                     rightNoteList.RemoveAll(GameObject => GameObject == null);
                     obj.transform.rotation = Quaternion.Euler(0, 0, 90);
                     rightNoteList.Add(obj);
+                    TrimList(i);
                     break;
                 }
             default:
@@ -98,29 +102,35 @@ public class RhythmMinigame : MonoBehaviour
 
     public void GetInputResult(int result) // get the input result from the arrow input
     {
+        Debug.Log("GetInputResult run with result: " + result);
         switch (result)
         {
             case 0: // miss
                 {
                     combo = 0;
+                    textResultDisplay.text = "Miss!";
                     break;
                 }
             case 1: // bad
                 {
                     combo++;
+                    textResultDisplay.text = "Bad!";
                     break;
                 }
             case 2: // good
                 {
                     combo++;
+                    textResultDisplay.text = "Good!";
                     break;
                 }
             case 3: // perfect
                 {
                     combo++;
+                    textResultDisplay.text = "Perfect!";
                     break;
                 }
         }
+        comboDisplay.text = "Combo: " + combo.ToString();
     }
 
     public void TrimList(int listNo)
@@ -129,24 +139,28 @@ public class RhythmMinigame : MonoBehaviour
         {
             case 0: // left
                 {
+                    leftNoteList.RemoveAll(GameObject => GameObject == null);
                     leftNoteList.TrimExcess();
                     leftNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 1: // down
                 {
+                    downNoteList.RemoveAll(GameObject => GameObject == null);
                     downNoteList.TrimExcess();
                     downNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 2: // up
                 {
+                    upNoteList.RemoveAll(GameObject => GameObject == null);
                     upNoteList.TrimExcess();
                     upNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 3: // right
                 {
+                    rightNoteList.RemoveAll(GameObject => GameObject == null);
                     rightNoteList.TrimExcess();
                     rightNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
