@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 public class Arrow : MonoBehaviour
 {
     public float speed;
-    public bool topOfList;
+    //public bool topOfList;
     public bool inTrigger;
     public int arrowType;
     public RhythmMinigame minigameManager;
@@ -11,7 +11,7 @@ public class Arrow : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector2(transform.position.x, transform.position.y + speed * Time.deltaTime);
-        if (topOfList && inTrigger)
+        if (/*topOfList &&*/ inTrigger)
         {
             DetectInput();
         }
@@ -20,7 +20,7 @@ public class Arrow : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "RhythmInput") { inTrigger = true; }
-        else if (collision.gameObject.tag == "DeleteArrow") { minigameManager.DeleteArrow(gameObject, arrowType); }
+        else if (collision.gameObject.tag == "DeleteArrow") { minigameManager.GetInputResult(0); minigameManager.DeleteArrow(gameObject, arrowType); }
     }
 
     int distanceResult;

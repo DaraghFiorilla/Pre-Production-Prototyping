@@ -141,28 +141,28 @@ public class RhythmMinigame : MonoBehaviour
                 {
                     leftNoteList.RemoveAll(GameObject => GameObject == null);
                     leftNoteList.TrimExcess();
-                    leftNoteList[0].GetComponent<Arrow>().topOfList = true;
+                    //leftNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 1: // down
                 {
                     downNoteList.RemoveAll(GameObject => GameObject == null);
                     downNoteList.TrimExcess();
-                    downNoteList[0].GetComponent<Arrow>().topOfList = true;
+                    //downNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 2: // up
                 {
                     upNoteList.RemoveAll(GameObject => GameObject == null);
                     upNoteList.TrimExcess();
-                    upNoteList[0].GetComponent<Arrow>().topOfList = true;
+                    //upNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             case 3: // right
                 {
                     rightNoteList.RemoveAll(GameObject => GameObject == null);
                     rightNoteList.TrimExcess();
-                    rightNoteList[0].GetComponent<Arrow>().topOfList = true;
+                    //rightNoteList[0].GetComponent<Arrow>().topOfList = true;
                     break;
                 }
             default:
