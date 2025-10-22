@@ -7,14 +7,10 @@ public class TextScroll : MonoBehaviour
 {
     [SerializeField][TextArea] private string[] displayText;
     [SerializeField] private float scrollSpeed;
-    private TextMeshProUGUI textMesh;
+    [SerializeField] private TextMeshProUGUI textMesh;
     private int currentChar = 0;
-
-    private void Awake()
-    {
-        textMesh = GetComponent<TextMeshProUGUI>();
-        UpdateText();
-    }
+    [SerializeField] private GameObject displayCanvas;
+    //[SerializeField] private GameObject displayArrow;
 
     public void SetText(string text)
     {
@@ -24,6 +20,9 @@ public class TextScroll : MonoBehaviour
 
     private void UpdateText()
     {
+        //dialogueManager.canAdvance = false;
+        //displayArrow.SetActive(false);
+        textMesh.text = "";
         StartCoroutine(AnimateText());
     }
 
@@ -33,6 +32,25 @@ public class TextScroll : MonoBehaviour
         {
             textMesh.text = displayText[currentChar].Substring(0, i);
             yield return new WaitForSeconds(scrollSpeed);
+        }
+        //dialogueManager.canAdvance = true;
+        //displayArrow.SetActive(true);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            displayCanvas.SetActive(true);
+            UpdateText();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            displayCanvas.SetActive(false);
         }
     }
 }
