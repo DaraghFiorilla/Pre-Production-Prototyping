@@ -10,7 +10,23 @@ public class TextScroll : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMesh;
     private int currentChar = 0;
     [SerializeField] private GameObject displayCanvas;
+    private GameObject player;
+    private bool playerInTrigger;
+    private Camera mainCam;
     //[SerializeField] private GameObject displayArrow;
+
+    private void Awake()
+    {
+        mainCam = Camera.main;
+    }
+
+    private void Update()
+    {
+        if (playerInTrigger)
+        {
+            RotateCanvas();
+        }
+    }
 
     public void SetText(string text)
     {
@@ -41,7 +57,9 @@ public class TextScroll : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            player = other.gameObject;
             displayCanvas.SetActive(true);
+            playerInTrigger = true;
             UpdateText();
         }
     }
@@ -52,5 +70,10 @@ public class TextScroll : MonoBehaviour
         {
             displayCanvas.SetActive(false);
         }
+    }
+
+    private void RotateCanvas()
+    {
+        displayCanvas.transform.LookAt(mainCam.transform);
     }
 }
