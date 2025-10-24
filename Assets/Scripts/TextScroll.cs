@@ -13,6 +13,7 @@ public class TextScroll : MonoBehaviour
     private GameObject player;
     private bool playerInTrigger;
     private Camera mainCam;
+    [SerializeField] private bool rotateThis;
     //[SerializeField] private GameObject displayArrow;
 
     private void Awake()
@@ -24,6 +25,7 @@ public class TextScroll : MonoBehaviour
     {
         if (playerInTrigger)
         {
+            if (rotateThis) { transform.LookAt(player.transform); }
             RotateCanvas();
         }
     }
