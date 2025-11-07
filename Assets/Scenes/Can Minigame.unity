@@ -370,6 +370,8 @@ MonoBehaviour:
   currentCansNo: 0
   canPrefab: {fileID: 5387593329732681428, guid: 6a608026a8cbb2142be75cdc8bb0fa9b, type: 3}
   activeCans: []
+  placingCan: {fileID: 0}
+  maxCansPlaced: 0
 --- !u!4 &1007556188
 Transform:
   m_ObjectHideFlags: 0
