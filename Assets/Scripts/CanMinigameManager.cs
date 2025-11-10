@@ -30,15 +30,23 @@ public class CanMinigameManager : MonoBehaviour
             if (placingState)
             {
                 Vector2 screenPos = Mouse.current.position.ReadValue();
-                //Debug.Log("Screenpos = " + screenPos);
                 // get cursor pos and convert to world pos
-                //Debug.Log("Placing!!");
                 Vector3 worldPos = myCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10));
-                //Debug.Log("World pos = " + worldPos);
                 placingCan.transform.position = new Vector3 (worldPos.x, 5, worldPos.z);
+                RaycastShadow();
                 // if mouse input left place at pos
                 if (InputSystem.actions.FindAction("RightClick").WasPressedThisFrame() && !canFalling) { PlaceCan(); }
             }
+        }
+    }
+
+    private void RaycastShadow()
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity))
+        {
+            Vector3 hitPoint = hit.point;
+            placingCan.transform.GetChild(0).position = new Vector3(hitPoint.x, hitPoint.y + placingCan.transform.GetChild(0).localScale.y, hitPoint.z);
         }
     }
 
@@ -64,6 +72,7 @@ public class CanMinigameManager : MonoBehaviour
 
     private void PlaceCan()
     {
+        Destroy(placingCan.transform.GetChild(0).gameObject);
         GameObject addedCan = placingCan;
         Rigidbody rb = placingCan.GetComponent<Rigidbody>();
         activeCans.Add(addedCan);
@@ -85,7 +94,7 @@ public class CanMinigameManager : MonoBehaviour
 
     private void CheckResult()
     {
-        bool success = false;
+        bool? success = null;
         switch (maxCansNo)
         {
             case 3:
@@ -96,19 +105,29 @@ public class CanMinigameManager : MonoBehaviour
                     if (layer1Result.Length != 2 || layer2Result.Length != 1)
                     {
                         success = false;
-                        break;
                     }
-                    // check all cans are upright
-                    for (int i = 0; i < activeCans.Count; i++)
+                    if (success != false) // if cans are in the right triggers, check all cans are upright
                     {
-                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
+                        for (int i = 0; i < activeCans.Count; i++)
                         {
-                            success = false;
-                            break;
+                            if (activeCans[i].transform.rotation.eulerAngles.z >= 15 || activeCans[i].transform.rotation.eulerAngles.z <= -15)
+                            {
+                                Debug.Log(activeCans[i] + " is not upright");
+                                success = false;
+                            }
+                        }
+
+                        if (success != false) // if all cans are upright, check they're all touching correctly
+                        {
+                            int i = 0; // total number of can contacts, for 3 cans this should be 4
+                            foreach (GameObject can in activeCans)
+                            {
+                                i += can.GetComponent<Can>().touchingObjs.Count;
+                            }
+                            if (i >= 4) { success = true; } // top can touching 2, bottom cans touching 1 (2+1+1 = 4)
+                            else { success = false; }
                         }
                     }
-
-                    success = true; // this should only be run if neither previous break statement is reached
                     break;
                 }
             case 6:
@@ -120,24 +139,34 @@ public class CanMinigameManager : MonoBehaviour
                     if (layer1Result.Length != 3 || layer2Result.Length != 2 || layer3Result.Length != 1)
                     {
                         success = false;
-                        break;
                     }
-                    // check all cans are upright
-                    for (int i = 0; i < activeCans.Count; i++)
+                    if (success != false) // if cans are in the right triggers, check all cans are upright
                     {
-                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
+                        for (int i = 0; i < activeCans.Count; i++)
                         {
-                            success = false;
-                            break;
+                            if (activeCans[i].transform.rotation.eulerAngles.z >= 15 || activeCans[i].transform.rotation.eulerAngles.z <= -15)
+                            {
+                                Debug.Log(activeCans[i] + " is not upright");
+                                success = false;
+                            }
+                        }
+
+                        if (success != false) // if all cans are upright, check they're all touching correctly
+                        {
+                            int i = 0; // total number of can contacts, for 6 cans this should be 12
+                            foreach (GameObject can in activeCans)
+                            {
+                                i += can.GetComponent<Can>().touchingObjs.Count;
+                            }
+                            if (i >= 12) { success = true; }// bottom corner cans touching 1, bottom middle and top middle touching 2, both middle row touching 3 (1+1+2+2+3+3 = 12)
+                            else { success = false; }
                         }
                     }
-
-                    success = true; // this should only be run if neither previous break statement is reached
                     break;
                 }
             case 10:
                 {
-                    // check layer 1 has 4 cans, layer 2 has cans, layer 3 has 2 cans and layer 4 has 1 can
+                    // check layer 1 has 4 cans, layer 2 has 3 cans, layer 3 has 2 cans and layer 4 has 1 can
                     Collider[] layer1Result = Physics.OverlapBox(layerTriggers[0].gameObject.transform.position, layerTriggers[0].transform.localScale / 2);
                     Collider[] layer2Result = Physics.OverlapBox(layerTriggers[1].gameObject.transform.position, layerTriggers[1].transform.localScale / 2);
                     Collider[] layer3Result = Physics.OverlapBox(layerTriggers[2].gameObject.transform.position, layerTriggers[2].transform.localScale / 2);
@@ -145,21 +174,34 @@ public class CanMinigameManager : MonoBehaviour
                     if (layer1Result.Length != 4 || layer2Result.Length != 3 || layer3Result.Length != 2 || layer4Result.Length != 1)
                     {
                         success = false;
-                        break;
-                    }
-                    // check all cans are upright
-                    for (int i = 0; i < activeCans.Count; i++)
-                    {
-                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
-                        {
-                            success = false;
-                            break;
-                        }
                     }
 
-                    success = true; // this should only be run if neither previous break statement is reached
+                    if (success != false) // if cans are in the right triggers, check all cans are upright
+                    {
+                        for (int i = 0; i < activeCans.Count; i++)
+                        {
+                            if (activeCans[i].transform.rotation.eulerAngles.z >= 15 || activeCans[i].transform.rotation.eulerAngles.z <= -15)
+                            {
+                                Debug.Log(activeCans[i] + " is not upright");
+                                success = false;
+                            }
+                        }
+
+                        if (success != false) // if all cans are upright, check they're all touching correctly
+                        {
+                            int i = 0; // total number of can contacts, for 10 cans this should be 23
+                            foreach (GameObject can in activeCans)
+                            {
+                                i += can.GetComponent<Can>().touchingObjs.Count;
+                            }
+                            if (i >= 23) { success = true; } // drew it out but yea 23 trust me 
+                            else { success = false; }
+                        }
+                    }
                     break;
                 }
+            // next iterations would be 15, 21, 28, 36
+            // not implemented atm cause they didnt fit the camera scene and it might get excessive but can be added if needed
             default:
                 {
                     Debug.LogError("Invalid number of max cans set in the can minigame! Womp womp");
@@ -168,7 +210,8 @@ public class CanMinigameManager : MonoBehaviour
         }
 
 
-        if (success) { Debug.Log("Success!"); }
-        else { Debug.Log("Not success! :("); }
+        if (success == true) { Debug.Log("Success!"); }
+        else if (success == false) { Debug.Log("Not success! :("); }
+        else { Debug.Log("Bool is still null wtf"); }
     }
 }
