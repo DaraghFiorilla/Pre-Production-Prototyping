@@ -15,7 +15,7 @@ public class CanMinigameManager : MonoBehaviour
     [SerializeField] private GameObject placingCan;
     public bool maxCansPlaced;
     [SerializeField] private bool canFalling;
-    [SerializeField] private Collider[] layerTriggers;
+    [SerializeField] private GameObject[] layerTriggers;
     //[SerializeField] private float yLevel;
 
     private void Awake()
@@ -85,24 +85,79 @@ public class CanMinigameManager : MonoBehaviour
 
     private void CheckResult()
     {
+        bool success = false;
         switch (maxCansNo)
         {
             case 3:
                 {
                     // check layer 1 has 2 cans and layer 2 has 1 can
+                    Collider[] layer1Result = Physics.OverlapBox(layerTriggers[0].gameObject.transform.position, layerTriggers[0].transform.localScale / 2);
+                    Collider[] layer2Result = Physics.OverlapBox(layerTriggers[1].gameObject.transform.position, layerTriggers[1].transform.localScale / 2);
+                    if (layer1Result.Length != 2 || layer2Result.Length != 1)
+                    {
+                        success = false;
+                        break;
+                    }
                     // check all cans are upright
+                    for (int i = 0; i < activeCans.Count; i++)
+                    {
+                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
+                        {
+                            success = false;
+                            break;
+                        }
+                    }
+
+                    success = true; // this should only be run if neither previous break statement is reached
                     break;
                 }
             case 6:
                 {
                     // check layer 1 has 3 cans, layer 2 has 2 cans and layer 3 has 1 can
+                    Collider[] layer1Result = Physics.OverlapBox(layerTriggers[0].gameObject.transform.position, layerTriggers[0].transform.localScale / 2);
+                    Collider[] layer2Result = Physics.OverlapBox(layerTriggers[1].gameObject.transform.position, layerTriggers[1].transform.localScale / 2);
+                    Collider[] layer3Result = Physics.OverlapBox(layerTriggers[2].gameObject.transform.position, layerTriggers[2].transform.localScale / 2);
+                    if (layer1Result.Length != 3 || layer2Result.Length != 2 || layer3Result.Length != 1)
+                    {
+                        success = false;
+                        break;
+                    }
                     // check all cans are upright
+                    for (int i = 0; i < activeCans.Count; i++)
+                    {
+                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
+                        {
+                            success = false;
+                            break;
+                        }
+                    }
+
+                    success = true; // this should only be run if neither previous break statement is reached
                     break;
                 }
             case 10:
                 {
                     // check layer 1 has 4 cans, layer 2 has cans, layer 3 has 2 cans and layer 4 has 1 can
+                    Collider[] layer1Result = Physics.OverlapBox(layerTriggers[0].gameObject.transform.position, layerTriggers[0].transform.localScale / 2);
+                    Collider[] layer2Result = Physics.OverlapBox(layerTriggers[1].gameObject.transform.position, layerTriggers[1].transform.localScale / 2);
+                    Collider[] layer3Result = Physics.OverlapBox(layerTriggers[2].gameObject.transform.position, layerTriggers[2].transform.localScale / 2);
+                    Collider[] layer4Result = Physics.OverlapBox(layerTriggers[3].gameObject.transform.position, layerTriggers[3].transform.localScale / 2);
+                    if (layer1Result.Length != 4 || layer2Result.Length != 3 || layer3Result.Length != 2 || layer4Result.Length != 1)
+                    {
+                        success = false;
+                        break;
+                    }
                     // check all cans are upright
+                    for (int i = 0; i < activeCans.Count; i++)
+                    {
+                        if (Mathf.Abs(activeCans[i].transform.rotation.x) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.y) >= 15 || Mathf.Abs(activeCans[i].transform.rotation.z) >= 15)
+                        {
+                            success = false;
+                            break;
+                        }
+                    }
+
+                    success = true; // this should only be run if neither previous break statement is reached
                     break;
                 }
             default:
@@ -111,5 +166,9 @@ public class CanMinigameManager : MonoBehaviour
                     break;
                 }
         }
+
+
+        if (success) { Debug.Log("Success!"); }
+        else { Debug.Log("Not success! :("); }
     }
 }
