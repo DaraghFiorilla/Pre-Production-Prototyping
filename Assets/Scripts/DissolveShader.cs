@@ -18,7 +18,8 @@ public class DissolveShader : MonoBehaviour
         //myShader = Instantiate(myRenderer.sharedMaterial);
         //myRenderer.materials[0] = myShader;
         myShader = myRenderer.materials[1];
-        myCutoff = minCutoff;
+        if (show) { myCutoff = minCutoff; }
+        else { myCutoff = maxCutoff; }
         myShader.SetFloat("_Cutoff_Height", myCutoff);
 
     }
@@ -30,17 +31,17 @@ public class DissolveShader : MonoBehaviour
         {
             if (show)
             {
-                //myCutoff += (0.015f * spawnSpeedMultiplier);
+                myCutoff += (0.015f * spawnSpeedMultiplier);
                 if (myCutoff >= maxCutoff) { active = false; show = false; }
             }
 
             if (!show)
             {
-                //myCutoff -= (0.015f * spawnSpeedMultiplier);
-                if (myCutoff <= -0.6f) { active = false; show = true; }
+                myCutoff -= (0.015f * spawnSpeedMultiplier);
+                if (myCutoff <= minCutoff) { active = false; show = true; }
             }
 
-            myCutoff = Mathf.Clamp(myCutoff, -0.6f, maxCutoff);
+            myCutoff = Mathf.Clamp(myCutoff, minCutoff, maxCutoff);
             myShader.SetFloat("_Cutoff_Height", myCutoff);
         }
     }
