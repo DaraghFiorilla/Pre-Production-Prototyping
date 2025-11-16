@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class NightmareSwitch : MonoBehaviour
 {
@@ -16,11 +17,14 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] private float maxBlinkingTimer;
     [Tooltip("How much the blinking timer will decrease upon a successful blink")][SerializeField] private float blinkingTimerIncrement;
     [SerializeField] private float timer;
-    [SerializeField] private float reactionTime;
-    [Tooltip("How much the player's time to input will decrease upon a successful blink")][SerializeField] private float reactionTimeIncrement;
-    [SerializeField] private bool coroutineActive;
+    [Tooltip("How much the player's time to input will decrease upon a successful blink")][SerializeField] private float animMultIncrement;
     [SerializeField] private int timesBlinked;
-    [SerializeField] private GameObject[] eyelidObjs = new GameObject[2];
+    [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
+    [SerializeField] bool pauseBlink;
+
+    // vars used in the initiate blink function
+    float startTime;
+    bool blinkActive;
 
     private void Awake()
     {
@@ -35,10 +39,21 @@ public class NightmareSwitch : MonoBehaviour
     {
         if (!nightmareState)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0 && !coroutineActive)
+            if (!pauseBlink)
             {
-                InitiateBlink();
+                if (!blinkActive && timer > 0) { timer -= Time.deltaTime; }
+                if (timer <= 0 && !blinkActive)
+                {
+                    blinkActive = true;
+                    InitiateBlink();
+                }
+                if (blinkActive)
+                {
+                    if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
+                    {
+                        Blink();
+                    }
+                }
             }
         }
     }
@@ -46,11 +61,16 @@ public class NightmareSwitch : MonoBehaviour
     public void Switch()
     {
         if (nightmareState)
-        { 
+        {
+            timer = maxBlinkingTimer;
             nightmareState = false;
-
+            Debug.Log("Switching to regular state");
         }
-        else { nightmareState = true; }
+        else 
+        {
+            nightmareState = true;
+            Debug.Log("Switching to nightmare state");
+        }
         switchNightmareState?.Invoke();
     }
 
@@ -73,48 +93,56 @@ public class NightmareSwitch : MonoBehaviour
 
     void InitiateBlink()
     {
-        float startTime = Time.time;
-        Vector3 topLidTarget = new Vector3(0, 270, 0);
-        Vector3 bottomLidTarget = new Vector3(0, -270, 0);
-
-        float blinkTimer = reactionTime - reactionTimeIncrement * timesBlinked;
-        Debug.Log(blinkTimer);
-        coroutineActive = true;
-        // blink 
-        while (blinkTimer > 0)
-        {
-            if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
-            {
-                Debug.Log("interact pressed");
-                timesBlinked++;
-                reactionTime -= reactionTimeIncrement;
-                timer = maxBlinkingTimer - blinkingTimerIncrement * timesBlinked;
-                RetractEyelids();
-                return;
-            }
-            Debug.Log("interact not pressed");
-            blinkTimer -= Time.deltaTime;
-            float fracComplete = (Time.time - startTime) / (reactionTime - reactionTimeIncrement * timesBlinked);
-            eyelidObjs[0].transform.position = Vector3.Slerp(eyelidObjs[0].transform.position, topLidTarget, fracComplete);
-            eyelidObjs[1].transform.position = Vector3.Slerp(eyelidObjs[1].transform.position, bottomLidTarget, fracComplete);
-
-        }
-        Switch();
-        RetractEyelids();
+        startTime = Time.time;
+        blinkActive = true;
+        eyelidAnimators[0].Play("TopLidClose");
+        eyelidAnimators[1].Play("BottomLidClose");
+        Debug.Log("Blink started");
     }
 
-    void RetractEyelids()
+    void Blink()
     {
-        float startTime = Time.time;
-        float retractTime = 0.8f;
-        Vector3 topLidTarget = new Vector3(0, 810, 0);
-        Vector3 bottomLidTarget = new Vector3(0, -810, 0);
+        Debug.Log("interact pressed");
+        timesBlinked++;
+        timer = maxBlinkingTimer - blinkingTimerIncrement * timesBlinked;
+        eyelidAnimators[0].SetTrigger("forceOpen");
+        eyelidAnimators[1].SetTrigger("forceOpen");
+        eyelidAnimators[0].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+        eyelidAnimators[1].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+        blinkActive = false;
+    }
 
-        while (eyelidObjs[1].transform.position.y < -810)
+    public void EyesClosed()
+    {
+        blinkActive = false;
+        Debug.Log("interact not pressed");
+        timesBlinked = 0;
+        eyelidAnimators[0].SetTrigger("forceOpen");
+        eyelidAnimators[1].SetTrigger("forceOpen");
+        Switch();
+    }
+
+    public void PauseBlink()
+    {
+        if (pauseBlink)
         {
-            float fracComplete = (Time.time - startTime) / retractTime;
-            eyelidObjs[0].transform.position = Vector3.Slerp(eyelidObjs[0].transform.position, topLidTarget, fracComplete);
-            eyelidObjs[1].transform.position = Vector3.Slerp(eyelidObjs[1].transform.position, bottomLidTarget, fracComplete);
+            Debug.Log("Unpausing blink");
+            pauseBlink = false;
+            foreach (Animator anim in eyelidAnimators)
+            {
+                anim.speed = 1;
+                anim.GetComponent<Image>().enabled = true;
+            }
+        }
+        else
+        {
+            Debug.Log("Pausing blink");
+            pauseBlink = true;
+            foreach (Animator anim in eyelidAnimators)
+            {
+                anim.speed = 0;
+                anim.GetComponent<Image>().enabled = false;
+            }
         }
     }
 }

@@ -11,20 +11,15 @@ public class DissolveShader : MonoBehaviour
     [SerializeField] private float minCutoff; // same as max cutoff this needs to be assigned manually based on object shape, for cubes -0.6
     [SerializeField] private float maxCutoff; // this will have to be tested on each object and assigned manualy, im not sure what dictates what the max cutoff should be. for cubes its 0.85 and cylinders its 1.2
 
-    // Start is called before the first frame update
     private void Start()
     {
         myRenderer = GetComponent<MeshRenderer>();
-        //myShader = Instantiate(myRenderer.sharedMaterial);
-        //myRenderer.materials[0] = myShader;
         myShader = myRenderer.materials[1];
         if (show) { myCutoff = minCutoff; }
         else { myCutoff = maxCutoff; }
         myShader.SetFloat("_Cutoff_Height", myCutoff);
-
     }
 
-    // Update is called once per frame
     private void FixedUpdate()
     {
         if (active)
