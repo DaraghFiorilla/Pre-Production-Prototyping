@@ -143,7 +143,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012, y: 0.01, z: 0.008}
+  m_Size: {x: 0.0075, y: 0.01, z: 0.008}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3553270732439094998
 GameObject:
@@ -191,12 +191,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CanLayout
   cansNo: 3
-  layer1Cans: []
-  layer2Cans: []
+  layer1Cans:
+  - {fileID: 3068065235041049417}
+  - {fileID: 9132818448364586112}
+  layer2Cans:
+  - {fileID: 5653896899124207115}
   layer3Cans: []
   layer4Cans: []
   layer5Cans: []
-  cansTouchingNo: 0
+  cansTouchingNo: 4
 --- !u!1 &5653896899124207115
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,7 +309,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012, y: 0.01, z: 0.008}
+  m_Size: {x: 0.0075, y: 0.01, z: 0.008}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9132818448364586112
 GameObject:
@@ -417,5 +420,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.012, y: 0.01, z: 0.008}
+  m_Size: {x: 0.0075, y: 0.01, z: 0.008}
   m_Center: {x: 0, y: 0, z: 0}

@@ -34,7 +34,6 @@ public class CanMinigameManager : MonoBehaviour
 
     private void Awake()
     {
-        maxCansNo = canLayout.cansNo;
         if (mainCam == null) { mainCam = Camera.main; }
         StartMinigame();
     }
@@ -50,7 +49,7 @@ public class CanMinigameManager : MonoBehaviour
                 Vector3 worldPos = myCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10));
                 placingCan.transform.position = new Vector3 (worldPos.x, 5, worldPos.z);
                 placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                placingCan.transform.rotation = Quaternion.identity;
+                placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); //new Quaternion.EulerAngles(0, -90, 0, 1);
                 placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
                 RaycastShadow();
                 // if mouse input left place at pos
@@ -72,7 +71,9 @@ public class CanMinigameManager : MonoBehaviour
     public void StartMinigame()
     {
         //myCam = Camera.main;
-        if (!testing) { mainCam.enabled = false; Debug.Log("E"); }
+        maxCansNo = canLayout.cansNo;
+        cansRemainingText.text = "x" + maxCansNo.ToString();
+        if (!testing) { mainCam.enabled = false; }
         
         minigameActive = true;
         Cursor.visible = true;
@@ -198,6 +199,7 @@ public class CanMinigameManager : MonoBehaviour
         placingCan = null;
         foreach (GameObject can in activeCans) { Destroy(can); }
         activeCans.Clear();
+        cansRemainingText.text = "x" + maxCansNo.ToString();
     }
 
     public IEnumerator Finish()
