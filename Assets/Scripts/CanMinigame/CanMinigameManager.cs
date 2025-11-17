@@ -10,6 +10,7 @@ public class CanMinigameManager : MonoBehaviour
     [Header("Changeable variables")]
     [SerializeField] private float finishTime;
     [SerializeField] private bool testing;
+    [SerializeField] private float localYLevel;
 
     [Header("State variables")]
     public bool minigameActive;
@@ -24,30 +25,35 @@ public class CanMinigameManager : MonoBehaviour
     [Header("Object references")]
     [SerializeField] private GameObject canPrefab;
     [SerializeField] private Camera myCam;
-    [SerializeField] private Camera mainCam;
+    [SerializeField] private GameObject playerObj;
     [SerializeField] private GameObject[] layerTriggers;
     [SerializeField] private CanLayout canLayout;
     [SerializeField] private TextMeshProUGUI cansRemainingText;
     [SerializeField] private TextMeshProUGUI resultText;
-    [SerializeField] private Transform cansNewParent;
+    [SerializeField] private Transform cansParent;
     [SerializeField] private MainManager mainManager;
+    [SerializeField] private GameObject tableObj;
+    [SerializeField] private GameObject[] objectsToEnable;
 
     private void Awake()
     {
-        if (mainCam == null) { mainCam = Camera.main; }
-        StartMinigame();
+        if (testing) { StartMinigame(); }
     }
 
     private void Update()
     {
         if (minigameActive)
         {
+            if (!Cursor.visible) { Cursor.visible = true; }
+            if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
             if (placingState)
             {
                 Vector2 screenPos = Mouse.current.position.ReadValue();
                 // get cursor pos and convert to world pos
                 Vector3 worldPos = myCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10));
-                placingCan.transform.position = new Vector3 (worldPos.x, 5, worldPos.z);
+                //float worldPosX = Mathf.Clamp();
+                placingCan.transform.localPosition = new Vector3(0, localYLevel, 0);
+                placingCan.transform.position = new Vector3 (worldPos.x, placingCan.transform.position.y, placingCan.transform.parent.position.z);
                 placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); //new Quaternion.EulerAngles(0, -90, 0, 1);
                 placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
@@ -64,16 +70,18 @@ public class CanMinigameManager : MonoBehaviour
         if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
         {
             Vector3 hitPoint = hit.point;
-            placingCan.transform.GetChild(0).position = new Vector3(hitPoint.x, hitPoint.y + placingCan.transform.localScale.y, hitPoint.z);
+            placingCan.transform.GetChild(0).position = new Vector3(hitPoint.x, hitPoint.y + gameObject.transform.localScale.y, hitPoint.z);
         }
     }
 
     public void StartMinigame()
     {
         //myCam = Camera.main;
+        Debug.Log("Starting minigame");
+        foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
         maxCansNo = canLayout.cansNo;
         cansRemainingText.text = "x" + maxCansNo.ToString();
-        if (!testing) { mainCam.enabled = false; }
+        if (!testing) { playerObj.SetActive(false); }
         
         minigameActive = true;
         Cursor.visible = true;
@@ -81,14 +89,14 @@ public class CanMinigameManager : MonoBehaviour
 
     public void CreateNewCan()
     {
-        if (!placingState && !canFalling) // check we're not already placing another can
+        if (!placingState && !canFalling && minigameActive) // check we're not already placing another can
         {
             if (maxCansPlaced) { return; } // make sure we're not creating too many cans
             // instantiate new can
             // follow mouse pos converted to world pos (z axis locked)
             placingState = true;
             canLayout.transform.GetChild(0).gameObject.SetActive(false);
-            placingCan = Instantiate(canPrefab);
+            placingCan = Instantiate(canPrefab, cansParent.transform);
             placingCan.gameObject.name = placingCan.gameObject.name + activeCans.Count;
             placingCan.GetComponent<BoxCollider>().enabled = false;
             placingCan.GetComponent<Can>().manager = this;
@@ -189,31 +197,41 @@ public class CanMinigameManager : MonoBehaviour
 
     public void Restart()
     {
-        // reset states
-        placingState = false;
-        maxCansPlaced = false;
-        canFalling = false;
-        // clear objects
-        currentCansNo = 0;
-        if (placingCan != null) { Destroy(placingCan); }
-        placingCan = null;
-        foreach (GameObject can in activeCans) { Destroy(can); }
-        activeCans.Clear();
-        cansRemainingText.text = "x" + maxCansNo.ToString();
+        if (minigameActive)
+        {
+            // reset states
+            placingState = false;
+            maxCansPlaced = false;
+            canFalling = false;
+            // clear objects
+            currentCansNo = 0;
+            if (placingCan != null) { Destroy(placingCan); }
+            placingCan = null;
+            foreach (GameObject can in activeCans) { Destroy(can); }
+            activeCans.Clear();
+            resultText.text = "";
+            cansRemainingText.text = "x" + maxCansNo.ToString();
+        }
     }
 
     public IEnumerator Finish()
     {
+        minigameActive = false;
         yield return new WaitForSeconds(finishTime);
         if (!testing)
         {
             mainManager.canMinigamesComplete++;
-            foreach (GameObject can in activeCans)
+            /*foreach (GameObject can in activeCans)
             {
                 can.transform.parent = cansNewParent;
-            }
-            mainCam.enabled = true;
-            Destroy(gameObject);
+            }*/
+            playerObj.SetActive(true);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            gameObject.name = "CanTable";
+            foreach (GameObject can in activeCans) { Destroy(can.GetComponent<Can>()); }
+            foreach (GameObject obj in objectsToEnable) { Destroy(obj); }
+            Destroy(this);
         }
         else
         {

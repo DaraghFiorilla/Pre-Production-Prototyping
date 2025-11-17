@@ -4,7 +4,7 @@ public class DissolveShader : MonoBehaviour
 {
     private MeshRenderer myRenderer;
     private Material myShader;
-    public bool show; // show nightmare so if transitioning to nightmare this is true
+    [Tooltip("If transitioning to nightmare this is true")]public bool show; // show nightmare so if transitioning to nightmare this is true
     public bool active;
     [SerializeField] private float spawnSpeedMultiplier = 1.0f; // make this dependant on max cutoff var so different shapes dissolve at the same rate
     [SerializeField] private float myCutoff;
