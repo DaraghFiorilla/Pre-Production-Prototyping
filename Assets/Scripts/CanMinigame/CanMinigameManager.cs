@@ -10,7 +10,7 @@ public class CanMinigameManager : MonoBehaviour
     [Header("Changeable variables")]
     [SerializeField] private float finishTime;
     [SerializeField] private bool testing;
-    [SerializeField] private float localYLevel;
+    [SerializeField] private bool rotated;
 
     [Header("State variables")]
     public bool minigameActive;
@@ -45,23 +45,42 @@ public class CanMinigameManager : MonoBehaviour
         if (minigameActive)
         {
             if (!Cursor.visible) { Cursor.visible = true; }
-            if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.None; }
+            if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.Confined; }
             if (placingState)
             {
-                Vector2 screenPos = Mouse.current.position.ReadValue();
-                // get cursor pos and convert to world pos
-                Vector3 worldPos = myCam.ScreenToWorldPoint(new Vector3(screenPos.x, screenPos.y, 10));
-                //float worldPosX = Mathf.Clamp();
-                placingCan.transform.localPosition = new Vector3(0, localYLevel, 0);
-                placingCan.transform.position = new Vector3 (worldPos.x, placingCan.transform.position.y, placingCan.transform.parent.position.z);
-                placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-                placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); //new Quaternion.EulerAngles(0, -90, 0, 1);
-                placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
-                RaycastShadow();
-                // if mouse input left place at pos
-                if (InputSystem.actions.FindAction("RightClick").WasPressedThisFrame() && !canFalling) { PlaceCan(); }
+                UpdateCanPos();
             }
         }
+    }
+
+    Ray ray;
+    RaycastHit hit;
+    float xPos;
+
+    private void UpdateCanPos()
+    {
+        ray = myCam.ScreenPointToRay(Mouse.current.position.ReadValue());
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Collide))
+        {
+            if (hit.collider.gameObject.name == "GetInputQuad")
+            {
+                // if this gameobject has been rotated, we will have to get the Z AXIS input of the raycast
+                if (!rotated) { xPos = hit.point.x; }
+                else { xPos = hit.point.z; }
+            }
+            Debug.DrawRay(ray.origin, ray.direction, Color.yellow);
+        }
+        placingCan.transform.position = cansParent.transform.position;
+
+        if (!rotated) { placingCan.transform.position = new Vector3(xPos, placingCan.transform.position.y, placingCan.transform.parent.position.z); }
+        else { placingCan.transform.position = new Vector3(placingCan.transform.position.x, placingCan.transform.position.y, xPos); }
+
+        placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); //new Quaternion.EulerAngles(0, -90, 0, 1);
+        placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
+        RaycastShadow();
+        // if mouse input left place at pos
+        if (InputSystem.actions.FindAction("RightClick").WasPressedThisFrame() && !canFalling) { PlaceCan(); }
     }
 
     private void RaycastShadow()
@@ -76,8 +95,6 @@ public class CanMinigameManager : MonoBehaviour
 
     public void StartMinigame()
     {
-        //myCam = Camera.main;
-        Debug.Log("Starting minigame");
         foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
         maxCansNo = canLayout.cansNo;
         cansRemainingText.text = "x" + maxCansNo.ToString();

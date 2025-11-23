@@ -119,11 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!4 &97517709 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 7916737814799628311, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-  m_PrefabInstance: {fileID: 1419579787}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &205466815
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,30 +206,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 120245850112278138, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 570427569020815050, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2240130476726235601, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3281955352555156181, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3281955352555156181, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3281955352555156181, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3281955352555156181, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
       propertyPath: m_LocalPosition.x
       value: 76.91213
@@ -275,41 +246,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3752998390929325243, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3808290591079920966, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4806738291265737679, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4921604261825451663, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: testing
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4921604261825451663, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: cansParent
-      value: 
-      objectReference: {fileID: 97517709}
-    - target: {fileID: 6571188302318536867, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7116086539157555884, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
       propertyPath: m_Name
       value: CanMinigameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 7248269526150572966, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7763500942888009591, guid: d4aa422a44da1e94dba2bebd2ee09218, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

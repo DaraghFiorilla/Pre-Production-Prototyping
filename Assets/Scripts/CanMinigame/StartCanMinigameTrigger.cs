@@ -31,7 +31,6 @@ public class StartCanMinigameTrigger : MonoBehaviour
         {
             if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
             {
-                Debug.Log("E pressed");
                 myManager.StartMinigame();
                 myCanvasObj.SetActive(false);
                 Destroy(gameObject);
