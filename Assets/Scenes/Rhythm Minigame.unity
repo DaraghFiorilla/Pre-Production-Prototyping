@@ -716,8 +716,8 @@ MonoBehaviour:
   downNoteList: []
   upNoteList: []
   rightNoteList: []
-  timeBetweenArrows: 1.5
-  arrowSpeed: 300
+  timeBetweenArrows: 0.75
+  arrowSpeed: 600
   combo: 0
   arrowPrefab: {fileID: 4599112415152482579, guid: 7dc8ea6091720ee4d917f867d656d5bf, type: 3}
   arrowParents:

@@ -4,18 +4,28 @@ using UnityEngine;
 public class Can : MonoBehaviour
 {
     [HideInInspector] public CanMinigameManager manager;
-    private Rigidbody rb;
+    Rigidbody rb;
     public List<GameObject> touchingCans;
     public List<GameObject> touchingDisplay;
     public GameObject touchedLayer;
-    private bool finished;
+    bool finished;
     float maxWaitingTime = 3.5f;
     float timer;
+    bool madeContact;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         timer = maxWaitingTime;
+    }
+
+    private void Update()
+    {
+        if (madeContact)
+        {
+            timer -= Time.deltaTime;
+            if (timer <= 0) { finished = true; manager.CanStopped(); }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -36,9 +46,9 @@ public class Can : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
-        if (!finished) { timer -= Time.deltaTime; }
+        //if (!finished) { timer -= Time.deltaTime; }
         if (Mathf.Abs(rb.linearVelocity.y) < 0.001 && Mathf.Abs(rb.angularVelocity.z) < 0.1 && !finished) { finished = true; manager.CanStopped(); }
-        else if (timer <= 0) { finished = true; manager.CanStopped(); }
+        //else if (timer <= 0) { finished = true; manager.CanStopped(); }
     }
 
     private void OnTriggerEnter(Collider other)

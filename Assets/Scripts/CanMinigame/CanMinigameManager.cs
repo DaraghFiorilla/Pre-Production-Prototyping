@@ -76,7 +76,9 @@ public class CanMinigameManager : MonoBehaviour
         else { placingCan.transform.position = new Vector3(placingCan.transform.position.x, placingCan.transform.position.y, xPos); }
 
         placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); //new Quaternion.EulerAngles(0, -90, 0, 1);
+        if (!rotated) { placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); }
+        else { placingCan.transform.rotation = Quaternion.Euler(0, 180, 0); }
+
         placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         RaycastShadow();
         // if mouse input left place at pos
@@ -86,11 +88,18 @@ public class CanMinigameManager : MonoBehaviour
     private void RaycastShadow()
     {
         RaycastHit hit;
-        if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
+        bool hitBool = Physics.BoxCast(placingCan.transform.position, transform.localScale * 0.5f, Vector3.down, out hit, Quaternion.identity, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore);
+        if (hitBool) { placingCan.transform.GetChild(0).position = new Vector3(hit.point.x, hit.point.y + gameObject.transform.localScale.y, hit.point.z); } 
+        /*if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
         {
             Vector3 hitPoint = hit.point;
             placingCan.transform.GetChild(0).position = new Vector3(hitPoint.x, hitPoint.y + gameObject.transform.localScale.y, hitPoint.z);
-        }
+        }*/
+        /*if (Physics.BoxCast(placingCan.transform.GetChild(0).transform.position, transform.localScale * 0.5f, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
+        {
+            Vector3 hitPoint = hit.point;
+            placingCan.transform.GetChild(0).position = hit.point;
+        }*/
     }
 
     public void StartMinigame()
