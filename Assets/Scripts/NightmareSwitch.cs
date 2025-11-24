@@ -21,6 +21,8 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] private int timesBlinked;
     [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
     [SerializeField] bool pauseBlink;
+    [SerializeField] private int maxTimesBlinked;
+    private MainManager mainManager;
 
     // vars used in the initiate blink function
     float startTime;
@@ -28,6 +30,7 @@ public class NightmareSwitch : MonoBehaviour
 
     private void Awake()
     {
+        mainManager = GetComponent<MainManager>();
         switchNightmareState += ChangeTextures;
         switchNightmareState += EnableObjs;
 
@@ -97,25 +100,36 @@ public class NightmareSwitch : MonoBehaviour
         blinkActive = true;
         eyelidAnimators[0].Play("TopLidClose");
         eyelidAnimators[1].Play("BottomLidClose");
-        Debug.Log("Blink started");
+        mainManager.canInteract = false;
+        //Debug.Log("Blink started");
     }
 
     void Blink()
     {
-        Debug.Log("interact pressed");
+        //Debug.Log("interact pressed");
         timesBlinked++;
-        timer = maxBlinkingTimer - blinkingTimerIncrement * timesBlinked;
-        eyelidAnimators[0].SetTrigger("forceOpen");
-        eyelidAnimators[1].SetTrigger("forceOpen");
-        eyelidAnimators[0].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
-        eyelidAnimators[1].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+
+        if (timesBlinked >= maxTimesBlinked)
+        {
+            EyesClosed();
+        }
+        else
+        {
+            timer = maxBlinkingTimer - blinkingTimerIncrement * timesBlinked;          
+            eyelidAnimators[0].SetTrigger("forceOpen");
+            eyelidAnimators[1].SetTrigger("forceOpen");
+            eyelidAnimators[0].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+            eyelidAnimators[1].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+        }
+        mainManager.canInteract = true;
         blinkActive = false;
     }
 
     public void EyesClosed()
     {
         blinkActive = false;
-        Debug.Log("interact not pressed");
+        timer = maxBlinkingTimer;
+        //Debug.Log("interact not pressed");
         timesBlinked = 0;
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");

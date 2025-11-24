@@ -95,6 +95,7 @@ public class CanMinigameManager : MonoBehaviour
 
     public void StartMinigame()
     {
+        mainManager.nightmareManager.PauseBlink();
         foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
         maxCansNo = canLayout.cansNo;
         cansRemainingText.text = "x" + maxCansNo.ToString();
@@ -248,6 +249,7 @@ public class CanMinigameManager : MonoBehaviour
             gameObject.name = "CanTable";
             foreach (GameObject can in activeCans) { Destroy(can.GetComponent<Can>()); }
             foreach (GameObject obj in objectsToEnable) { Destroy(obj); }
+            mainManager.nightmareManager.PauseBlink();
             Destroy(this);
         }
         else
