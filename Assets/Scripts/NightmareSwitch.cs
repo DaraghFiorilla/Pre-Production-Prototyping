@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -23,6 +24,7 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] bool pauseBlink;
     [SerializeField] private int maxTimesBlinked;
     private MainManager mainManager;
+    [SerializeField] private GameObject blinkPrompt;
 
     // vars used in the initiate blink function
     float startTime;
@@ -100,6 +102,7 @@ public class NightmareSwitch : MonoBehaviour
 
     void InitiateBlink()
     {
+        blinkPrompt.SetActive(true);
         startTime = Time.time;
         blinkActive = true;
         eyelidAnimators[0].Play("TopLidClose");
@@ -110,6 +113,7 @@ public class NightmareSwitch : MonoBehaviour
 
     void Blink()
     {
+        blinkPrompt.SetActive(false);
         //Debug.Log("interact pressed");
         timesBlinked++;
 
@@ -131,6 +135,7 @@ public class NightmareSwitch : MonoBehaviour
 
     public void EyesClosed()
     {
+        blinkPrompt.SetActive(false);
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");
         Switch();
