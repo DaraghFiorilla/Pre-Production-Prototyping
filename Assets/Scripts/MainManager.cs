@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MainManager : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class MainManager : MonoBehaviour
         if (canMinigamesComplete == minigamesBeforeSwitch && !nightmareManager.nightmareState)
         {
             nightmareManager.Switch();
+        }
+        else if (canMinigamesComplete >= canMinigamesNo)
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
