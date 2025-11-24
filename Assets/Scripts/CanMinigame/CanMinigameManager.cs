@@ -238,7 +238,7 @@ public class CanMinigameManager : MonoBehaviour
         yield return new WaitForSeconds(finishTime);
         if (!testing)
         {
-            mainManager.canMinigamesComplete++;
+            mainManager.UpdateCanMinigameNo();
             /*foreach (GameObject can in activeCans)
             {
                 can.transform.parent = cansNewParent;

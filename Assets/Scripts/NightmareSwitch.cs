@@ -63,6 +63,10 @@ public class NightmareSwitch : MonoBehaviour
 
     public void Switch()
     {
+        blinkActive = false;
+        timer = maxBlinkingTimer;
+        //Debug.Log("interact not pressed");
+        timesBlinked = 0;
         if (nightmareState)
         {
             timer = maxBlinkingTimer;
@@ -127,10 +131,6 @@ public class NightmareSwitch : MonoBehaviour
 
     public void EyesClosed()
     {
-        blinkActive = false;
-        timer = maxBlinkingTimer;
-        //Debug.Log("interact not pressed");
-        timesBlinked = 0;
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");
         Switch();
