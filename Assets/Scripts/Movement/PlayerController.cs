@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     public bool sprintInput;
 
     [Header("Components")]
-    [SerializeField] Camera camera;
+    [SerializeField] private Camera camera;
     [SerializeField] CharacterController characterController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
