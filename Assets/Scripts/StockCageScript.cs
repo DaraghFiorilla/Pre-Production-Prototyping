@@ -19,6 +19,8 @@ public class StockCageScript : MonoBehaviour
     {
 
         tagText = ("StockCage");
+        rb = GetComponent<Rigidbody>();
+        rb.useGravity = false;
 
 
     }
@@ -45,6 +47,7 @@ public class StockCageScript : MonoBehaviour
                 Debug.Log(correctProductType + " Stock Cage Full");
                 this.gameObject.tag = tagText;
                 this.gameObject.GetComponent<Collider>().isTrigger = false;
+                rb.useGravity = true;
                 
             }
         }
