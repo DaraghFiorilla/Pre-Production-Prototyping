@@ -89,7 +89,7 @@ public class CanMinigameManager : MonoBehaviour
     {
         RaycastHit hit;
         bool hitBool = Physics.BoxCast(placingCan.transform.position, transform.localScale * 0.5f, Vector3.down, out hit, Quaternion.identity, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore);
-        if (hitBool) { placingCan.transform.GetChild(0).position = new Vector3(hit.point.x, hit.point.y + gameObject.transform.localScale.y, hit.point.z); } 
+        if (hitBool) { placingCan.transform.GetChild(0).position = new Vector3(gameObject.transform.position.x, hit.point.y + gameObject.transform.localScale.y, gameObject.transform.position.z); } 
         /*if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
         {
             Vector3 hitPoint = hit.point;
