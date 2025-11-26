@@ -9,7 +9,7 @@ public class Can : MonoBehaviour
     public List<GameObject> touchingDisplay;
     public GameObject touchedLayer;
     bool finished;
-    float maxWaitingTime = 3.5f;
+    float maxWaitingTime = 2f;
     float timer;
     bool madeContact;
 
@@ -21,10 +21,14 @@ public class Can : MonoBehaviour
 
     private void Update()
     {
-        if (madeContact)
+        if (madeContact && !finished)
         {
             timer -= Time.deltaTime;
-            if (timer <= 0) { finished = true; manager.CanStopped(); }
+            if (timer <= 0)
+            {
+                finished = true;
+                manager.CanStopped();
+            }
         }
     }
 
@@ -33,6 +37,7 @@ public class Can : MonoBehaviour
         if (collision.gameObject.GetComponent<Can>() != null)
         {
             touchingCans.Add(collision.gameObject);
+            madeContact = true;
         }
     }
 

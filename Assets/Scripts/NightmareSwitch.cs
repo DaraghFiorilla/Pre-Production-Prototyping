@@ -19,12 +19,14 @@ public class NightmareSwitch : MonoBehaviour
     [Tooltip("How much the blinking timer will decrease upon a successful blink")][SerializeField] private float blinkingTimerIncrement;
     [SerializeField] private float timer;
     [Tooltip("How much the player's time to input will decrease upon a successful blink")][SerializeField] private float animMultIncrement;
+    [Tooltip("If paused, what to set the timer to on unpause")][SerializeField] private float interruptedTimer;
     [SerializeField] private int timesBlinked;
     [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
     [SerializeField] bool pauseBlink;
     [SerializeField] private int maxTimesBlinked;
     private MainManager mainManager;
     [SerializeField] private GameObject blinkPrompt;
+    [SerializeField] private string currentInputButton;
 
     // vars used in the initiate blink function
     float startTime;
@@ -54,7 +56,7 @@ public class NightmareSwitch : MonoBehaviour
                 }
                 if (blinkActive)
                 {
-                    if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
+                    if (InputSystem.actions.FindAction(currentInputButton).WasPressedThisFrame())
                     {
                         Blink();
                     }
@@ -102,7 +104,13 @@ public class NightmareSwitch : MonoBehaviour
 
     void InitiateBlink()
     {
+        RandomiseInputButton();
+
         blinkPrompt.SetActive(true);
+        TextMeshProUGUI blinkPromptText = blinkPrompt.GetComponent<TextMeshProUGUI>();
+        if (currentInputButton == "Interact") { blinkPromptText.text = "Press E to blink!!!"; }
+        else { blinkPromptText.text = "Press " + currentInputButton + " to blink!!"; }
+
         startTime = Time.time;
         blinkActive = true;
         eyelidAnimators[0].Play("TopLidClose");
@@ -149,12 +157,21 @@ public class NightmareSwitch : MonoBehaviour
             pauseBlink = false;
             foreach (Animator anim in eyelidAnimators)
             {
+                /*if (anim.gameObject.name == "BottomLid")
+                {
+                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("BottomLidClose"))
+                    {
+
+                    }
+                }*/
+                timer = interruptedTimer;
                 anim.speed = 1;
                 anim.GetComponent<Image>().enabled = true;
             }
         }
         else
         {
+            if (blinkPrompt.activeSelf) { blinkPrompt.SetActive(false); }
             Debug.Log("Pausing blink");
             pauseBlink = true;
             foreach (Animator anim in eyelidAnimators)
@@ -162,6 +179,34 @@ public class NightmareSwitch : MonoBehaviour
                 anim.speed = 0;
                 anim.GetComponent<Image>().enabled = false;
             }
+        }
+    }
+
+    private void RandomiseInputButton()
+    {
+        int i = UnityEngine.Random.Range(0, 4);
+        Debug.Log(i);
+        switch (i)
+        {
+            case 0:
+                currentInputButton = "Interact";
+                break;
+
+            case 1:
+                currentInputButton = "Q";
+                break;
+
+            case 2:
+                currentInputButton = "F";
+                break;
+
+            case 3:
+                currentInputButton = "R";
+                break;
+
+            default:
+                Debug.LogError("Getting a random input outside the bounds of range");
+                break;
         }
     }
 }

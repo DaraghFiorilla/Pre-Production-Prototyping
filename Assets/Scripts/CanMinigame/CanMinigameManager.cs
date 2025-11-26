@@ -19,8 +19,10 @@ public class CanMinigameManager : MonoBehaviour
     [SerializeField] private int currentCansNo;
     [SerializeField] List<GameObject> activeCans;
     [SerializeField] private GameObject placingCan;
+    [SerializeField] private GameObject lastPlacedCan;
     public bool maxCansPlaced;
     [SerializeField] private bool canFalling;
+    [SerializeField] private bool undoUsed;
 
     [Header("Object references")]
     [SerializeField] private GameObject canPrefab;
@@ -33,7 +35,9 @@ public class CanMinigameManager : MonoBehaviour
     [SerializeField] private Transform cansParent;
     [SerializeField] private MainManager mainManager;
     [SerializeField] private GameObject tableObj;
+    [SerializeField] private GameObject canOverlay;
     [SerializeField] private GameObject[] objectsToEnable;
+    [SerializeField] private GameObject undoButton;
 
     private void Awake()
     {
@@ -89,17 +93,7 @@ public class CanMinigameManager : MonoBehaviour
     {
         RaycastHit hit;
         bool hitBool = Physics.BoxCast(placingCan.transform.position, transform.localScale * 0.5f, Vector3.down, out hit, Quaternion.identity, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore);
-        if (hitBool) { placingCan.transform.GetChild(0).position = new Vector3(hit.point.x, hit.point.y + gameObject.transform.localScale.y, hit.point.z); } 
-        /*if (Physics.Raycast(placingCan.transform.position, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
-        {
-            Vector3 hitPoint = hit.point;
-            placingCan.transform.GetChild(0).position = new Vector3(hitPoint.x, hitPoint.y + gameObject.transform.localScale.y, hitPoint.z);
-        }*/
-        /*if (Physics.BoxCast(placingCan.transform.GetChild(0).transform.position, transform.localScale * 0.5f, Vector3.down, out hit, Mathf.Infinity, ~0, QueryTriggerInteraction.Ignore))
-        {
-            Vector3 hitPoint = hit.point;
-            placingCan.transform.GetChild(0).position = hit.point;
-        }*/
+        if (hitBool) { placingCan.transform.GetChild(0).position = new Vector3(placingCan.transform.position.x, hit.point.y + gameObject.transform.localScale.y, placingCan.transform.position.z); } 
     }
 
     public void StartMinigame()
@@ -120,7 +114,6 @@ public class CanMinigameManager : MonoBehaviour
         {
             if (maxCansPlaced) { return; } // make sure we're not creating too many cans
             // instantiate new can
-            // follow mouse pos converted to world pos (z axis locked)
             placingState = true;
             canLayout.transform.GetChild(0).gameObject.SetActive(false);
             placingCan = Instantiate(canPrefab, cansParent.transform);
@@ -128,16 +121,20 @@ public class CanMinigameManager : MonoBehaviour
             placingCan.GetComponent<BoxCollider>().enabled = false;
             placingCan.GetComponent<Can>().manager = this;
             cansRemainingText.text = "x" + (maxCansNo - activeCans.Count - 1).ToString();
+            canOverlay.SetActive(true);
+            if (undoButton.activeSelf) { undoButton.SetActive(false); }
         }
     }
 
     private void PlaceCan()
     {
+        canOverlay.SetActive(false);
         Destroy(placingCan.transform.GetChild(0).gameObject);
         placingCan.GetComponent<BoxCollider>().enabled = true;
         GameObject addedCan = placingCan;
         Rigidbody rb = placingCan.GetComponent<Rigidbody>();
         activeCans.Add(addedCan);
+        lastPlacedCan = addedCan;
         placingCan = null;
         placingState = false;
         canLayout.transform.GetChild(0).gameObject.SetActive(true);
@@ -155,6 +152,7 @@ public class CanMinigameManager : MonoBehaviour
     {
         canFalling = false;
         if (maxCansPlaced) { CheckResult(); }
+        else if (!undoUsed) { undoButton.SetActive(true); }
     }
 
     private void CheckResult()
@@ -241,17 +239,28 @@ public class CanMinigameManager : MonoBehaviour
         }
     }
 
+    public void Undo()
+    {
+        undoUsed = true;
+        activeCans.Remove(lastPlacedCan);
+        Destroy(lastPlacedCan);
+        currentCansNo--;
+        cansRemainingText.text = "x" + (maxCansNo - currentCansNo).ToString();
+        undoButton.SetActive(false);
+    }
+
     public IEnumerator Finish()
     {
         minigameActive = false;
+        foreach (GameObject can in activeCans)
+        {
+            Rigidbody rb = can.GetComponent<Rigidbody>();
+            rb.constraints = RigidbodyConstraints.FreezeAll;
+        }
         yield return new WaitForSeconds(finishTime);
         if (!testing)
         {
             mainManager.UpdateCanMinigameNo();
-            /*foreach (GameObject can in activeCans)
-            {
-                can.transform.parent = cansNewParent;
-            }*/
             playerObj.SetActive(true);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
