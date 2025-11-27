@@ -7,6 +7,7 @@ public class MainManager : MonoBehaviour
     public int canMinigamesComplete;
     public int minigamesBeforeSwitch;
     [HideInInspector] public NightmareSwitch nightmareManager;
+    public PlayerController playerController;
     public bool canInteract;
 
     private void Awake()

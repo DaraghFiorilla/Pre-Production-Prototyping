@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     public Vector2 moveInput;
     public Vector2 lookInput;
     public bool sprintInput;
+    public bool canMove;
 
     [Header("Components")]
     [SerializeField] private Camera camera;
@@ -68,8 +69,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        MoveUpdate();
-        LookUpdate();
+        if (canMove)
+        {
+            MoveUpdate();
+            LookUpdate();
+        }
     }
 
     public void TryJump()

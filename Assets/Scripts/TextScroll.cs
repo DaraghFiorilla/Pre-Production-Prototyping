@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class TextScroll : MonoBehaviour
 {
@@ -10,7 +12,6 @@ public class TextScroll : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMesh;
     private int currentChar = 0;
     [SerializeField] private GameObject displayCanvas;
-    private GameObject player;
     private bool playerInTrigger;
     private Camera mainCam;
     [SerializeField] private bool rotateThis;
@@ -22,14 +23,14 @@ public class TextScroll : MonoBehaviour
 
     private void Update()
     {
-        if (playerInTrigger)
+        if (rotateThis)
         {
-            
-            if (rotateThis)
-            {
-                transform.LookAt(player.transform.position);
-            }
-            else { RotateCanvas(); }
+            Rotate();
+        }
+        else if (playerInTrigger)
+        {
+
+            Rotate();
         }
     }
 
@@ -41,8 +42,6 @@ public class TextScroll : MonoBehaviour
 
     private void UpdateText()
     {
-        //dialogueManager.canAdvance = false;
-        //displayArrow.SetActive(false);
         textMesh.text = "";
         StartCoroutine(AnimateText());
     }
@@ -54,15 +53,12 @@ public class TextScroll : MonoBehaviour
             textMesh.text = displayText[currentChar].Substring(0, i);
             yield return new WaitForSeconds(scrollSpeed);
         }
-        //dialogueManager.canAdvance = true;
-        //displayArrow.SetActive(true);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            player = other.gameObject;
             displayCanvas.SetActive(true);
             playerInTrigger = true;
             UpdateText();
@@ -78,8 +74,15 @@ public class TextScroll : MonoBehaviour
         }
     }
 
-    private void RotateCanvas()
+    private void Rotate()
     {
-        displayCanvas.transform.LookAt(mainCam.transform);
+        if (rotateThis)
+        {
+            transform.forward = new Vector3(transform.position.x - mainCam.transform.position.x, 0, transform.position.z - mainCam.transform.position.z);
+        }
+        else
+        {
+            displayCanvas.transform.forward = new Vector3(transform.position.x - mainCam.transform.position.x, 0, transform.position.z - mainCam.transform.position.z);
+        }
     }
 }

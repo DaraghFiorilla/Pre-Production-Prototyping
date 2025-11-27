@@ -155,6 +155,7 @@ public class NightmareSwitch : MonoBehaviour
         {
             Debug.Log("Unpausing blink");
             pauseBlink = false;
+            if (timer < interruptedTimer) { timer = interruptedTimer; }
             foreach (Animator anim in eyelidAnimators)
             {
                 /*if (anim.gameObject.name == "BottomLid")
@@ -164,7 +165,6 @@ public class NightmareSwitch : MonoBehaviour
 
                     }
                 }*/
-                timer = interruptedTimer;
                 anim.speed = 1;
                 anim.GetComponent<Image>().enabled = true;
             }
