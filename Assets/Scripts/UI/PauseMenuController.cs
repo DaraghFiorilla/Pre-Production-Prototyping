@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class MenuController : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {
 
     public GameObject pauseMenu;
