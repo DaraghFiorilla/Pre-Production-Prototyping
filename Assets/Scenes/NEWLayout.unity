@@ -15622,9 +15622,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 698759858}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 698759857}
   m_SourcePrefab: {fileID: 100100000, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
 --- !u!4 &698759855 stripped
@@ -15658,24 +15655,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.041193496, y: 0.04119349, z: 0.022463905}
   m_Center: {x: -0.000000018626455, y: -0.000000029802322, z: 0.0012319539}
---- !u!114 &698759858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698759856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c960988b52184b8a5a81bd09d1c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DissolveShader
-  show: 0
-  active: 0
-  spawnSpeedMultiplier: 1.2
-  myCutoff: 0
-  minCutoff: -1
-  maxCutoff: 1.4
 --- !u!1001 &701986046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23159,7 +23138,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c45727b5c0960ed4881b3468e535212b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NightmareSwitch
-  objectsToSwitch: []
+  objectsToSwitch:
+  - {fileID: 176821801}
+  - {fileID: 1299436375}
+  - {fileID: 1709165218}
+  - {fileID: 1881593962}
+  - {fileID: 336226039}
+  - {fileID: 1673788446}
+  - {fileID: 1883651512}
+  - {fileID: 1723921761}
+  - {fileID: 560129868}
+  - {fileID: 1364086942}
+  - {fileID: 894421570}
+  - {fileID: 366677744}
+  - {fileID: 1479366506}
+  - {fileID: 40301485}
+  - {fileID: 1703551210}
+  - {fileID: 926972037}
+  - {fileID: 1823612413}
   objectsToEnable:
   - {fileID: 844651540}
   - {fileID: 2065824915}
@@ -24408,9 +24404,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1078845537}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1078845536}
   m_SourcePrefab: {fileID: 100100000, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
 --- !u!1 &1078845534 stripped
@@ -24444,24 +24437,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.041193496, y: 0.04119349, z: 0.022463905}
   m_Center: {x: -0.000000018626455, y: -0.000000029802322, z: 0.0012319539}
---- !u!114 &1078845537
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1078845534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c960988b52184b8a5a81bd09d1c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DissolveShader
-  show: 0
-  active: 0
-  spawnSpeedMultiplier: 1.2
-  myCutoff: 0
-  minCutoff: -1
-  maxCutoff: 1.4
 --- !u!1001 &1083634805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35634,9 +35609,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1586726055}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1586726054}
   m_SourcePrefab: {fileID: 100100000, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
 --- !u!1 &1586726052 stripped
@@ -35670,24 +35642,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.041193496, y: 0.04119349, z: 0.022463905}
   m_Center: {x: -0.000000018626455, y: -0.000000029802322, z: 0.0012319539}
---- !u!114 &1586726055
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586726052}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c960988b52184b8a5a81bd09d1c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DissolveShader
-  show: 0
-  active: 0
-  spawnSpeedMultiplier: 1.2
-  myCutoff: 0
-  minCutoff: -1
-  maxCutoff: 1.4
 --- !u!1 &1598171229
 GameObject:
   m_ObjectHideFlags: 0
@@ -40536,9 +40490,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1808663924}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1808663923}
   m_SourcePrefab: {fileID: 100100000, guid: 21f38098121d7a84688898c838f2f0c2, type: 3}
 --- !u!1 &1808663921 stripped
@@ -40572,24 +40523,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.041193496, y: 0.04119349, z: 0.022463905}
   m_Center: {x: -0.000000018626455, y: -0.000000029802322, z: 0.0012319539}
---- !u!114 &1808663924
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808663921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 198c960988b52184b8a5a81bd09d1c27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DissolveShader
-  show: 0
-  active: 0
-  spawnSpeedMultiplier: 1.2
-  myCutoff: 0
-  minCutoff: -1
-  maxCutoff: 1.4
 --- !u!1001 &1809846135
 PrefabInstance:
   m_ObjectHideFlags: 0
