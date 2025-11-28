@@ -51,6 +51,11 @@ public class MoveStockCage : MonoBehaviour
                         //stockCageScript = hit.transform.GetComponent<StockCageScript>();
                        // stockCageScript.PushStockCage(); this is the other option for grid based pushing but it doesn't fully work
                     }
+
+                    if(hit.transform.gameObject.tag == "GridBasedStockCage")
+                    {
+                        hit.transform.gameObject.GetComponent<GridBasedStockCage>().PushStockCage();
+                    }
                 }
             } 
             else

@@ -8,7 +8,7 @@ public class StockCageScript : MonoBehaviour
     // Rigidbody rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
-    [SerializeField] private string correctProductType;
+    [SerializeField] public string correctProductType;
     [SerializeField] private int requiredAmount;
     [SerializeField] private int currentAmount;
     public string tagText;
@@ -18,7 +18,7 @@ public class StockCageScript : MonoBehaviour
     void Start()
     {
 
-        tagText = ("StockCage");
+        tagText = ("GridBasedStockCage");
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
