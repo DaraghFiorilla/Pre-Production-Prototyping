@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionBounces: 1
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
-  m_Sun: {fileID: 1896492873}
+  m_Sun: {fileID: 0}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -21533,6 +21533,8 @@ MonoBehaviour:
   mainCanvas: {fileID: 0}
   finalText: {fileID: 0}
   playerObj: {fileID: 0}
+  unchoppedMeats: []
+  choppedMeats: []
 --- !u!1001 &1022308862
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39278,11 +39280,6 @@ Transform:
   - {fileID: 292470806}
   m_Father: {fileID: 1783452706}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!108 &1896492873 stripped
-Light:
-  m_CorrespondingSourceObject: {fileID: 4109284337519922549, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
-  m_PrefabInstance: {fileID: 4935258558354092653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1903099653
 PrefabInstance:
   m_ObjectHideFlags: 0
