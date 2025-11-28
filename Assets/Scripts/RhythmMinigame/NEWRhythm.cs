@@ -22,6 +22,9 @@ public class NEWRhythm : MonoBehaviour
     [SerializeField] private GameObject mainCanvas;
     [SerializeField] private TextMeshProUGUI finalText;
     [SerializeField] private GameObject playerObj;
+    [SerializeField] private GameObject[] unchoppedMeats;
+    [SerializeField] private GameObject[] choppedMeats;
+    private int currentIndex;
 
     private Camera mainCam;
     private Vector3[] pathPoints = new Vector3[5];
@@ -49,11 +52,8 @@ public class NEWRhythm : MonoBehaviour
 
             if (activeInput != null)
             {
-                Debug.Log("activeInput");
-                if (InputSystem.actions.FindAction(activeInputType) != null) { Debug.Log("Action " + activeInputType + " exists"); }
                 if (InputSystem.actions.FindAction(activeInputType).WasPressedThisFrame())
                 {
-                    Debug.Log("EEEEEE");
                     pressed = true;
                     CheckInputResult();
                 }
@@ -61,7 +61,6 @@ public class NEWRhythm : MonoBehaviour
 
             if (sliceBar.transform.position == pathPoints[currentTarget])
             {
-                Debug.Log("Met target");
                 currentTarget++;
                 if (currentTarget == 5)
                 {
@@ -106,6 +105,8 @@ public class NEWRhythm : MonoBehaviour
                 textResultDisplay.text = "Bad!";
                 score++;
             }
+            unchoppedMeats[currentIndex].SetActive(false);
+            choppedMeats[currentIndex].SetActive(true);
         }
 
         if (activeInput != null)
@@ -114,6 +115,8 @@ public class NEWRhythm : MonoBehaviour
             activeInput = null;
             activeInputType = "";
         }
+
+        currentIndex++;
     }
 
     public void SliceTriggerEntered(Collider2D other)
@@ -152,6 +155,7 @@ public class NEWRhythm : MonoBehaviour
         myCam.gameObject.SetActive(true);
         mainCanvas.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
+        currentIndex = 0;
 
         for (int i = 0; i < 5; i++)
         {
