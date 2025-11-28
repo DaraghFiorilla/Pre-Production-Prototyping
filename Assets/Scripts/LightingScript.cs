@@ -11,7 +11,7 @@ public class LightingScript : MonoBehaviour
     void Start()
     {
 
-        Day();
+        //Day();
 
     }
 

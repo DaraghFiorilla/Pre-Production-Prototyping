@@ -27,6 +27,7 @@ public class NightmareSwitch : MonoBehaviour
     private MainManager mainManager;
     [SerializeField] private GameObject blinkPrompt;
     [SerializeField] private string currentInputButton;
+    [SerializeField] private LightControl lightControl;
 
     // vars used in the initiate blink function
     float startTime;
@@ -75,10 +76,12 @@ public class NightmareSwitch : MonoBehaviour
         {
             timer = maxBlinkingTimer;
             nightmareState = false;
+            lightControl.TurnDay();
             Debug.Log("Switching to regular state");
         }
         else 
         {
+            lightControl.TurnNight();
             nightmareState = true;
             Debug.Log("Switching to nightmare state");
         }

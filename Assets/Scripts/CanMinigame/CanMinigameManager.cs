@@ -104,7 +104,9 @@ public class CanMinigameManager : MonoBehaviour
 
     public void StartMinigame()
     {
+        Debug.Log("starting minigame");
         mainManager.nightmareManager.PauseBlink();
+        Debug.Log("Enabling objs");
         foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
         maxCansNo = canLayout.cansNo;
         cansRemainingText.text = "x" + maxCansNo.ToString();
@@ -257,6 +259,7 @@ public class CanMinigameManager : MonoBehaviour
 
     public IEnumerator Finish()
     {
+        Debug.Log("Finishing minigame");
         minigameActive = false;
         foreach (GameObject can in activeCans)
         {
