@@ -40605,6 +40605,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4448615999129565316, guid: 0e07852f668829841b0ac52e2cd767d6, type: 3}
+      propertyPath: minigameManager
+      value: 
+      objectReference: {fileID: 1010584181}
     - target: {fileID: 5875836797888393753, guid: 0e07852f668829841b0ac52e2cd767d6, type: 3}
       propertyPath: m_Name
       value: MeatChopMinigame
