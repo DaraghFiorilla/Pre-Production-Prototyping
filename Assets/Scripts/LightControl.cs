@@ -29,7 +29,7 @@ public class LightControl : MonoBehaviour
     public void TurnNight()
     {
 
-        for (int i = 0; i <= Lights.Length; i++)
+        for (int i = 0; i <= Lights.Length+1; i++)
         {
 
             Lights[i].Night();
