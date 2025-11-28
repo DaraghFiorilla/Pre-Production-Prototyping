@@ -11,15 +11,17 @@ public class NEWRhythm : MonoBehaviour
     public bool minigameStarted;
     public int score;
     [SerializeField] private int totalInputs;
+    [SerializeField] private bool paused;
 
     [Header("Object references")]
     [SerializeField] private GameObject sliceBar;
     [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private Camera myCam;
-    [SerializeField] private MainManager mainManager;
+    private MainManager mainManager;
     [SerializeField] private TextMeshProUGUI textResultDisplay;
     [SerializeField] private GameObject mainCanvas;
     [SerializeField] private TextMeshProUGUI finalText;
+    [SerializeField] private GameObject playerObj;
 
     private Camera mainCam;
     private Vector3[] pathPoints = new Vector3[5];
@@ -30,19 +32,16 @@ public class NEWRhythm : MonoBehaviour
 
     private void Awake()
     {
+        mainManager = GetComponent<MainManager>();
         currentTarget = 0;
         mainCam = Camera.main;
-        for (int i = 0; i < 5; i++)
-        {
-            pathPoints[i] = sliceBar.transform.GetChild(i).position;
-        }
 
-        StartCoroutine(StartMinigame());
+        //StartCoroutine(StartMinigame());
     }
 
     private void Update()
     {
-        if (minigameStarted)
+        if (minigameStarted && !paused)
         {
             //Debug.Log("Started");
             //Debug.Log("Movetowards = " + sliceBar.transform.position + ", " + pathPoints[currentTarget] + ", " + sliceBarSpeed * Time.deltaTime);
@@ -50,8 +49,11 @@ public class NEWRhythm : MonoBehaviour
 
             if (activeInput != null)
             {
+                Debug.Log("activeInput");
+                if (InputSystem.actions.FindAction(activeInputType) != null) { Debug.Log("Action " + activeInputType + " exists"); }
                 if (InputSystem.actions.FindAction(activeInputType).WasPressedThisFrame())
                 {
+                    Debug.Log("EEEEEE");
                     pressed = true;
                     CheckInputResult();
                 }
@@ -67,6 +69,11 @@ public class NEWRhythm : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void Pause(bool isPaused)
+    {
+        paused = isPaused;
     }
 
     private void CheckInputResult()
@@ -130,11 +137,26 @@ public class NEWRhythm : MonoBehaviour
         }
     }
 
+    public void TriggerStart()
+    {
+        StartCoroutine(StartMinigame());
+    }
+
     public IEnumerator StartMinigame()
     {
+        mainManager.nightmareManager.PauseBlink();
+        mainManager.canPause = false;
+        //mainManager.canInteract = false;
         mainCam.enabled = false;
-        myCam.enabled = true;
+        playerObj.GetComponent<PlayerController>().canMove = false;
+        myCam.gameObject.SetActive(true);
+        mainCanvas.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
+
+        for (int i = 0; i < 5; i++)
+        {
+            pathPoints[i] = sliceBar.transform.GetChild(i).position;
+        }
 
         for (int i = 0; i < 3; i++)
         {
@@ -147,10 +169,12 @@ public class NEWRhythm : MonoBehaviour
 
         countdownText.gameObject.SetActive(false);
         minigameStarted = true;
+        mainManager.canPause = true;
     }
 
     public IEnumerator FinishMinigame()
     {
+        mainManager.canPause = false;
         minigameStarted = false;
         finalText.gameObject.SetActive(true);
         textResultDisplay.gameObject.SetActive(false);
@@ -179,5 +203,11 @@ public class NEWRhythm : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         Destroy(mainCanvas);
+        playerObj.GetComponent<PlayerController>().canMove = true;
+        mainManager.canPause = true;
+        mainCam.enabled = true;
+        //mainManager.canInteract = true;
+        Destroy(myCam.gameObject);
+        Destroy(this);
     }
 }

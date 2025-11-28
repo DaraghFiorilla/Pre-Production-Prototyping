@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     [HideInInspector] public Transform speakingChar;
     [HideInInspector] public GameObject canvasToDisable;
     [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private Dialogue[] dialoguesInScene;
+    [SerializeField] private bool paused;
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class DialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (canAdvance)
+        if (canAdvance && !paused)
         {
             if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
             {
@@ -44,6 +46,15 @@ public class DialogueManager : MonoBehaviour
                     Finish();
                 }
             }
+        }
+    }
+
+    public void Pause(bool isPaused)
+    {
+        paused = isPaused;
+        foreach (Dialogue dialogue in dialoguesInScene)
+        {
+            dialogue.Pause(isPaused);
         }
     }
 
@@ -73,6 +84,7 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator AnimateText()
     {
+        mainManager.canPause = false;
         textArrow.SetActive(false);
         for (int i = 0; i < displayText.Peek().Length + 1; i++)
         {
@@ -82,6 +94,7 @@ public class DialogueManager : MonoBehaviour
         displayText.Dequeue();
         canAdvance = true;
         textArrow.SetActive(true);
+        mainManager.canPause = true;
     }
 
     private void Finish()

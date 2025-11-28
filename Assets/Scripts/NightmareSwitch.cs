@@ -22,7 +22,7 @@ public class NightmareSwitch : MonoBehaviour
     [Tooltip("If paused, what to set the timer to on unpause")][SerializeField] private float interruptedTimer;
     [SerializeField] private int timesBlinked;
     [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
-    [SerializeField] bool pauseBlink;
+    public bool pauseBlink;
     [SerializeField] private int maxTimesBlinked;
     private MainManager mainManager;
     [SerializeField] private GameObject blinkPrompt;

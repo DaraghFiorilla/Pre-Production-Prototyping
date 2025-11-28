@@ -10,6 +10,7 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private MainManager mainManager;
     [SerializeField] private GameObject interactPrompt;
     private bool playerInTrigger;
+    private bool paused;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -22,10 +23,15 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if (playerInTrigger && InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
+        if (playerInTrigger && InputSystem.actions.FindAction("Interact").WasPressedThisFrame() && !paused)
         {
             StartDialogue();
         }
+    }
+
+    public void Pause(bool isPaused)
+    {
+        paused = isPaused;
     }
 
     private void OnTriggerExit(Collider other)

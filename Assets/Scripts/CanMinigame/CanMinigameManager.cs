@@ -23,6 +23,7 @@ public class CanMinigameManager : MonoBehaviour
     public bool maxCansPlaced;
     [SerializeField] private bool canFalling;
     [SerializeField] private bool undoUsed;
+    [SerializeField] private bool paused;
 
     [Header("Object references")]
     [SerializeField] private GameObject canPrefab;
@@ -46,7 +47,7 @@ public class CanMinigameManager : MonoBehaviour
 
     private void Update()
     {
-        if (minigameActive)
+        if (minigameActive && !paused)
         {
             if (!Cursor.visible) { Cursor.visible = true; }
             if (Cursor.lockState == CursorLockMode.Locked) { Cursor.lockState = CursorLockMode.Confined; }
@@ -55,6 +56,11 @@ public class CanMinigameManager : MonoBehaviour
                 UpdateCanPos();
             }
         }
+    }
+
+    public void Pause(bool isPaused)
+    {
+        paused = isPaused;
     }
 
     Ray ray;

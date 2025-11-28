@@ -5,22 +5,18 @@ public class PauseMenuController : MonoBehaviour
 {
 
     public GameObject pauseMenu;
+    private MainManager mainManager;
 
-    public bool paused;
-
-    void Start()
+    void Awake()
     {
-
+        mainManager = GetComponent<MainManager>();
         pauseMenu.SetActive(false);
-
-        paused = false;
-
     }
 
     void Update()
     {
 
-        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame())
+        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && mainManager.canPause)
         {
 
             Pause();
@@ -31,40 +27,25 @@ public class PauseMenuController : MonoBehaviour
 
     public void Pause()
     {
+        Time.timeScale = 0;
 
-        if (!paused)
-        {
+        mainManager.PauseMinigames();
 
-            Time.timeScale = 0;
+        pauseMenu.SetActive(true);
 
-            pauseMenu.SetActive(true);
-
-            paused = true;
-
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-        }
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
 
     }
 
     public void Resume()
     {
-
-        if (paused)
-        {
-
             Time.timeScale = 1;
 
             pauseMenu.SetActive(false);
 
-            paused = false;
-
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-
-        }
-
     }
 
     public void Quit()
