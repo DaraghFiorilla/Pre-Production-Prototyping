@@ -208,6 +208,7 @@ public class NEWRhythm : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         mainManager.UpdateMeatMinigameNo();
+        mainManager.nightmareManager.PauseBlink();
         Destroy(mainCanvas);
         playerObj.GetComponent<PlayerController>().canMove = true;
         mainManager.canPause = true;
