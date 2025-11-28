@@ -42778,7 +42778,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8344b916eee5b63438b9832be3c0d3df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EyelidClosed
-  manager: {fileID: 0}
+  manager: {fileID: 1010584179}
 --- !u!95 &1943090044
 Animator:
   serializedVersion: 7
