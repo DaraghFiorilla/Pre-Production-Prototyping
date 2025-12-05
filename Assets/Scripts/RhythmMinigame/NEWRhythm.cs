@@ -215,6 +215,6 @@ public class NEWRhythm : MonoBehaviour
         mainCam.enabled = true;
         //mainManager.canInteract = true;
         Destroy(myCam.gameObject);
-        Destroy(this);
+        Destroy(mainCanvas);
     }
 }

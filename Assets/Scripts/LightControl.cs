@@ -17,7 +17,7 @@ public class LightControl : MonoBehaviour
     public void TurnDay()
     {
 
-        for (int i = 0; i <= Lights.Length; i++)
+        for (int i = 0; i < Lights.Length; i++)
         {
 
             Lights[i].Day();
@@ -29,9 +29,9 @@ public class LightControl : MonoBehaviour
     public void TurnNight()
     {
 
-        for (int i = 0; i <= Lights.Length+1; i++)
+        for (int i = 0; i < Lights.Length; i++)
         {
-
+            Debug.Log("Switched light at index " + i + ", Lights.Length = " + Lights.Length);
             Lights[i].Night();
 
         }

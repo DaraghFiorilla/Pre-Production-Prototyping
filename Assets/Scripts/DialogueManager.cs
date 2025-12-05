@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -67,7 +68,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (canvasToDisable != null) { canvasToDisable.SetActive(false); }
         interactPrompt.SetActive(false);
-        mainCam.transform.LookAt(speakingChar);
+        mainCam.transform.LookAt(new Vector3(speakingChar.transform.position.x, mainCam.transform.position.y, speakingChar.transform.position.z));
         dialogueBox.SetActive(true);
         mainManager.canInteract = false;
         nmManager.PauseBlink();
