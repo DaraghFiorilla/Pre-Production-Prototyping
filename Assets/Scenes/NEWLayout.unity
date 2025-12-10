@@ -9421,6 +9421,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cebc57e74cbfa3e48afa5f1e178c82d0, type: 2}
     - target: {fileID: 919132149155446097, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
       propertyPath: m_Name
       value: S.ButterPile (1)
@@ -14136,6 +14140,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cebc57e74cbfa3e48afa5f1e178c82d0, type: 2}
     - target: {fileID: 919132149155446097, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
       propertyPath: m_Name
       value: S.ButterPile (2)
@@ -23946,6 +23954,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cebc57e74cbfa3e48afa5f1e178c82d0, type: 2}
     - target: {fileID: 919132149155446097, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
       propertyPath: m_Name
       value: S.ButterPile
@@ -39999,6 +40011,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: cebc57e74cbfa3e48afa5f1e178c82d0, type: 2}
     - target: {fileID: 919132149155446097, guid: f60d695c66144b74d97e15a44ef267c9, type: 3}
       propertyPath: m_Name
       value: S.ButterPile (3)
