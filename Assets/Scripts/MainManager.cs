@@ -70,7 +70,7 @@ public class MainManager : MonoBehaviour
         }
         else if (EndRequirementsMet())
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 
