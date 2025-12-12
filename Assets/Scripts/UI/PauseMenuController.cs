@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -7,16 +8,24 @@ public class PauseMenuController : MonoBehaviour
     public GameObject pauseMenu;
     private MainManager mainManager;
 
+    public bool inMain;
+
     void Awake()
     {
-        mainManager = GetComponent<MainManager>();
+        if (inMain)
+        {
+
+            mainManager = GetComponent<MainManager>();
+
+        }
+
         pauseMenu.SetActive(false);
     }
 
     void Update()
     {
 
-        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && mainManager.canPause)
+        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && (!inMain || mainManager.canPause))
         {
 
             Pause();
@@ -29,7 +38,12 @@ public class PauseMenuController : MonoBehaviour
     {
         Time.timeScale = 0;
 
-        mainManager.PauseMinigames();
+        if (inMain)
+        {
+
+            mainManager.PauseMinigames();
+
+        }
 
         pauseMenu.SetActive(true);
 
@@ -46,6 +60,13 @@ public class PauseMenuController : MonoBehaviour
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+    }
+
+    public void Restart()
+    {
+
+        SceneManager.LoadScene(0);
+
     }
 
     public void Quit()
