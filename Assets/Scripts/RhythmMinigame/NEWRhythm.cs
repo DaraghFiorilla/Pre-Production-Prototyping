@@ -87,13 +87,13 @@ public class NEWRhythm : MonoBehaviour
         {
             float xDif = Mathf.Abs(sliceBar.transform.position.x - activeInput.transform.position.x);
             //Debug.Log("xDif = Mathf.Abs(" + sliceBar.transform.position.x + " - " + activeInput.transform.position.x + ", result = " + xDif);
-            if (xDif <= 5)
+            if (xDif <= 12)
             {
                 //Debug.Log("Perf!");
                 textResultDisplay.text = "Perf!";
                 score += 3;
             }
-            else if (xDif <= 10)
+            else if (xDif <= 20)
             {
                 //Debug.Log("Good!");
                 textResultDisplay.text = "Good!";

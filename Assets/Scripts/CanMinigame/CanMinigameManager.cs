@@ -86,8 +86,7 @@ public class CanMinigameManager : MonoBehaviour
         else { placingCan.transform.position = new Vector3(placingCan.transform.position.x, placingCan.transform.position.y, xPos); }
 
         placingCan.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-        if (!rotated) { placingCan.transform.rotation = Quaternion.Euler(0, 90, 0); }
-        else { placingCan.transform.rotation = Quaternion.Euler(0, 180, 0); }
+        
 
         placingCan.GetComponent<Rigidbody>().linearVelocity = Vector3.zero;
         RaycastShadow();
@@ -123,13 +122,16 @@ public class CanMinigameManager : MonoBehaviour
             if (maxCansPlaced) { return; } // make sure we're not creating too many cans
             // instantiate new can
             placingState = true;
-            if (canLayout.transform.GetChild(0).gameObject.activeSelf) { canLayout.transform.GetChild(0).gameObject.SetActive(false); }
+            //if (canLayout.transform.GetChild(0).gameObject.activeSelf) { canLayout.transform.GetChild(0).gameObject.SetActive(false); }
+            DisableDisplayCans(true);
             placingCan = Instantiate(canPrefab, cansParent.transform);
             placingCan.gameObject.name = placingCan.gameObject.name + activeCans.Count;
             placingCan.GetComponent<BoxCollider>().enabled = false;
             placingCan.GetComponent<Can>().manager = this;
             cansRemainingText.text = "x" + (maxCansNo - activeCans.Count - 1).ToString();
             canOverlay.SetActive(true);
+            if (!rotated) { placingCan.transform.rotation = Quaternion.Euler(0, -90, 0); }
+            else { placingCan.transform.rotation = Quaternion.Euler(0, 180, 0); }
             if (undoButton.activeSelf) { undoButton.SetActive(false); }
         }
     }
@@ -163,9 +165,28 @@ public class CanMinigameManager : MonoBehaviour
         else if (!undoUsed) { undoButton.SetActive(true); }
     }
 
+    private void DisableDisplayCans(bool disable)
+    {
+        MeshRenderer[] objMeshes = canLayout.transform.GetChild(0).GetComponentsInChildren<MeshRenderer>();
+        if (disable)
+        {
+            foreach (MeshRenderer objMesh in objMeshes)
+            {
+                objMesh.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (MeshRenderer objMesh in objMeshes)
+            {
+                objMesh.enabled = true;
+            }
+        }
+    }
+
     private void CheckResult()
     {
-        canLayout.transform.GetChild(0).gameObject.SetActive(true);
+        DisableDisplayCans(false);
         bool? success = null;
 
         int layer1Result = 0;
@@ -208,6 +229,7 @@ public class CanMinigameManager : MonoBehaviour
                     i += canScript.touchingCans.Count;
                     if (canScript.touchingDisplay.Count > 0) { j++; }
                 }
+                Debug.Log("i = " + i + "j = " + j);
                 if (i < canLayout.cansTouchingNo || j < activeCans.Count)
                 {
                     if (i < canLayout.cansTouchingNo) { Debug.Log("Failed because not touching right amount of cans"); }
@@ -240,7 +262,8 @@ public class CanMinigameManager : MonoBehaviour
             undoUsed = false;
 
             // clear objects
-            canLayout.transform.GetChild(0).gameObject.SetActive(true);
+            DisableDisplayCans(false);
+            //canLayout.transform.GetChild(0).gameObject.SetActive(true);
             currentCansNo = 0;
             if (placingCan != null) { Destroy(placingCan); }
             placingCan = null;
