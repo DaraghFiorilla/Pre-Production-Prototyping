@@ -23921,7 +23921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9b9b1b9a1437b240a4552f204efe335, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NEWRhythm
-  sliceBarSpeed: 300
+  sliceBarSpeed: 400
   minigameStarted: 0
   score: 0
   totalInputs: 20
