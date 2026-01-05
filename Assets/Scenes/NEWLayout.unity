@@ -23556,7 +23556,6 @@ MonoBehaviour:
   - {fileID: 173185072}
   pauseBlink: 0
   maxTimesBlinked: 10
-  blinkPrompt: {fileID: 1162315815}
   currentInputButton: 
   lightControl: {fileID: 4935258558354092654}
 --- !u!114 &1010584180
@@ -47720,9 +47719,89 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 436365755077673691, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 529391351618538442, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
     - target: {fileID: 972202537096078756, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: m_Name
       value: Lights
+      objectReference: {fileID: 0}
+    - target: {fileID: 1144231714264085611, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543432646264739808, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1691600089127216071, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1713377880128448626, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887977855664312987, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2456304211963430769, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2473236512341894242, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2520706303698886414, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688665205622185300, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 2850773833360320331, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3951054850976682631, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061086431070106634, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4550452958832810845, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4759164466604243061, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4853881111728546159, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4877979093277327909, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4922257055163314949, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 5418578149301712929, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 5904769495897899355, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: m_LocalPosition.x
@@ -47763,6 +47842,42 @@ PrefabInstance:
     - target: {fileID: 5904769495897899355, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6056934645233999959, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 6932137718021291483, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7187945300407387747, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7268662761354686742, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7896277436691494335, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8326552264894507897, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453849839513322335, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8747102260678422005, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835346206110225189, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: m_Intensity
+      value: 26
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -77,12 +77,16 @@ public class NightmareSwitch : MonoBehaviour
             timer = maxBlinkingTimer;
             nightmareState = false;
             lightControl.TurnDay();
+            RenderSettings.ambientIntensity = 1;
+            RenderSettings.reflectionIntensity = 1;
             Debug.Log("Switching to regular state");
         }
         else 
         {
             lightControl.TurnNight();
             nightmareState = true;
+            RenderSettings.ambientIntensity = 0.3f;
+            RenderSettings.reflectionIntensity = 0.3f;
             Debug.Log("Switching to nightmare state");
         }
         switchNightmareState?.Invoke();
