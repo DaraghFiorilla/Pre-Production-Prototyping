@@ -23556,6 +23556,7 @@ MonoBehaviour:
   - {fileID: 173185072}
   pauseBlink: 0
   maxTimesBlinked: 10
+  blinkPrompt: {fileID: 1162315815}
   currentInputButton: 
   lightControl: {fileID: 4935258558354092654}
 --- !u!114 &1010584180
