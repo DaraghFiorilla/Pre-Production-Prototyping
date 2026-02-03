@@ -78,6 +78,30 @@ public class MoveStockCage : MonoBehaviour
                 }
             } 
         }
+
+        if (InputSystem.actions.FindAction("R").WasPressedThisFrame())
+        {
+            RaycastHit hit;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, pickUpRange))
+            {
+                //make sure pickup tag is attached
+                if (hit.transform.gameObject.tag == "StockCage") // checks if player is trying to pick up stock
+                {
+                    //passes in the object hit into the PickUpObject function
+                    PickUpObject(hit.transform.gameObject);
+                    //stockCageScript = hit.transform.GetComponent<StockCageScript>();
+                    // stockCageScript.PushStockCage(); this is the other option for grid based pushing but it doesn't fully work
+                }
+
+                if (hit.transform.gameObject.tag == "GridBasedStockCage")
+                {
+                    hit.transform.gameObject.GetComponent<GridBasedStockCage>().PullStockCage();
+                }
+            }
+
+        }
+
+
     }
 
     void PickUpObject(GameObject pickUpObj)

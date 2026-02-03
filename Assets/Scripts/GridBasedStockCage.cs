@@ -46,4 +46,19 @@ public class GridBasedStockCage : MonoBehaviour
             //GetComponent<Rigidbody>().AddForce(direction * force);
         //}
     }
+
+    public void PullStockCage()
+    {
+        Vector3 direction = player.transform.position - transform.position;
+
+        direction.y = 0;
+
+        direction.Normalize();
+
+        Debug.Log("Stock cage should get pushed now");
+
+        // movePoint.position = direction;
+
+        rb.AddForceAtPosition(direction * force, player.transform.position, ForceMode.Impulse);
+    }
 }
