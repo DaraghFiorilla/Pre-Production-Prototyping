@@ -54,13 +54,13 @@ public class PlayerController : MonoBehaviour
     public bool canMove;
 
     [Header("Components")]
-    [SerializeField] private Camera camera;
+    [SerializeField] private Camera myCamera;
     [SerializeField] CharacterController characterController;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         canMove = true;
-
+        myCamera = GetComponentInChildren<Camera>();
         if (characterController == null)
         {
             GetComponent<CharacterController>();
@@ -123,7 +123,7 @@ public class PlayerController : MonoBehaviour
 
         CurrentPitch -= input.y;
 
-        camera.transform.localRotation = Quaternion.Euler(CurrentPitch, 0f, 0f);
+        myCamera.transform.localRotation = Quaternion.Euler(CurrentPitch, 0f, 0f);
 
         transform.Rotate(Vector2.up * input.x);
     }

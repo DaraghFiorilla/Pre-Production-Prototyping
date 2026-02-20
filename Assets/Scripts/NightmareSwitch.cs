@@ -12,7 +12,8 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] private GameObject[] objectsToSwitch; // list of objects to initiate the dissolve
     [SerializeField] private GameObject[] objectsToEnable;
     public UnityAction switchNightmareState;
-    public bool nightmareState;
+    [Tooltip("True = nightmare state, false = daytime state")]public bool nightmareState;
+    public bool debug;
 
     [Header("Blinking Mech. Variables")]
     [SerializeField] private float maxBlinkingTimer;
@@ -25,7 +26,7 @@ public class NightmareSwitch : MonoBehaviour
     public bool pauseBlink;
     [SerializeField] private int maxTimesBlinked;
     private MainManager mainManager;
-    [SerializeField] private GameObject blinkPrompt;
+    //[SerializeField] private GameObject blinkPrompt;
     [SerializeField] private string currentInputButton;
     [SerializeField] private LightControl lightControl;
 
@@ -40,12 +41,18 @@ public class NightmareSwitch : MonoBehaviour
         switchNightmareState += EnableObjs;
 
         //Switch();
-        timer = maxBlinkingTimer;
+        if (!debug) timer = maxBlinkingTimer;
+        else timer = 5;
+
+        if (nightmareState)
+        {
+            ChangeTextures();
+        }
     }
 
     private void Update()
     {
-        if (!nightmareState)
+        if (!nightmareState || nightmareState && debug)
         {
             if (!pauseBlink)
             {
@@ -64,6 +71,13 @@ public class NightmareSwitch : MonoBehaviour
                 }
             }
         }
+        if (nightmareState)
+        {
+            if (InputSystem.actions.FindAction("DownArrow").WasPressedThisFrame())
+            {
+                StartCoroutine(lightControl.FlickerLights());
+            }
+        }
     }
 
     public void Switch()
@@ -74,7 +88,6 @@ public class NightmareSwitch : MonoBehaviour
         timesBlinked = 0;
         if (nightmareState)
         {
-            timer = maxBlinkingTimer;
             nightmareState = false;
             lightControl.TurnDay();
             RenderSettings.ambientIntensity = 1;
@@ -113,10 +126,10 @@ public class NightmareSwitch : MonoBehaviour
     {
         RandomiseInputButton();
 
-        blinkPrompt.SetActive(true);
-        TextMeshProUGUI blinkPromptText = blinkPrompt.GetComponent<TextMeshProUGUI>();
-        if (currentInputButton == "Interact") { blinkPromptText.text = "Press E to blink!!!"; }
-        else { blinkPromptText.text = "Press " + currentInputButton + " to blink!!"; }
+        //blinkPrompt.SetActive(true);
+        //TextMeshProUGUI blinkPromptText = blinkPrompt.GetComponent<TextMeshProUGUI>();
+        //if (currentInputButton == "Interact") { blinkPromptText.text = "Press E to blink!!!"; }
+        //else { blinkPromptText.text = "Press " + currentInputButton + " to blink!!"; }
 
         startTime = Time.time;
         blinkActive = true;
@@ -128,12 +141,13 @@ public class NightmareSwitch : MonoBehaviour
 
     void Blink()
     {
-        blinkPrompt.SetActive(false);
+        //blinkPrompt.SetActive(false);
         //Debug.Log("interact pressed");
         timesBlinked++;
 
         if (timesBlinked >= maxTimesBlinked)
         {
+            Debug.Log("Times blinked is too high man wtf");
             EyesClosed();
         }
         else
@@ -143,6 +157,7 @@ public class NightmareSwitch : MonoBehaviour
             eyelidAnimators[1].SetTrigger("forceOpen");
             eyelidAnimators[0].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
             eyelidAnimators[1].SetFloat("speedMult", 1 + animMultIncrement * timesBlinked);
+            Debug.Log("Speedmult = " + eyelidAnimators[0].GetFloat("speedMult") + ", " + "1 " + "+ " + animMultIncrement + " * " + timesBlinked);
         }
         mainManager.canInteract = true;
         blinkActive = false;
@@ -150,9 +165,11 @@ public class NightmareSwitch : MonoBehaviour
 
     public void EyesClosed()
     {
-        blinkPrompt.SetActive(false);
+        //blinkPrompt.SetActive(false);
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");
+        Debug.Log("EyesClosed");
+        mainManager.canInteract = true;
         Switch();
     }
 
@@ -178,7 +195,7 @@ public class NightmareSwitch : MonoBehaviour
         }
         else
         {
-            if (blinkPrompt.activeSelf) { blinkPrompt.SetActive(false); }
+            //if (blinkPrompt.activeSelf) { blinkPrompt.SetActive(false); }
             Debug.Log("Pausing blink");
             pauseBlink = true;
             foreach (Animator anim in eyelidAnimators)

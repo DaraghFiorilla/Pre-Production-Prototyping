@@ -6,7 +6,7 @@ public class EyelidClosed : MonoBehaviour
     
     public void Close()
     {
-        if (!manager.nightmareState) { manager.EyesClosed(); }
-        else { manager.Switch(); }
+        /*if (!manager.nightmareState) */{ manager.EyesClosed(); }
+        //else { manager.Switch(); }
     }
 }
