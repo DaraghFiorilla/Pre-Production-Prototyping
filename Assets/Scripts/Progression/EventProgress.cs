@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class EventProgress : MonoBehaviour
 {
-    public GameObject[] event2Boxes;
+    public GameObject[] event2Boxes; // TEMP VAR
     public List<GameEvent> eventQueue = new();
 
     private void Start()
@@ -60,7 +60,7 @@ public class EventProgress : MonoBehaviour
         eventQueue[0].startingEvent.Invoke();
     }
 
-    public void BoxesEvent()
+    public void BoxesEvent() // TEMP FUNCTION FOR TESTING - IN MAIN SCENE, THIS FUNCTION WILL BE IN A MINIGAME / OBJECT'S RESPECTIVE SCRIPT
     {
         foreach (GameObject box in event2Boxes) box.SetActive(true);
     }
@@ -69,7 +69,7 @@ public class EventProgress : MonoBehaviour
     {
         public string eventName;
         public UnityEvent startingEvent;
-        [TextArea(8, 20)] public string eventDescription;
+        [TextArea(8, 20)][Tooltip("This is purely so we can keep track of which event covers what - no script uses this data")] public string eventDescription;
         public bool[] endFlags;
     }
 }
