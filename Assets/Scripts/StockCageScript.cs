@@ -13,17 +13,19 @@ public class StockCageScript : MonoBehaviour
     [SerializeField] private int currentAmount;
     public string tagText;
     Rigidbody rb;
+    RigidbodyConstraints rbConstraints;
 
     //public StockBoxes stockBoxType;
     void Start()
     {
-
+        rbConstraints = RigidbodyConstraints.FreezePosition;
         tagText = ("GridBasedStockCage");
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
 
 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -34,7 +36,7 @@ public class StockCageScript : MonoBehaviour
 
         
     }
-
+    
 
     private void OnTriggerEnter(Collider other)
     {
@@ -47,11 +49,29 @@ public class StockCageScript : MonoBehaviour
                 Debug.Log(correctProductType + " Stock Cage Full");
                 this.gameObject.tag = tagText;
                 this.gameObject.GetComponent<Collider>().isTrigger = false;
+                rbConstraints = RigidbodyConstraints.None;
                 rb.useGravity = true;
-                
+
             }
         }
-    }
+    } 
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
+        {
+            currentAmount++;
+            Destroy(collision.gameObject);
+            if (currentAmount == requiredAmount)
+            {
+                Debug.Log(correctProductType + " Stock Cage Full");
+                this.gameObject.tag = tagText;
+                this.gameObject.GetComponent<Collider>().isTrigger = false;
+                rb.useGravity = true;
+
+            }
+        }
+    }*/
 
 
 

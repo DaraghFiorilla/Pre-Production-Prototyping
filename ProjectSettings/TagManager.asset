@@ -8,6 +8,9 @@ TagManager:
   - DeleteArrow
   - StockCage
   - GridBasedStockCage
+  - Fresh
+  - Expired
+  - Discount
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - StockBox
   - 
   - 
   - 
