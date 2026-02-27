@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8251948692074568012}
   - component: {fileID: 8361412540238467331}
   - component: {fileID: 5604128940237925785}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: JamesPlayer
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 7498621343354917202}
   - component: {fileID: 3656192717270076824}
   - component: {fileID: 4942726350366363949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 6631345350324087323}
   - component: {fileID: 8344759263811319908}
   - component: {fileID: 841695995640095234}
+  - component: {fileID: 5008509827163860704}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -431,3 +432,16 @@ MonoBehaviour:
   holdPos: {fileID: 8664380163917925869}
   throwForce: 500
   pickUpRange: 7
+--- !u!114 &5008509827163860704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9209020909082240074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf288371079a3b0418a42eaf3333ae25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCleanup
+  raycastDistance: 4
