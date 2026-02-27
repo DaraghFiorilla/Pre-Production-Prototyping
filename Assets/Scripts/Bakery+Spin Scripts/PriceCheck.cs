@@ -1,9 +1,36 @@
 using UnityEngine;
+using TMPro;
 
 public class PriceCheck : MonoBehaviour
 {
     public ItemSlot[] slots;
-    public int targetPrice;
+
+    [Header("Price")]
+    public int[] targetPrice;
+    private int price;
+
+    public TextMeshProUGUI priceText;
+    public GameObject canvasOff;
+
+    [SerializeField] private PlayerController playerController;
+
+    void Awake()
+    {
+        SetPrice();
+    }
+
+    void SetPrice()
+    {
+        int randomIndex = Random.Range(0, targetPrice.Length);
+        price = targetPrice[randomIndex];
+
+        UpdatePriceUI();
+    }
+
+    void UpdatePriceUI()
+    {
+        priceText.text = "€" + price.ToString();
+    }
 
     public void Compare()
     {
@@ -11,18 +38,30 @@ public class PriceCheck : MonoBehaviour
 
         foreach (ItemSlot slot in slots)
         {
-            PastryItem item = slot.CurrentItem;
-            totalCost += item.GetCost();
+            if (slot.CurrentItem != null)
+            {
+                totalCost += slot.CurrentItem.GetCost();
+            }
         }
 
-        if (totalCost == targetPrice)
+        if (totalCost == price)
         {
             Debug.Log("RIGHT PRICE!!!");
+            canvasOff.SetActive(false);
+            SetPrice();
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+
+            playerController.canMove = true;
         }
         else
         {
-            EjectItem();
             Debug.Log("NO");
+            EjectItem();
+            SetPrice();
+
+            FailSystem.Instance.ReportFailure();
         }
     }
 
@@ -30,10 +69,12 @@ public class PriceCheck : MonoBehaviour
     {
         foreach (ItemSlot slot in slots)
         {
-            PastryItem item = slot.CurrentItem;
-            
-            item.transform.SetParent(null);
-            Destroy(item.gameObject);
+            if (slot.CurrentItem != null)
+            {
+                PastryItem item = slot.CurrentItem;
+                item.transform.SetParent(null);
+                Destroy(item.gameObject);
+            }
         }
     }
 }
