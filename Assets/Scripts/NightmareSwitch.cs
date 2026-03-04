@@ -34,6 +34,8 @@ public class NightmareSwitch : MonoBehaviour
     float startTime;
     bool blinkActive;
 
+    public BGMusicController music;
+
     private void Awake()
     {
         mainManager = GetComponent<MainManager>();
@@ -93,6 +95,7 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.ambientIntensity = 1;
             RenderSettings.reflectionIntensity = 1;
             Debug.Log("Switching to regular state");
+            music.enterDay();
         }
         else 
         {
@@ -101,6 +104,7 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.ambientIntensity = 0.3f;
             RenderSettings.reflectionIntensity = 0.3f;
             Debug.Log("Switching to nightmare state");
+            music.enterNight();
         }
         switchNightmareState?.Invoke();
     }
