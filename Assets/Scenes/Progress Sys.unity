@@ -23545,6 +23545,7 @@ MonoBehaviour:
   - {fileID: 2065824915}
   - {fileID: 863459480}
   nightmareState: 0
+  debug: 0
   maxBlinkingTimer: 15
   blinkingTimerIncrement: 0.4
   timer: 0
@@ -23554,9 +23555,8 @@ MonoBehaviour:
   eyelidAnimators:
   - {fileID: 1943090044}
   - {fileID: 173185072}
-  pauseBlink: 0
+  pauseBlink: 1
   maxTimesBlinked: 10
-  blinkPrompt: {fileID: 1162315815}
   currentInputButton: 
   lightControl: {fileID: 4935258558354092654}
 --- !u!114 &1010584180
