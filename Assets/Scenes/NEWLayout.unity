@@ -20089,17 +20089,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.079974554, y: 0.022137923, z: 0.1803744}
   m_Center: {x: -0.029987276, y: -0.0010689482, z: 0.00023709702}
---- !u!114 &848729871 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 523133056041564927, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-  m_PrefabInstance: {fileID: 2614015559408179146}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c96ae585422424748b1094166d866c5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BGMusicController
 --- !u!1001 &857028815
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23952,7 +23941,7 @@ MonoBehaviour:
   maxTimesBlinked: 10
   currentInputButton: 
   lightControl: {fileID: 0}
-  music: {fileID: 848729871}
+  music: {fileID: 0}
 --- !u!114 &1010584180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49747,63 +49736,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8121160153593734845}
   m_CullTransparentMesh: 1
---- !u!1001 &2614015559408179146
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 11.72
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.81
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.07
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2381355725741438342, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5175915351129615844, guid: 13d121045a436904995fc9af19afe40b, type: 3}
-      propertyPath: m_Name
-      value: MusicHolder
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 13d121045a436904995fc9af19afe40b, type: 3}
 --- !u!114 &2660905852951772821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51044,4 +50976,3 @@ SceneRoots:
   - {fileID: 629023276}
   - {fileID: 1192939586}
   - {fileID: 528527086}
-  - {fileID: 2614015559408179146}
