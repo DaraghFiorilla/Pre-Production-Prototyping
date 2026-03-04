@@ -10,7 +10,7 @@ public class EventProgress : MonoBehaviour
 {
     [SerializeField] private GameObject tasklistParentObj;
     [SerializeField] private GameObject tasklistTaskPrefab;
-    public GameObject[] event2Boxes; // TEMP VAR
+    //public GameObject[] event2Boxes; // TEMP VAR
     public List<GameEvent> eventQueue = new();
     public List<TasklistTask> activeTasks = new();
 
@@ -126,10 +126,10 @@ public class EventProgress : MonoBehaviour
         }
     }
 
-    public void BoxesEvent() // TEMP FUNCTION FOR TESTING - IN MAIN SCENE, THIS FUNCTION WILL BE IN A MINIGAME / OBJECT'S RESPECTIVE SCRIPT
+    /*public void BoxesEvent() // TEMP FUNCTION FOR TESTING - IN MAIN SCENE, THIS FUNCTION WILL BE IN A MINIGAME / OBJECT'S RESPECTIVE SCRIPT
     {
         foreach (GameObject box in event2Boxes) box.SetActive(true);
-    }
+    }*/
 
     [Serializable] public struct GameEvent
     {
