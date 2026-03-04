@@ -633,6 +633,132 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6818262596569893340, guid: 327fc462629058041a2540f7c7ecc1cf, type: 3}
   m_PrefabInstance: {fileID: 1232632902391749161}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &939112580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 939112585}
+  - component: {fileID: 939112584}
+  - component: {fileID: 939112583}
+  - component: {fileID: 939112582}
+  - component: {fileID: 939112581}
+  m_Layer: 0
+  m_Name: Cube (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &939112581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939112580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d58b00c939095e4ea3484661f8ae927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ProgressTest
+  eventProgress: {fileID: 1630805135}
+  id: 3
+--- !u!65 &939112582
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939112580}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &939112583
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939112580}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 7d531df598796324190efb8be70338eb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &939112584
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939112580}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &939112585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939112580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.61, y: 1.25, z: -9.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &980230800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1448,6 +1574,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1555308458 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6263371808262205943, guid: 327fc462629058041a2540f7c7ecc1cf, type: 3}
+  m_PrefabInstance: {fileID: 1232632902391749161}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b932570438685642ba3ad2a919b817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TasklistTask
 --- !u!1 &1562271952
 GameObject:
   m_ObjectHideFlags: 0
@@ -1614,12 +1751,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc9f7a4606496d84185ddf7c3a55440f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
-  tasklistParentObj: {fileID: 0}
-  tasklistTaskPrefab: {fileID: 0}
+  tasklistParentObj: {fileID: 1086670404}
+  tasklistTaskPrefab: {fileID: 9202232064316024213, guid: 327fc462629058041a2540f7c7ecc1cf, type: 3}
   event2Boxes:
   - {fileID: 1096520559}
   - {fileID: 980230800}
   - {fileID: 197828692}
+  - {fileID: 939112580}
   eventQueue:
   - eventName: CollectBoxes
     startingEvent:
@@ -1640,15 +1778,21 @@ MonoBehaviour:
     eventDescription: When all 3 boxes collected, move to next event
     endFlags:
     - flag: 0
-      tasklistTask: 0
-      taskName: 
+      tasklistID: 0
+      description: Player collects box 1
     - flag: 0
-      tasklistTask: 0
-      taskName: 
+      tasklistID: 1
+      description: Player collects box 2
     - flag: 0
-      tasklistTask: 0
-      taskName: 
-    addedTasks: []
+      tasklistID: 2
+      description: Player collects box 3
+    addedTasks:
+    - targetCount: 0
+      displayText: Collect box 1
+    - targetCount: 0
+      displayText: Collect box 2
+    - targetCount: 0
+      displayText: Collect box 3
   - eventName: CollectBoxes2
     startingEvent:
       m_PersistentCalls:
@@ -1665,9 +1809,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: Enable 3 more boxes for player to collect and then progress
-    endFlags: []
-    addedTasks: []
+    eventDescription: Enable 3 green boxes and 1 blue box box for player to collect
+      and then progress
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Collects greenbox 1
+    - flag: 0
+      tasklistID: 0
+      description: Collects greenbox 2
+    - flag: 0
+      tasklistID: 0
+      description: Collects greenbox 3
+    - flag: 0
+      tasklistID: 1
+      description: Collects bluebox
+    addedTasks:
+    - targetCount: 3
+      displayText: Collect green boxes
+    - targetCount: 0
+      displayText: Collect blue box
   - eventName: Empty
     startingEvent:
       m_PersistentCalls:
@@ -1675,7 +1836,8 @@ MonoBehaviour:
     eventDescription: Blehhhhhh
     endFlags: []
     addedTasks: []
-  activeTasks: []
+  activeTasks:
+  - {fileID: 1555308458}
 --- !u!4 &1630805136
 Transform:
   m_ObjectHideFlags: 0
@@ -1840,6 +2002,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TasklistTask
       objectReference: {fileID: 0}
+    - target: {fileID: 9202232064316024213, guid: 327fc462629058041a2540f7c7ecc1cf, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1860,5 +2026,6 @@ SceneRoots:
   - {fileID: 1096520564}
   - {fileID: 980230805}
   - {fileID: 197828697}
+  - {fileID: 939112585}
   - {fileID: 797943970}
   - {fileID: 846463144}

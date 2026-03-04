@@ -17,6 +17,7 @@ public class EventProgress : MonoBehaviour
     private void Start()
     {
         eventQueue[0].startingEvent.Invoke();
+        CreateNewTasks();
     }
 
     public void UpdateFlag(int id)
@@ -26,12 +27,42 @@ public class EventProgress : MonoBehaviour
         {
             Debug.Log("Setting flag true");
             eventQueue[0].endFlags[id].flag = true;
-            for(int i = 0; i < activeTasks.Count; i++)
+            /*for(int i = 0; i < activeTasks.Count; i++)
             {
                 if (activeTasks[i].flagID == id)
                 {
-                    if (activeTasks[i].taskCountTarget > 1) activeTasks[i].taskCount++;
+                    if (activeTasks[i].taskCountTarget > 1)
+                    {
+                        activeTasks[i].taskCount++;
+                        if (activeTasks[i].taskCount >= activeTasks[i].taskCountTarget)
+                        {
+                            activeTasks[i].complete = true;
+                            activeTasks[i].transform.GetChild(1).gameObject.SetActive(true);
+                        }
+                    }
+
+                    else
+                    {
+                        activeTasks[i].complete = true;
+                        activeTasks[i].transform.GetChild(1).gameObject.SetActive(true);
+                    }
                 }
+            }*/
+            TasklistTask task = activeTasks[eventQueue[0].endFlags[id].tasklistID];
+            if (task.taskCountTarget > 1)
+            {
+                task.taskCount++;
+                task.GetComponent<TextMeshProUGUI>().text = task.displayText + "(" + task.taskCount + "/" + task.taskCountTarget + ")";
+                if (task.taskCount >= task.taskCountTarget)
+                {
+                    task.complete = true;
+                    task.transform.GetChild(1).gameObject.SetActive(true);
+                }
+            }
+            else
+            {
+                task.complete = true;
+                task.transform.GetChild(1).gameObject.SetActive(true);
             }
         }
         else
@@ -50,19 +81,17 @@ public class EventProgress : MonoBehaviour
             if (!flag) failed = true;
         }*/
 
-        // 
         for (int i = 0; i < eventQueue[0].endFlags.Length; i++)
         {
             if (eventQueue[0].endFlags[i].flag == false) failed = true;
         }
 
-        for (int i = 0; i < activeTasks.Count; i++)
-        {
-
-        }
-
         if (!failed)
         {
+            for (int i = 0; i < activeTasks.Count; i++)
+            {
+                if (!activeTasks[i].complete) Debug.LogError("WARNING: Active task " + activeTasks[i].name + " is marked as incomplete despite flags being met");
+            }
             Debug.Log("End conditions met, moving to next event");
             QueueNextEvent();
         }
@@ -83,12 +112,17 @@ public class EventProgress : MonoBehaviour
 
         activeTasks.Clear();
 
-        foreach (TasklistTask task in eventQueue[0].addedTasks)
+        foreach (TaskConstructor task in eventQueue[0].addedTasks)
         {
             GameObject g = Instantiate(tasklistTaskPrefab, tasklistParentObj.transform);
             TasklistTask t = g.GetComponent<TasklistTask>();
+            //t.flagID = task.flagID;
+            t.taskCountTarget = task.targetCount;
+            t.displayText = task.displayText;
             activeTasks.Add(t);
-            g.GetComponent<TextMeshProUGUI>().text = t.displayText;
+
+            if (t.taskCountTarget > 1) g.GetComponent<TextMeshProUGUI>().text = t.displayText + "(" + t.taskCount + "/" + t.taskCountTarget + ")";
+            else g.GetComponent<TextMeshProUGUI>().text = t.displayText;
         }
     }
 
@@ -103,14 +137,22 @@ public class EventProgress : MonoBehaviour
         public UnityEvent startingEvent;
         [TextArea(8, 20)][Tooltip("This is purely so we can keep track of which event covers what - no script uses this data")] public string eventDescription;
         public EndFlag[] endFlags;
-        public TasklistTask[] addedTasks;
+        public TaskConstructor[] addedTasks;
     }
 
     [Serializable] public struct EndFlag
     {
         public bool flag;
-        public bool tasklistTask;
-        public string taskName;
+        //public bool tasklistTask;
+        public int tasklistID;
+        public string description;
+    }
+
+    [Serializable] public struct TaskConstructor
+    {
+        public int targetCount;
+        //public int flagID;
+        public string displayText;
     }
 
     /*[Serializable] public struct TasklistStruct
