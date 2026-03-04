@@ -23957,7 +23957,6 @@ MonoBehaviour:
   maxTimesBlinked: 10
   currentInputButton: 
   lightControl: {fileID: 0}
-  music: {fileID: 0}
 --- !u!114 &1010584180
 MonoBehaviour:
   m_ObjectHideFlags: 0
