@@ -57,7 +57,7 @@ public class NightmareSwitch : MonoBehaviour
     {
         if (!nightmareState || nightmareState && debug)
         {
-            if (!pauseBlink || !scriptedBlink)
+            if (!pauseBlink && !scriptedBlink)
             {
                 if (!blinkActive && timer > 0) { timer -= Time.deltaTime; }
                 if (timer <= 0 && !blinkActive)

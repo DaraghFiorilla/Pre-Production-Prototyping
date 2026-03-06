@@ -5,7 +5,7 @@ public class PlayerCleanup : MonoBehaviour
 {
     public float raycastDistance;
     private RaycastHit hit;
-    //[SerializeField] private GameObject interactPrompt;
+    [SerializeField] private GameObject interactPrompt;
     private CleanupObj cleanupObj;
 
     private void Update()
@@ -16,6 +16,7 @@ public class PlayerCleanup : MonoBehaviour
         {
             if (hit.transform.gameObject.CompareTag("Cleanup"))
             {
+                interactPrompt.SetActive(true);
                 Debug.Log("Hit cleanup");
                 cleanupObj = hit.transform.GetComponent<CleanupObj>();
                 if (InputSystem.actions.FindAction("Interact").IsPressed())
@@ -26,6 +27,7 @@ public class PlayerCleanup : MonoBehaviour
             }
             else
             {
+                interactPrompt.SetActive(false);
                 cleanupObj = null;
             }
         }

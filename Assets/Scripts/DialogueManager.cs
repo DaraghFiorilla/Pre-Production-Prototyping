@@ -114,4 +114,10 @@ public class DialogueManager : MonoBehaviour
 
         if (updateFlag) mainManager.eventManager.UpdateFlag(flagID);
     }
+
+    public void StartEvent(int id)
+    {
+        updateFlag = true;
+        flagID = id;
+    }
 }

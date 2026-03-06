@@ -1,3 +1,4 @@
+using FMODUnity;
 using UnityEngine;
 
 public class CleanupObj : MonoBehaviour
@@ -5,6 +6,8 @@ public class CleanupObj : MonoBehaviour
     public float cleanSpeed;
     public float objHealth = 100;
     private Material mat;
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
 
     private void Awake()
     {
@@ -17,7 +20,7 @@ public class CleanupObj : MonoBehaviour
         mat.color = new Color(mat.color.r, mat.color.g, mat.color.b, objHealth / 100);
         if (objHealth <= 0)
         {
-            // tell another script this object is done 
+            eventManager.UpdateFlag(flagID);
             Destroy(gameObject);
         }
     }

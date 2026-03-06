@@ -5,16 +5,18 @@ using UnityEngine.Events;
 using Unity.VisualScripting.FullSerializer;
 using UnityEditor;
 using TMPro;
+using UnityEngine.InputSystem;
 
 public class EventProgress : MonoBehaviour
 {
     public List<GameEvent> eventQueue = new();
     public List<TasklistTask> activeTasks = new();
 
+    [Header("Object references")]
     [SerializeField] private GameObject tasklistParentObj;
     [SerializeField] private GameObject tasklistTaskPrefab;
-    [SerializeField] private bool showTasklist;
-    [SerializeField] private Animator animator;
+    //[SerializeField] private bool showTasklist;
+    private Animator animator;
 
     private void Awake()
     {
@@ -25,6 +27,11 @@ public class EventProgress : MonoBehaviour
     {
         eventQueue[0].startingEvent.Invoke();
         CreateNewTasks();
+    }
+
+    private void Update()
+    {
+        if (InputSystem.actions.FindAction("ToggleTasklist").WasPressedThisFrame()) ToggleTasklist();
     }
 
     public void UpdateFlag(int id)
@@ -39,7 +46,7 @@ public class EventProgress : MonoBehaviour
             if (task.taskCountTarget > 1)
             {
                 task.taskCount++;
-                task.GetComponent<TextMeshProUGUI>().text = task.displayText + "(" + task.taskCount + "/" + task.taskCountTarget + ")";
+                task.GetComponent<TextMeshProUGUI>().text = task.displayText + " (" + task.taskCount + "/" + task.taskCountTarget + ")";
                 if (task.taskCount >= task.taskCountTarget)
                 {
                     task.complete = true;
@@ -104,14 +111,20 @@ public class EventProgress : MonoBehaviour
             t.displayText = task.displayText;
             activeTasks.Add(t);
 
-            if (t.taskCountTarget > 1) g.GetComponent<TextMeshProUGUI>().text = t.displayText + "(" + t.taskCount + "/" + t.taskCountTarget + ")";
+            if (t.taskCountTarget > 1) g.GetComponent<TextMeshProUGUI>().text = t.displayText + " (" + t.taskCount + "/" + t.taskCountTarget + ")";
             else g.GetComponent<TextMeshProUGUI>().text = t.displayText;
         }
     }
 
-    public void OnClick()
+    private void ToggleTasklist()
     {
-        
+        Debug.Log("toggletasklist");
+        animator.SetTrigger("toggle");
+    }
+
+    public void TestDebug()
+    {
+        Debug.Log("Success");
     }
 
     [Serializable] public struct GameEvent
@@ -127,12 +140,12 @@ public class EventProgress : MonoBehaviour
     {
         public bool flag;
         public int tasklistID;
-        public string description;
+        [TextArea(2, 2)][Tooltip("This is just for inspector also")] public string description;
     }
 
     [Serializable] public struct TaskConstructor
     {
         public int targetCount;
-        public string displayText;
+        [TextArea(2, 2)] public string displayText;
     }
 }

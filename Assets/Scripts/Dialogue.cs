@@ -1,16 +1,18 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Dialogue : MonoBehaviour
 {
-    [SerializeField] private string[] dialogueSentences;
+    [SerializeField] private List<string> dialogueSentences;
     [SerializeField] private GameObject canvasToDisable;
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private MainManager mainManager;
     [SerializeField] private GameObject interactPrompt;
     private bool playerInTrigger;
     private bool paused;
+    public bool active;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -23,7 +25,7 @@ public class Dialogue : MonoBehaviour
 
     private void Update()
     {
-        if (playerInTrigger && InputSystem.actions.FindAction("Interact").WasPressedThisFrame() && !paused)
+        if (playerInTrigger && InputSystem.actions.FindAction("Interact").WasPressedThisFrame() && !paused && active)
         {
             StartDialogue();
         }
@@ -50,6 +52,23 @@ public class Dialogue : MonoBehaviour
         if (canvasToDisable != null) { dialogueManager.canvasToDisable = canvasToDisable; }
         dialogueManager.speakingChar = gameObject.transform;
         dialogueManager.StartDialogue();
-        Destroy(this);
+        active = false;
+    }
+
+    public void ToggleActive()
+    {
+        if (active) active = false;
+        else active = true;
+    }
+
+    public void ClearDialogue()
+    {
+        dialogueSentences.Clear();
+    }
+
+    public void AddDialougeLine(string[] lines)
+    {
+        foreach (string line in lines)
+        dialogueSentences.Add(line);
     }
 }
