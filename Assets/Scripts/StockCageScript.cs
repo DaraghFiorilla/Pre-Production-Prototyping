@@ -14,6 +14,8 @@ public class StockCageScript : MonoBehaviour
     public string tagText;
     Rigidbody rb;
     RigidbodyConstraints rbConstraints;
+    [SerializeField] public GameObject[] ArrayOfFillBoxes;
+
 
     //public StockBoxes stockBoxType;
     void Start()
@@ -22,8 +24,10 @@ public class StockCageScript : MonoBehaviour
         tagText = ("GridBasedStockCage");
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
-
-
+        for (int i = 0; i < ArrayOfFillBoxes.Length; ++i)
+        {
+            ArrayOfFillBoxes[i].SetActive(false);
+        }
     }
 
 
@@ -40,10 +44,16 @@ public class StockCageScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
         {
             currentAmount++;
-            Destroy(other.gameObject);
+            
+            int howManyNeededToFill = currentAmount;
+            for(int i = 0; i < ArrayOfFillBoxes.Length; i++)
+            {
+                ArrayOfFillBoxes[i].SetActive(i < howManyNeededToFill);
+            }
             if (currentAmount == requiredAmount)
             {
                 Debug.Log(correctProductType + " Stock Cage Full");
@@ -53,6 +63,12 @@ public class StockCageScript : MonoBehaviour
                 rb.useGravity = true;
 
             }
+            Destroy(other.gameObject);
+
+        }
+        else
+        {
+            return;
         }
     } 
     /*
