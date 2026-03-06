@@ -8,11 +8,18 @@ using TMPro;
 
 public class EventProgress : MonoBehaviour
 {
-    [SerializeField] private GameObject tasklistParentObj;
-    [SerializeField] private GameObject tasklistTaskPrefab;
-    //public GameObject[] event2Boxes; // TEMP VAR
     public List<GameEvent> eventQueue = new();
     public List<TasklistTask> activeTasks = new();
+
+    [SerializeField] private GameObject tasklistParentObj;
+    [SerializeField] private GameObject tasklistTaskPrefab;
+    [SerializeField] private bool showTasklist;
+    [SerializeField] private Animator animator;
+
+    private void Awake()
+    {
+        animator = tasklistParentObj.transform.parent.GetComponent<Animator>();
+    }
 
     private void Start()
     {
@@ -27,28 +34,8 @@ public class EventProgress : MonoBehaviour
         {
             Debug.Log("Setting flag true");
             eventQueue[0].endFlags[id].flag = true;
-            /*for(int i = 0; i < activeTasks.Count; i++)
-            {
-                if (activeTasks[i].flagID == id)
-                {
-                    if (activeTasks[i].taskCountTarget > 1)
-                    {
-                        activeTasks[i].taskCount++;
-                        if (activeTasks[i].taskCount >= activeTasks[i].taskCountTarget)
-                        {
-                            activeTasks[i].complete = true;
-                            activeTasks[i].transform.GetChild(1).gameObject.SetActive(true);
-                        }
-                    }
-
-                    else
-                    {
-                        activeTasks[i].complete = true;
-                        activeTasks[i].transform.GetChild(1).gameObject.SetActive(true);
-                    }
-                }
-            }*/
             TasklistTask task = activeTasks[eventQueue[0].endFlags[id].tasklistID];
+
             if (task.taskCountTarget > 1)
             {
                 task.taskCount++;
@@ -76,10 +63,6 @@ public class EventProgress : MonoBehaviour
     {
         Debug.Log("Checking end conditions");
         bool failed = false;
-        /*foreach (bool flag in eventQueue[0].endFlags[].flag)
-        {
-            if (!flag) failed = true;
-        }*/
 
         for (int i = 0; i < eventQueue[0].endFlags.Length; i++)
         {
@@ -92,6 +75,7 @@ public class EventProgress : MonoBehaviour
             {
                 if (!activeTasks[i].complete) Debug.LogError("WARNING: Active task " + activeTasks[i].name + " is marked as incomplete despite flags being met");
             }
+
             Debug.Log("End conditions met, moving to next event");
             QueueNextEvent();
         }
@@ -116,7 +100,6 @@ public class EventProgress : MonoBehaviour
         {
             GameObject g = Instantiate(tasklistTaskPrefab, tasklistParentObj.transform);
             TasklistTask t = g.GetComponent<TasklistTask>();
-            //t.flagID = task.flagID;
             t.taskCountTarget = task.targetCount;
             t.displayText = task.displayText;
             activeTasks.Add(t);
@@ -126,10 +109,10 @@ public class EventProgress : MonoBehaviour
         }
     }
 
-    /*public void BoxesEvent() // TEMP FUNCTION FOR TESTING - IN MAIN SCENE, THIS FUNCTION WILL BE IN A MINIGAME / OBJECT'S RESPECTIVE SCRIPT
+    public void OnClick()
     {
-        foreach (GameObject box in event2Boxes) box.SetActive(true);
-    }*/
+        
+    }
 
     [Serializable] public struct GameEvent
     {
@@ -143,7 +126,6 @@ public class EventProgress : MonoBehaviour
     [Serializable] public struct EndFlag
     {
         public bool flag;
-        //public bool tasklistTask;
         public int tasklistID;
         public string description;
     }
@@ -151,17 +133,6 @@ public class EventProgress : MonoBehaviour
     [Serializable] public struct TaskConstructor
     {
         public int targetCount;
-        //public int flagID;
         public string displayText;
     }
-
-    /*[Serializable] public struct TasklistStruct
-    {
-        public int flagID;
-        public string displayText;
-        public int taskCountTarget;
-        public int taskCount;
-        public GameObject objRef;
-        public bool complete;
-    }*/
 }

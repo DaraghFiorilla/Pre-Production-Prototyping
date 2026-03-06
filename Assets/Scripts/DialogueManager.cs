@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
@@ -22,6 +23,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject interactPrompt;
     [SerializeField] private Dialogue[] dialoguesInScene;
     [SerializeField] private bool paused;
+
+    [Header("Event flag variables")]
+    public bool updateFlag;
+    public int flagID;
 
     private void Awake()
     {
@@ -106,5 +111,7 @@ public class DialogueManager : MonoBehaviour
         nmManager.PauseBlink();
         mainManager.canInteract = true;
         mainManager.playerController.canMove = true;
+
+        if (updateFlag) mainManager.eventManager.UpdateFlag(flagID);
     }
 }

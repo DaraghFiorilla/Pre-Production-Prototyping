@@ -24,6 +24,7 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] private int timesBlinked;
     [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
     public bool pauseBlink;
+    public bool scriptedBlink;
     [SerializeField] private int maxTimesBlinked;
     private MainManager mainManager;
     //[SerializeField] private GameObject blinkPrompt;
@@ -56,7 +57,7 @@ public class NightmareSwitch : MonoBehaviour
     {
         if (!nightmareState || nightmareState && debug)
         {
-            if (!pauseBlink)
+            if (!pauseBlink || !scriptedBlink)
             {
                 if (!blinkActive && timer > 0) { timer -= Time.deltaTime; }
                 if (timer <= 0 && !blinkActive)
