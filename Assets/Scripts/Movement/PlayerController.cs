@@ -1,6 +1,5 @@
 using UnityEngine;
-
-
+using FMOD.Studio;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -56,6 +55,9 @@ public class PlayerController : MonoBehaviour
     [Header("Components")]
     [SerializeField] private Camera myCamera;
     [SerializeField] CharacterController characterController;
+
+    private EventInstance playerSteps;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -65,6 +67,8 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<CharacterController>();
         }
+
+        playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
     }
 
     // Update is called once per frame
@@ -75,6 +79,9 @@ public class PlayerController : MonoBehaviour
             MoveUpdate();
             LookUpdate();
         }
+
+        SoundUpdate();
+
     }
 
     public void TryJump()
@@ -126,5 +133,23 @@ public class PlayerController : MonoBehaviour
         myCamera.transform.localRotation = Quaternion.Euler(CurrentPitch, 0f, 0f);
 
         transform.Rotate(Vector2.up * input.x);
+    }
+
+    private void SoundUpdate()
+    {
+        if (currenSpeed != 0 /*&& isGrounded*/)
+        {
+            PLAYBACK_STATE playbackState;
+            playerSteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                playerSteps.start();
+            }
+        }
+        else
+        {
+            playerSteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }
+
     }
 }

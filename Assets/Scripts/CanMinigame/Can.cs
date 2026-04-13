@@ -39,6 +39,7 @@ public class Can : MonoBehaviour
             touchingCans.Add(collision.gameObject);
             madeContact = true;
         }
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.canDropped, this.transform.position);
     }
 
     private void OnCollisionExit(Collision collision)

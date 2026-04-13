@@ -56,6 +56,7 @@ public class NEWRhythm : MonoBehaviour
                 {
                     pressed = true;
                     CheckInputResult();
+                    AudioManager.instance.PlayOneShot(FMODEvents.instance.meatChop, this.transform.position);
                 }
             }
 
