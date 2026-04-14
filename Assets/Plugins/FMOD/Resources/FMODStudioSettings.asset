@@ -526,8 +526,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../FMOD Files/Don't Blink Audio/Don't Blink Audio.fspro
-  sourceBankPath: ../FMOD Files/Don't Blink Audio/Build
+  sourceProjectPath: Assets/FMOD Files/Don't Blink Audio/Don't Blink Audio.fspro
+  sourceBankPath: Assets/FMOD Files/Don't Blink Audio/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

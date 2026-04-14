@@ -20,6 +20,140 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1074
   Exists: 1
+--- !u!114 &-7701081970709512244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639116774233103788
+  FileSizes:
+  - Name: Desktop
+    Value: 1216
+  Exists: 1
+--- !u!114 &-7409921979170729400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/General SFX/Menu Button Press
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/General SFX/Menu Button Press
+  Guid:
+    Data1: 8865009
+    Data2: 1315929296
+    Data3: -122465128
+    Data4: -989051949
+  Banks:
+  - {fileID: -3853709119206214916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &-3968989076711157175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 639113487408681058
+  FileSizes:
+  - Name: Desktop
+    Value: 1093216
+  Exists: 1
+--- !u!114 &-3875133541690209447
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Minigame SFX.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
+  Name: Minigame SFX
+  StudioPath: bank:/Minigame SFX
+  lastModified: 639116767684974462
+  FileSizes:
+  - Name: Desktop
+    Value: 10048
+  Exists: 1
+--- !u!114 &-3853709119206214916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/General SFX.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
+  Name: General SFX
+  StudioPath: bank:/General SFX
+  lastModified: 639116774233052039
+  FileSizes:
+  - Name: Desktop
+    Value: 54848
+  Exists: 1
+--- !u!114 &-3722837339200602858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/General SFX/Footsteps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/General SFX/Footsteps
+  Guid:
+    Data1: 1439150959
+    Data2: 1139239180
+    Data3: 1361365892
+    Data4: 2143416509
+  Banks:
+  - {fileID: -3853709119206214916}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 800
 --- !u!114 &-2800430135240941273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,6 +208,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1100
+--- !u!114 &-1434320500413180977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/General SFX/Mop SFX
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/General SFX/Mop SFX
+  Guid:
+    Data1: 355077179
+    Data2: 1316201291
+    Data3: -2071356236
+    Data4: -1176102934
+  Banks:
+  - {fileID: -3853709119206214916}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1100
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,37 +248,37 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EventCache
   EditorBanks:
-  - {fileID: 193286316726456838}
-  - {fileID: 3183411507389328464}
-  - {fileID: -7862812577925782298}
-  - {fileID: 5573158002325569611}
-  - {fileID: 6008518728436436408}
+  - {fileID: -7701081970709512244}
+  - {fileID: -3853709119206214916}
+  - {fileID: 8049583618651713403}
+  - {fileID: -3875133541690209447}
+  - {fileID: -3968989076711157175}
   EditorEvents:
-  - {fileID: 2202986547076976884}
-  - {fileID: 8792485210130505674}
-  - {fileID: 7302886216589769277}
-  - {fileID: 1777958434401907346}
-  - {fileID: -2156877372747809346}
-  - {fileID: -2800430135240941273}
+  - {fileID: -1434320500413180977}
+  - {fileID: -3722837339200602858}
+  - {fileID: -7409921979170729400}
+  - {fileID: 2266384271282192282}
+  - {fileID: 4325816332253049307}
+  - {fileID: 8318686127308972318}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -7862812577925782298}
+  - {fileID: 8049583618651713403}
   StringsBanks:
-  - {fileID: 193286316726456838}
+  - {fileID: -7701081970709512244}
   cacheVersion: 131858
   cacheTime: 639116774233103788
   SerializableEventsDict:
-  - key: event:/General SFX/Footsteps
-    index: 0
-  - key: event:/Minigame SFX/Can Drop
-    index: 1
-  - key: event:/Music/Daytime Muzak
-    index: 2
-  - key: event:/General SFX/Menu Button Press
-    index: 3
   - key: event:/General SFX/Mop SFX
-    index: 4
+    index: 0
+  - key: event:/General SFX/Footsteps
+    index: 1
+  - key: event:/General SFX/Menu Button Press
+    index: 2
   - key: event:/Minigame SFX/Meat Chop SFX
+    index: 3
+  - key: event:/Minigame SFX/Can Drop
+    index: 4
+  - key: event:/Music/Daytime Muzak
     index: 5
 --- !u!114 &193286316726456838
 MonoBehaviour:
@@ -193,6 +354,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 20
   Length: 800
+--- !u!114 &2266384271282192282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame SFX/Meat Chop SFX
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame SFX/Meat Chop SFX
+  Guid:
+    Data1: -1343437046
+    Data2: 1201426152
+    Data3: 1430124190
+    Data4: 697624939
+  Banks:
+  - {fileID: -3875133541690209447}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &3183411507389328464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +401,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 54848
   Exists: 1
+--- !u!114 &4325816332253049307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame SFX/Can Drop
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame SFX/Can Drop
+  Guid:
+    Data1: -774324413
+    Data2: 1214628396
+    Data3: -527932750
+    Data4: 1353704992
+  Banks:
+  - {fileID: -3875133541690209447}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5573158002325569611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +488,53 @@ MonoBehaviour:
     Data4: 1698049625
   Banks:
   - {fileID: 6008518728436436408}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 129750
+--- !u!114 &8049583618651713403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639116774233083629
+  FileSizes:
+  - Name: Desktop
+    Value: 1074
+  Exists: 1
+--- !u!114 &8318686127308972318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Daytime Muzak
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Daytime Muzak
+  Guid:
+    Data1: -495304610
+    Data2: 1251976220
+    Data3: -607182410
+    Data4: 1698049625
+  Banks:
+  - {fileID: -3968989076711157175}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
