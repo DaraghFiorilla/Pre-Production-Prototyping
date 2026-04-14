@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{6c831047-6e0b-43de-ba98-4d3bf54ad1d5}">
+		<property name="assetPath">
+			<value>Minigame SFX/Trolley Drop B.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.80979591836734699</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4928a9b8-f05e-421f-b193-ace688a9e88f}</destination>
+		</relationship>
+	</object>
+</objects>

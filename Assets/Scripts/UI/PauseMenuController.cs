@@ -55,18 +55,22 @@ public class PauseMenuController : MonoBehaviour
 
     public void Resume()
     {
-            Time.timeScale = 1;
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
 
-            pauseMenu.SetActive(false);
+        Time.timeScale = 1;
 
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+        pauseMenu.SetActive(false);
 
-            playerController.canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
+        playerController.canMove = true;
     }
 
     public void Restart()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
+
         Time.timeScale = 1; //added as time was still set to 0 after restart
 
         SceneManager.LoadScene(0);
@@ -74,8 +78,8 @@ public class PauseMenuController : MonoBehaviour
 
     public void Quit()
     {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
 
         Application.Quit();
-
     }
 }
