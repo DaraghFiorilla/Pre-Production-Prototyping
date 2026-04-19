@@ -37,6 +37,8 @@ public class NightmareSwitch : MonoBehaviour
 
     public BGMusicController music;
 
+    public MuzakScript muzakScript;
+
     private void Awake()
     {
         mainManager = GetComponent<MainManager>();
@@ -108,6 +110,7 @@ public class NightmareSwitch : MonoBehaviour
             music.enterNight();
         }
         switchNightmareState?.Invoke();
+        muzakScript.MusicChange(nightmareState);
     }
 
     void ChangeTextures()
