@@ -23861,7 +23861,7 @@ GameObject:
   - component: {fileID: 1010584181}
   - component: {fileID: 1010584182}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManager--------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24081,23 +24081,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
-  - eventName: TalkToManager
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    eventDescription: Player must talk to manager to start other events
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: Talk to the manager
-    addedTasks:
-    - targetCount: 0
-      displayText: Talk to the manager
-  - eventName: CleanPuddles
+  - eventName: CanMinigame
     startingEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1308000497}
+        - m_Target: {fileID: 245837629}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -24118,10 +24106,55 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: What are you waiting for? Go clean!
+            m_StringArgument: Stack those cans!
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: Player must clean 5 puddles around store
+    eventDescription: Player must stack cans
+    endFlags: []
+    addedTasks:
+    - targetCount: 5
+      displayText: Clean puddles
+  - eventName: TalkToManager
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    eventDescription: Player must talk to manager to start other events
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Talk to the manager
+    addedTasks:
+    - targetCount: 0
+      displayText: Talk to the manager
+  - eventName: CleanPuddles
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 245837629}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Stack the cans!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Player must stack cans
     endFlags:
     - flag: 0
       tasklistID: 0
@@ -26239,7 +26272,7 @@ GameObject:
   - component: {fileID: 1102173594}
   - component: {fileID: 1102173595}
   m_Layer: 5
-  m_Name: Tasklist
+  m_Name: Tasklist-------------------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
