@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639118655737320240
+  lastModified: 639122129288623518
   FileSizes:
   - Name: Desktop
-    Value: 1216
+    Value: 1274
   Exists: 1
 --- !u!114 &-7409921979170729400
 MonoBehaviour:
@@ -82,10 +82,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639118655737404692
+  lastModified: 639122129341889715
   FileSizes:
   - Name: Desktop
-    Value: 1093216
+    Value: 3382912
   Exists: 1
 --- !u!114 &-3875133541690209447
 MonoBehaviour:
@@ -102,7 +102,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639118655737330219
+  lastModified: 639122129290477971
   FileSizes:
   - Name: Desktop
     Value: 10048
@@ -122,7 +122,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639118655737300303
+  lastModified: 639122138926407634
   FileSizes:
   - Name: Desktop
     Value: 54848
@@ -260,13 +260,14 @@ MonoBehaviour:
   - {fileID: 2266384271282192282}
   - {fileID: 4325816332253049307}
   - {fileID: 8318686127308972318}
+  - {fileID: 4542459087455698656}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8049583618651713403}
   StringsBanks:
   - {fileID: -7701081970709512244}
   cacheVersion: 131858
-  cacheTime: 639118655737404692
+  cacheTime: 639122138926407634
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -280,6 +281,8 @@ MonoBehaviour:
     index: 4
   - key: event:/Music/Daytime Muzak
     index: 5
+  - key: event:/Music/Nightmare Music
+    index: 6
 --- !u!114 &193286316726456838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,6 +431,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4542459087455698656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Nightmare Music
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Nightmare Music
+  Guid:
+    Data1: 1675649466
+    Data2: 1314072538
+    Data3: -664865893
+    Data4: 802915529
+  Banks:
+  - {fileID: -3968989076711157175}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 259291
 --- !u!114 &5573158002325569611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,7 +540,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639118655737310267
+  lastModified: 639122129288618431
   FileSizes:
   - Name: Desktop
     Value: 1074

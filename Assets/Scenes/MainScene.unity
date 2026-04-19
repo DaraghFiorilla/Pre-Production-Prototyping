@@ -6049,6 +6049,13 @@ MonoBehaviour:
       Data3: -607182410
       Data4: 1698049625
     Path: event:/Music/Daytime Muzak
+  <nightMusic>k__BackingField:
+    Guid:
+      Data1: 1675649466
+      Data2: 1314072538
+      Data3: -664865893
+      Data4: 802915529
+    Path: event:/Music/Nightmare Music
 --- !u!1001 &197894637
 PrefabInstance:
   m_ObjectHideFlags: 0
