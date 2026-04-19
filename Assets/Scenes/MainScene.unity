@@ -6035,6 +6035,13 @@ MonoBehaviour:
       Data3: 1430124190
       Data4: 697624939
     Path: event:/Minigame SFX/Meat Chop SFX
+  <stockDrop>k__BackingField:
+    Guid:
+      Data1: -839676037
+      Data2: 1124354927
+      Data3: 1705292727
+      Data4: 862829851
+    Path: event:/Minigame SFX/Stock Cage Drop
   <menuButton>k__BackingField:
     Guid:
       Data1: 8865009
@@ -23994,6 +24001,7 @@ MonoBehaviour:
   currentInputButton: 
   lightControl: {fileID: 2007728999}
   music: {fileID: 0}
+  muzakScript: {fileID: 0}
 --- !u!114 &1010584180
 MonoBehaviour:
   m_ObjectHideFlags: 0

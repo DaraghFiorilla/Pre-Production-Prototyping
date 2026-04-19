@@ -35,10 +35,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639122129288623518
+  lastModified: 639122276543267500
   FileSizes:
   - Name: Desktop
-    Value: 1274
+    Value: 1320
   Exists: 1
 --- !u!114 &-7409921979170729400
 MonoBehaviour:
@@ -102,10 +102,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639122129290477971
+  lastModified: 639122276545708080
   FileSizes:
   - Name: Desktop
-    Value: 10048
+    Value: 21056
   Exists: 1
 --- !u!114 &-3853709119206214916
 MonoBehaviour:
@@ -261,13 +261,14 @@ MonoBehaviour:
   - {fileID: 4325816332253049307}
   - {fileID: 8318686127308972318}
   - {fileID: 4542459087455698656}
+  - {fileID: 1868522904292336271}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8049583618651713403}
   StringsBanks:
   - {fileID: -7701081970709512244}
   cacheVersion: 131858
-  cacheTime: 639122138926407634
+  cacheTime: 639122276545708080
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -283,6 +284,8 @@ MonoBehaviour:
     index: 5
   - key: event:/Music/Nightmare Music
     index: 6
+  - key: event:/Minigame SFX/Stock Cage Drop
+    index: 7
 --- !u!114 &193286316726456838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +328,33 @@ MonoBehaviour:
   - {fileID: 3183411507389328464}
   IsStream: 0
   Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &1868522904292336271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Minigame SFX/Stock Cage Drop
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Minigame SFX/Stock Cage Drop
+  Guid:
+    Data1: -839676037
+    Data2: 1124354927
+    Data3: 1705292727
+    Data4: 862829851
+  Banks:
+  - {fileID: -3875133541690209447}
+  IsStream: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -540,7 +570,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639122129288618431
+  lastModified: 639122276543242316
   FileSizes:
   - Name: Desktop
     Value: 1074

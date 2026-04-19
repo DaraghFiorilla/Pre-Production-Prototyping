@@ -16,6 +16,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: SerializeField] public EventReference meatChop { get; private set; }
 
+    [field: SerializeField] public EventReference stockDrop { get; private set; }
+
     [field: Header("UI SFX")]
 
     [field: SerializeField] public EventReference menuButton { get; private set; }
