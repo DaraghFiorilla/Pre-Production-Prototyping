@@ -6900,7 +6900,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &245837630
 Transform:
   m_ObjectHideFlags: 0
@@ -10348,6 +10348,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: flagID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
       propertyPath: tableObj
       value: 
       objectReference: {fileID: 1808663921}
@@ -10371,6 +10375,10 @@ PrefabInstance:
       propertyPath: mainManager
       value: 
       objectReference: {fileID: 1010584178}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: eventManager
+      value: 
+      objectReference: {fileID: 1010584182}
     - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
       propertyPath: 'objectsToEnable.Array.data[7]'
       value: 
@@ -17430,6 +17438,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: flagID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
       propertyPath: tableObj
       value: 
       objectReference: {fileID: 1586726052}
@@ -17453,6 +17465,10 @@ PrefabInstance:
       propertyPath: mainManager
       value: 
       objectReference: {fileID: 1010584178}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: eventManager
+      value: 
+      objectReference: {fileID: 1010584182}
     - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
       propertyPath: 'objectsToEnable.Array.data[7]'
       value: 
@@ -20172,6 +20188,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1010584178}
     - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: eventManager
+      value: 
+      objectReference: {fileID: 1010584182}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
       propertyPath: 'objectsToEnable.Array.data[7]'
       value: 
       objectReference: {fileID: 1447212883}
@@ -21149,6 +21169,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.023335153, y: 0.05074076, z: 0.038237274}
   m_Center: {x: 0.00000022293243, y: 0.010580575, z: 0.0019428945}
+--- !u!1 &887694199 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8343360664573457184, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
+  m_PrefabInstance: {fileID: 1125172296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &894421568
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24096,39 +24121,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
-  - eventName: CanMinigame
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 245837629}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Stack those cans!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Player must stack cans
-    endFlags: []
-    addedTasks:
-    - targetCount: 5
-      displayText: Clean puddles
   - eventName: TalkToManager
     startingEvent:
       m_PersistentCalls:
@@ -24141,7 +24133,7 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Talk to the manager
-  - eventName: CleanPuddles
+  - eventName: CanMiniGame
     startingEvent:
       m_PersistentCalls:
         m_Calls:
@@ -24169,7 +24161,49 @@ MonoBehaviour:
             m_StringArgument: Stack the cans!
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: Player must stack cans
+    eventDescription: Stack cans
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Can 1
+    - flag: 0
+      tasklistID: 0
+      description: Can 2
+    - flag: 0
+      tasklistID: 0
+      description: Can 3
+    addedTasks:
+    - targetCount: 3
+      displayText: Stack the cans
+  - eventName: CleanPuddles
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1308000497}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Stack the cans!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Clean puddles
     endFlags:
     - flag: 0
       tasklistID: 0
@@ -26893,13 +26927,30 @@ PrefabInstance:
     - {fileID: 8733054922932612679, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8343360664573457184, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1125172301}
   m_SourcePrefab: {fileID: 100100000, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
 --- !u!4 &1125172297 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1349578731272840085, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
   m_PrefabInstance: {fileID: 1125172296}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1125172301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887694199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e9a46a681bf9142bd8e504ab64f4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartCanMinigameTrigger
+  myManager: {fileID: 746401021}
+  myCanvasObj: {fileID: 714401374}
 --- !u!1 &1136179721
 GameObject:
   m_ObjectHideFlags: 0
@@ -36780,7 +36831,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1508332536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37105,7 +37156,8 @@ PrefabInstance:
       propertyPath: myCanvasObj
       value: 
       objectReference: {fileID: 714401374}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8733054922932612679, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -44609,6 +44661,10 @@ PrefabInstance:
       propertyPath: mainManager
       value: 
       objectReference: {fileID: 1010584178}
+    - target: {fileID: 7877926765029652965, guid: b770a055b164cb04f8829971cc08172d, type: 3}
+      propertyPath: eventManager
+      value: 
+      objectReference: {fileID: 1010584182}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 3309551484985540023, guid: b770a055b164cb04f8829971cc08172d, type: 3}

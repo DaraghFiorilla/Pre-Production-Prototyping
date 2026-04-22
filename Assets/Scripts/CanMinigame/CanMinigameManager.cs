@@ -7,6 +7,10 @@ using TMPro;
 
 public class CanMinigameManager : MonoBehaviour
 {
+    [Header("Event Progress")]
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
+
     [Header("Changeable variables")]
     [SerializeField] private float finishTime;
     [SerializeField] private bool testing;
@@ -288,6 +292,9 @@ public class CanMinigameManager : MonoBehaviour
     {
         Debug.Log("Finishing minigame");
         minigameActive = false;
+
+        eventManager.UpdateFlag(flagID);
+
         foreach (GameObject can in activeCans)
         {
             Rigidbody rb = can.GetComponent<Rigidbody>();
