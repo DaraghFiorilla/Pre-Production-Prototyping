@@ -37160,7 +37160,10 @@ PrefabInstance:
     - {fileID: 8733054922932612679, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8343360664573457184, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1930817269}
   m_SourcePrefab: {fileID: 100100000, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
 --- !u!4 &1513768719 stripped
 Transform:
@@ -42884,10 +42887,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 245837630}
     m_Modifications:
     - target: {fileID: 1349578731272840085, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.66595
-      objectReference: {fileID: 0}
-    - target: {fileID: 1349578731272840085, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -10.24
       objectReference: {fileID: 0}
@@ -46091,6 +46090,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021049762, y: 0.020000003, z: 0.04294306}
   m_Center: {x: 0.00030840933, y: -0.000000007081056, z: 0.011400099}
+--- !u!1 &1930817265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8343360664573457184, guid: 09e1816ac976de842b82e44de2454cb3, type: 3}
+  m_PrefabInstance: {fileID: 1513768718}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1930817269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1930817265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3e9a46a681bf9142bd8e504ab64f4df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartCanMinigameTrigger
+  myManager: {fileID: 418620848}
+  myCanvasObj: {fileID: 714401374}
 --- !u!1001 &1931731284
 PrefabInstance:
   m_ObjectHideFlags: 0
