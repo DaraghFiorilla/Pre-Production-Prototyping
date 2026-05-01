@@ -16,7 +16,6 @@ public class NEWRhythm : MonoBehaviour
     [Header("Object references")]
     [SerializeField] private GameObject sliceBar;
     [SerializeField] private TextMeshProUGUI countdownText;
-    [SerializeField] private Camera myCam;
     private MainManager mainManager;
     [SerializeField] private TextMeshProUGUI textResultDisplay;
     [SerializeField] private GameObject mainCanvas;
@@ -26,18 +25,20 @@ public class NEWRhythm : MonoBehaviour
     [SerializeField] private GameObject[] choppedMeats;
     private int currentIndex;
 
-    private Camera mainCam;
     private Vector3[] pathPoints = new Vector3[5];
     private int currentTarget;
     private GameObject activeInput;
     private string activeInputType;
     private bool pressed;
 
+    [Header("Event Progress")]
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
+
     private void Awake()
     {
         mainManager = GetComponent<MainManager>();
         currentTarget = 0;
-        mainCam = Camera.main;
 
         //StartCoroutine(StartMinigame());
     }
@@ -151,9 +152,7 @@ public class NEWRhythm : MonoBehaviour
         mainManager.nightmareManager.PauseBlink();
         mainManager.canPause = false;
         //mainManager.canInteract = false;
-        mainCam.enabled = false;
         playerObj.GetComponent<PlayerController>().canMove = false;
-        myCam.gameObject.SetActive(true);
         mainCanvas.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
         currentIndex = 0;
@@ -187,16 +186,19 @@ public class NEWRhythm : MonoBehaviour
         // check score
         if (score >= totalInputs * 3)
         {
+            eventManager.UpdateFlag(flagID);
             finalText.text = "Perfect!\nWell done!";
             // perfect you're awesome
         }
         else if (score >= totalInputs * 2)
         {
+            eventManager.UpdateFlag(flagID);
             finalText.text = "Good!\nNice job!";
             // good you're cool
         }
         else if (score >= totalInputs * 1.5)
         {
+            eventManager.UpdateFlag(flagID);
             finalText.text = "OK!\nIt'll do!";
             // ok you'll live
         }
@@ -213,9 +215,7 @@ public class NEWRhythm : MonoBehaviour
         Destroy(mainCanvas);
         playerObj.GetComponent<PlayerController>().canMove = true;
         mainManager.canPause = true;
-        mainCam.enabled = true;
         //mainManager.canInteract = true;
-        Destroy(myCam.gameObject);
         Destroy(mainCanvas);
     }
 }

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class SpinObject : MonoBehaviour
 {
-    public float moveSpeed = 5f;
+    public float moveSpeed = 10f;
     public float spinSpeed = 180f;
 
-    public float life;
+    public float life = 6;
 
-    void Start()
+    void Awake()
     {
         Destroy(gameObject, life);
     }

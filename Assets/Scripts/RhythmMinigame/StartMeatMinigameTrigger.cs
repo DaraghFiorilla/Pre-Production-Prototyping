@@ -6,6 +6,9 @@ public class StartMeatMinigameTrigger : MonoBehaviour
     //HelpURLAttribute HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HELP HLEP
     [SerializeField] NEWRhythm meatMinigame;
     [SerializeField] GameObject interactPrompt;
+    [SerializeField] GameObject disableTrigger;
+    [SerializeField] GameObject disableTasklist;
+
     bool playerInTrigger;
 
     private void Update()
@@ -16,7 +19,8 @@ public class StartMeatMinigameTrigger : MonoBehaviour
             {
                 interactPrompt.SetActive(false);
                 meatMinigame.TriggerStart();
-                Destroy(gameObject);
+                disableTrigger.SetActive(false);
+                disableTasklist.SetActive(false);
             }
         }
     }

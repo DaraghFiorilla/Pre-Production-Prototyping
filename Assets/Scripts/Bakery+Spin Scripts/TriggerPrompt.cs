@@ -9,6 +9,8 @@ public class TriggerPrompt : MonoBehaviour
     [SerializeField] GameObject interactPrompt;
     [SerializeField] GameObject breakTrigger;
 
+    [SerializeField] GameObject camDisable;
+
     [SerializeField] private PlayerController playerController;
 
     bool playerInTrigger;
@@ -21,6 +23,7 @@ public class TriggerPrompt : MonoBehaviour
             {
                 interactPrompt.SetActive(false);
                 miniGame.SetActive(true);
+                camDisable.SetActive(false);
 
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;

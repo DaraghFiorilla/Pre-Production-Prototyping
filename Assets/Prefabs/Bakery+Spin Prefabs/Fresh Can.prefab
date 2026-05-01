@@ -91,7 +91,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!136 &6463477096162108236
 CapsuleCollider:
@@ -128,9 +127,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e18c602741040ca4fa802f6602c28f71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::spinObject
-  moveSpeed: 1
+  moveSpeed: 2
   spinSpeed: 180
-  life: 15
+  life: 6
 --- !u!1 &5973814648620129814
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,5 +218,4 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}

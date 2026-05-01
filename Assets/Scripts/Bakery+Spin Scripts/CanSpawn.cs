@@ -5,6 +5,9 @@ public class CanSpawn : MonoBehaviour
     public GameObject[] itemPrefabs;
     public Transform[] spawnPoints;
 
+    
+    [SerializeField] public float repeatTime = 2f;
+
     public void SpawnAll()
     {
         foreach (Transform spawnPoint in spawnPoints)
@@ -22,6 +25,6 @@ public class CanSpawn : MonoBehaviour
     void Start()
     {
         SpawnAll();
-        InvokeRepeating(nameof(SpawnAll), 1f, 2f);
+        InvokeRepeating(nameof(SpawnAll), repeatTime, repeatTime);
     }
 }
