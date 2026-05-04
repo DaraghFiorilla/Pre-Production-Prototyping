@@ -12,6 +12,9 @@ TagManager:
   - Expired
   - Discount
   - Cleanup
+  - CombinationWheel
+  - AlcoholBottle
+  - AlcoCustomer
   layers:
   - Default
   - TransparentFX

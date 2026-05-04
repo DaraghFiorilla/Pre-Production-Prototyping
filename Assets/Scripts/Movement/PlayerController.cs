@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
 
     public float pitchLimit = 85f;
 
+    public float dialoguePitchLimit = 5f;
+
+    float currentDialoguePitchLimit = 0f;
+
     [SerializeField] float currentPitch = 0f;
 
     public float CurrentPitch
@@ -42,6 +46,16 @@ public class PlayerController : MonoBehaviour
         set
         {
             currentPitch = Mathf.Clamp(value, -pitchLimit, pitchLimit);
+        }
+    }
+
+    public float CurrentDialoguePitchLimit
+    {
+        get => currentDialoguePitchLimit;
+
+        set
+        {
+            currentDialoguePitchLimit = Mathf.Clamp(value, -dialoguePitchLimit, dialoguePitchLimit);
         }
     }
 
@@ -68,7 +82,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<CharacterController>();
         }
 
-        playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
+       // playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
     }
 
     // Update is called once per frame
@@ -133,6 +147,18 @@ public class PlayerController : MonoBehaviour
         myCamera.transform.localRotation = Quaternion.Euler(CurrentPitch, 0f, 0f);
 
         transform.Rotate(Vector2.up * input.x);
+    }
+
+    public void SetDialoguePitchLimit()
+    {
+        Vector2 input = new Vector2(lookInput.x * lookSensitvity.x, lookInput.y * lookSensitvity.y);
+
+        currentDialoguePitchLimit -= input.x;
+    }
+
+    public void DisableDialoguePitchLimit()
+    {
+        Vector2 input = new Vector2(lookInput.x * lookSensitvity.x, lookInput.y * lookSensitvity.y);
     }
 
     private void SoundUpdate()
