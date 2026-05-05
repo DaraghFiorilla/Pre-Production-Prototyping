@@ -15,9 +15,7 @@ public class MuzakScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
-        nightMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.nightMusic);
-
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.dayMuzak, this.gameObject);
+        MusakInitialise();
         MuzakPlay();
     }
 
@@ -28,7 +26,7 @@ public class MuzakScript : MonoBehaviour
 
     public void MusicChange(bool night)
     {
-        if (!night)
+        if (night)
         {
             isNight= false;
             MuzakPlay();
@@ -48,6 +46,13 @@ public class MuzakScript : MonoBehaviour
     public void MuzakStop()
     {
         emitter.Stop();
+    }
+
+    private void MusakInitialise()
+    {
+        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.dayMuzak, this.gameObject);
+
+        nightMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.nightMusic);
     }
 
     private void SoundUpdate()

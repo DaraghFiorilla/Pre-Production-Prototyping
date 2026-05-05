@@ -35,7 +35,7 @@ public class NightmareSwitch : MonoBehaviour
     float startTime;
     bool blinkActive;
 
-    public BGMusicController music;
+    //public BGMusicController music;
 
     public MuzakScript muzakScript;
 
@@ -98,7 +98,7 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.ambientIntensity = 1;
             RenderSettings.reflectionIntensity = 1;
             Debug.Log("Switching to regular state");
-            music.enterDay();
+            //music.enterDay();
         }
         else 
         {
@@ -107,7 +107,7 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.ambientIntensity = 0.3f;
             RenderSettings.reflectionIntensity = 0.3f;
             Debug.Log("Switching to nightmare state");
-            music.enterNight();
+            //music.enterNight();
         }
         switchNightmareState?.Invoke();
         muzakScript.MusicChange(nightmareState);
