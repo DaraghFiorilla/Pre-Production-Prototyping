@@ -14,6 +14,10 @@ public class PriceCheck : MonoBehaviour
 
     [SerializeField] private PlayerController playerController;
 
+    [Header("Event Progress")]
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
+
     void Awake()
     {
         SetPrice();
@@ -54,14 +58,14 @@ public class PriceCheck : MonoBehaviour
             Cursor.visible = false;
 
             playerController.canMove = true;
+
+            eventManager.UpdateFlag(flagID);
         }
         else
         {
             Debug.Log("NO");
             EjectItem();
             SetPrice();
-
-            FailSystem.Instance.ReportFailure();
         }
     }
 
