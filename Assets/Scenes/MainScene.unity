@@ -43628,7 +43628,6 @@ MonoBehaviour:
   maxTimesBlinked: 10
   currentInputButton: 
   lightControl: {fileID: 2007728999}
-  music: {fileID: 0}
   muzakScript: {fileID: 2060835522}
 --- !u!114 &1010584180
 MonoBehaviour:
@@ -87371,6 +87370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 275d1d92815d7894688db937fdadc65e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MuzakScript
+  emitter: {fileID: 2060835520}
 --- !u!1001 &2061301133
 PrefabInstance:
   m_ObjectHideFlags: 0

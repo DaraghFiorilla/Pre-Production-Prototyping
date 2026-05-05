@@ -7,7 +7,7 @@ using FMOD.Studio;
 public class MuzakScript : MonoBehaviour
 {
 
-    private StudioEventEmitter emitter;
+    public StudioEventEmitter emitter;
     private EventInstance nightMusic;
 
     private bool isNight;
@@ -26,7 +26,7 @@ public class MuzakScript : MonoBehaviour
 
     public void MusicChange(bool night)
     {
-        if (night)
+        if (!night)
         {
             isNight= false;
             MuzakPlay();
@@ -50,7 +50,7 @@ public class MuzakScript : MonoBehaviour
 
     private void MusakInitialise()
     {
-        emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.dayMuzak, this.gameObject);
+        //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.dayMuzak, this.gameObject);
 
         nightMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.nightMusic);
     }
