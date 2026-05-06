@@ -5911,11 +5911,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -5996,6 +6004,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10392,11 +10404,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -10477,6 +10497,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41016,7 +41040,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &659595502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65023,11 +65047,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -65108,6 +65140,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -72626,13 +72662,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1590718412377631151, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -72713,6 +72761,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -111766,13 +111818,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1590718412377631151, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.2
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -111853,6 +111917,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -126549,6 +126617,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 1590718412377631151, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
       value: 1.5
@@ -126636,6 +126708,10 @@ PrefabInstance:
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648607257363992718, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
