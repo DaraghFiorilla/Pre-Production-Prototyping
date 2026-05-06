@@ -22,7 +22,7 @@ public class CanSpawn : MonoBehaviour
         }
     }
 
-    void Start()
+    void Awake()
     {
         SpawnAll();
         InvokeRepeating(nameof(SpawnAll), repeatTime, repeatTime);
