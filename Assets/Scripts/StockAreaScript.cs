@@ -4,6 +4,8 @@ public class StockAreaScript : MonoBehaviour
 {
     public string correctAreaProductType;
     public bool isStocked;
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +25,7 @@ public class StockAreaScript : MonoBehaviour
         {
 
             isStocked = true;
+            eventManager.UpdateFlag(flagID);
         }
     }
 }

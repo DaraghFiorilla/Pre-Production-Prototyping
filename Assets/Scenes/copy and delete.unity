@@ -15108,6 +15108,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StockAreaScript
   correctAreaProductType: Cereal
   isStocked: 0
+  flagID: 1
+  eventManager: {fileID: 1010584182}
 --- !u!65 &254023462
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41218,7 +41220,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.66
+      value: 19.774
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
@@ -41226,7 +41228,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.52
+      value: -3.333
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalRotation.w
@@ -45245,6 +45247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   correctAreaProductType: Milk
   isStocked: 0
+  flagID: 2
+  eventManager: {fileID: 1010584182}
 --- !u!65 &784388571
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -92419,6 +92423,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StockAreaScript
   correctAreaProductType: Vegetable
   isStocked: 0
+  flagID: 0
+  eventManager: {fileID: 1010584182}
 --- !u!65 &1612236853
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120056,7 +120062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.61
+      value: 8.03
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
@@ -120064,7 +120070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4.19
+      value: 13.99
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalRotation.w
@@ -123015,6 +123021,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   correctAreaProductType: Dairy
   isStocked: 0
+  flagID: 3
+  eventManager: {fileID: 1010584182}
 --- !u!65 &2122670975
 BoxCollider:
   m_ObjectHideFlags: 0
