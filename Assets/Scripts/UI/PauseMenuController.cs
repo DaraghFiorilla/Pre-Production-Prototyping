@@ -55,6 +55,13 @@ public class PauseMenuController : MonoBehaviour
 
     public void Resume()
     {
+        if (inMain)
+        {
+
+            mainManager.UnpauseMinigames();
+
+        }
+
         AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
 
         Time.timeScale = 1;
