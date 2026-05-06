@@ -50,7 +50,7 @@ public class NightmareSwitch : MonoBehaviour
         switchNightmareState += ChangeTextures;
         switchNightmareState += EnableObjs;
 
-        if (!debug) timer = maxBlinkingTimer;
+        if (!debug) timer = 0f;
         else timer = 5;
 
         if (nightmareState)
