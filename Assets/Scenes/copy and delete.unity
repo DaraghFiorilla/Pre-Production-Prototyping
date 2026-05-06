@@ -14469,8 +14469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -45}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: -500, y: -225}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241648127
 MonoBehaviour:
@@ -16267,7 +16267,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 275513261}
+      addedObject: {fileID: 275513264}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &275513259 stripped
 Transform:
@@ -16279,8 +16279,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 275513258}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &275513261
-BoxCollider:
+--- !u!64 &275513264
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16297,9 +16297,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &275901210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17050,8 +17051,8 @@ MonoBehaviour:
     - I'm gonna guess that it was some kind of wine, right?
     - Was it a rum by any chance?
     correctQuestion: 3
-  - CustomerQuestion: Yes! It had a very fruity taste to it, do you have anything
-      with a dark look in stock?
+  - CustomerQuestion: Yes! It had a very fruity taste to it, it also had a dark bottle
+      with a red label, do you have anything with a dark look in stock?
     PlayerQuestions:
     - Maybe it was a citrusy white wine?
     - That'd probably be a red wine then
@@ -17068,14 +17069,14 @@ MonoBehaviour:
       you
     correctQuestion: 4
   dialogueOptions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1533336106}
+  - {fileID: 1430966113}
+  - {fileID: 241648125}
+  - {fileID: 810617132}
   currentCustomerQuestion: 0
   questionText: {fileID: 846421606}
-  incorrectResponse: No that doesn't seem right at all! Are you sure you know what
-    you're doing?
+  incorrectResponse: No that doesn't seem right at all! I would never drink lower
+    class filth like that! Are you sure you know what you're doing?
 --- !u!136 &286666422
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19801,8 +19802,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.72055864}
+  m_Center: {x: -0.0066194874, y: 0.0000430873, z: 0.13800889}
 --- !u!54 &345285107
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19845,7 +19846,7 @@ MonoBehaviour:
   correctProductType: Vegetable
   requiredAmount: 6
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 2104740145}
   - {fileID: 1545005019}
@@ -19888,8 +19889,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5622514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.021437228, y: 0.021733161, z: 0.71692616}
+  m_Center: {x: -0.006619489, y: 0.000043087304, z: 0.1383253}
 --- !u!23 &345285111
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24107,7 +24108,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 434175821}
+      addedObject: {fileID: 434175824}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &434175819 stripped
 Transform:
@@ -24119,8 +24120,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 434175818}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &434175821
-BoxCollider:
+--- !u!64 &434175824
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -24137,9 +24138,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &435616458
 GameObject:
   m_ObjectHideFlags: 0
@@ -32735,7 +32737,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 595067297}
+      addedObject: {fileID: 595067300}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &595067295 stripped
 Transform:
@@ -32747,8 +32749,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 595067294}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &595067297
-BoxCollider:
+--- !u!64 &595067300
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -32765,9 +32767,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &597680563
 GameObject:
   m_ObjectHideFlags: 0
@@ -35291,7 +35294,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 641319101}
+      addedObject: {fileID: 641319104}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &641319099 stripped
 Transform:
@@ -35303,8 +35306,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 641319098}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &641319101
-BoxCollider:
+--- !u!64 &641319104
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35321,9 +35324,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &643240414
 GameObject:
   m_ObjectHideFlags: 0
@@ -36282,7 +36286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &659595502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39813,7 +39817,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 709018260}
+      addedObject: {fileID: 709018263}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &709018258 stripped
 Transform:
@@ -39825,8 +39829,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 709018257}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &709018260
-BoxCollider:
+--- !u!64 &709018263
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -39843,9 +39847,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &709163250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41935,8 +41940,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -47163,8 +47168,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -45}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: 500, y: -225}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &810617134
 MonoBehaviour:
@@ -50588,8 +50593,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.7219662}
+  m_Center: {x: -0.0066194846, y: 0.0000430873, z: 0.13730523}
 --- !u!54 &863524129
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -50632,7 +50637,7 @@ MonoBehaviour:
   correctProductType: Milk
   requiredAmount: 7
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 822374374}
   - {fileID: 826299684}
@@ -50676,8 +50681,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5612514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.021437228, y: 0.021733161, z: 0.7175357}
+  m_Center: {x: -0.006619489, y: 0.000043087304, z: 0.13752055}
 --- !u!23 &863524133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -62468,8 +62473,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.72351617}
+  m_Center: {x: -0.00661949, y: 0.000043087304, z: 0.13653022}
 --- !u!54 &1061328865
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -62512,7 +62517,7 @@ MonoBehaviour:
   correctProductType: Dairy
   requiredAmount: 4
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 783227429}
   - {fileID: 1818635677}
@@ -62553,8 +62558,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5152514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.021437228, y: 0.021733161, z: 0.69772565}
+  m_Center: {x: -0.006619489, y: 0.000043087308, z: 0.1244255}
 --- !u!23 &1061328869
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -77109,8 +77114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -205.61502}
-  m_SizeDelta: {x: 0, y: -106.88996}
+  m_AnchoredPosition: {x: 0, y: -326.08496}
+  m_SizeDelta: {x: 0, y: -347.83008}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337681973
 MonoBehaviour:
@@ -82616,8 +82621,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 100}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: 500, y: 10}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1430966115
 MonoBehaviour:
@@ -89072,8 +89077,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 100}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: -500, y: 10}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1533336108
 MonoBehaviour:
@@ -89933,8 +89938,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.7217899}
+  m_Center: {x: -0.0066194786, y: 0.0000430873, z: 0.1373936}
 --- !u!54 &1542481217
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -89977,7 +89982,7 @@ MonoBehaviour:
   correctProductType: Cereal
   requiredAmount: 10
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 1495350203}
   - {fileID: 1649341037}
@@ -90024,8 +90029,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02223723, y: 0.02223315, z: 0.5522514}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.02223723, y: 0.02223315, z: 0.7143665}
+  m_Center: {x: -0.006619489, y: 0.000043087304, z: 0.13460504}
 --- !u!23 &1542481221
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -93057,8 +93062,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.099945, y: 227.36998}
-  m_SizeDelta: {x: -24.200094, y: -341.68002}
+  m_AnchoredPosition: {x: 0, y: 275}
+  m_SizeDelta: {x: 0.000025749207, y: -550}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620584041
 MonoBehaviour:
@@ -95526,8 +95531,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2354, y: 0.6669}
-  m_SizeDelta: {x: 910.068, y: 75.3438}
+  m_AnchoredPosition: {x: 2.2354, y: -6.356}
+  m_SizeDelta: {x: 1850, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663753382
 MonoBehaviour:
@@ -95579,8 +95584,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 42
+  m_fontSizeBase: 42
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -98330,7 +98335,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1704720170}
+      addedObject: {fileID: 1704720173}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &1704720168 stripped
 Transform:
@@ -98342,8 +98347,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 1704720167}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1704720170
-BoxCollider:
+--- !u!64 &1704720173
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -98360,9 +98365,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &1708784753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -108868,8 +108874,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -109938,8 +109944,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -112308,7 +112314,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1907674585}
+      addedObject: {fileID: 1907674588}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &1907674583 stripped
 Transform:
@@ -112320,8 +112326,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 1907674582}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1907674585
-BoxCollider:
+--- !u!64 &1907674588
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112338,9 +112344,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &1908477726
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118531,7 +118538,7 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2014603051}
+      addedObject: {fileID: 2014603054}
   m_SourcePrefab: {fileID: 100100000, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!4 &2014603049 stripped
 Transform:
@@ -118543,8 +118550,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 2014603048}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2014603051
-BoxCollider:
+--- !u!64 &2014603054
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -118561,9 +118568,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &2014823098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -123183,8 +123191,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
