@@ -110,6 +110,7 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.reflectionIntensity = 1;
             Debug.Log("Switching to regular state");
             //music.enterDay();
+            muzakScript.MusicChange(false);
         }
         else 
         {
@@ -119,9 +120,9 @@ public class NightmareSwitch : MonoBehaviour
             RenderSettings.reflectionIntensity = 0.3f;
             Debug.Log("Switching to nightmare state");
             //music.enterNight();
+            muzakScript.MusicChange(true);
         }
         switchNightmareState?.Invoke();
-        muzakScript.MusicChange(nightmareState);
     }
 
     void ChangeTextures()
