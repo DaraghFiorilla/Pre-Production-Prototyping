@@ -128,6 +128,10 @@ public class NightmareSwitch : MonoBehaviour
     {
         foreach (GameObject obj in objectsToSwitch)
         {
+            if(obj.GetComponent<DissolveShader>() == null)
+            {
+                return;
+            }
             obj.GetComponent<DissolveShader>().active = true;
         }
     }

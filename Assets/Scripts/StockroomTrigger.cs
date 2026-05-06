@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class StockroomTrigger : MonoBehaviour
 {
     public int sceneBuildNumber;
+    public string sceneName;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,7 +21,9 @@ public class StockroomTrigger : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneBuildNumber);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + sceneBuildNumber);
+
+            SceneManager.LoadScene(sceneName);
         }
     }
 }
