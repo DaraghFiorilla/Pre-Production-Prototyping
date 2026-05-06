@@ -59853,8 +59853,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dialogue
   dialogueSentences:
-  - Hey, lazybones!
-  - Time for you to get to work! The floor is filthy, start cleaning them ASAP!
+  - YOU'RE NOT ON TIME MISSY!
+  - GET WORKING ASAP!
   - Or else you're FIRED!
   canvasToDisable: {fileID: 100934312}
   dialogueManager: {fileID: 1010584177}
@@ -59895,7 +59895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TextScroll
   displayText:
-  - Hey, you! Get over here!
+  - WHY ARE YOU SO LATE!
   scrollSpeed: 0.08
   textMesh: {fileID: 100934314}
   displayCanvas: {fileID: 100934312}
@@ -75828,7 +75828,7 @@ MonoBehaviour:
       tasklistID: 0
       description: Can 3
     addedTasks:
-    - targetCount: 4
+    - targetCount: 3
       displayText: Stack the cans
   - eventName: CleanPuddles
     startingEvent:
