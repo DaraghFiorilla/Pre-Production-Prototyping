@@ -9,19 +9,19 @@ EditorBuildSettings:
     path: Assets/Scenes/StartScreen.unity
     guid: 4f951f584376815419af8b35a162be9e
   - enabled: 1
-    path: Assets/Scenes/NEWLayout.unity
+    path: Assets/Scenes/idk/NEWLayout.unity
     guid: de33ad83ce8b9104a9ee402861e0bba7
   - enabled: 1
-    path: Assets/Scenes/JamesStockRoomScene.unity
+    path: Assets/Scenes/idk/JamesStockRoomScene.unity
     guid: 599d1f64ad8cd8c49968ccf83cca5c89
   - enabled: 1
     path: Assets/Scenes/TestScenes/TRAILER SCENES/RunningObjects.unity
     guid: dd7757696ac1d614c99452242fce52b0
   - enabled: 1
-    path: Assets/Scenes/JamesMazeScene.unity
+    path: Assets/Scenes/idk/JamesMazeScene.unity
     guid: 973ff5dde163a314c83c04d057562dbd
   - enabled: 1
-    path: Assets/Scenes/JamesCanRiverScene.unity
+    path: Assets/Scenes/idk/JamesCanRiverScene.unity
     guid: 351d6e89250f11242942e7c5dc2b3776
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
