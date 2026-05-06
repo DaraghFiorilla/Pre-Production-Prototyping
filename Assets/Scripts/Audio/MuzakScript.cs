@@ -16,7 +16,11 @@ public class MuzakScript : MonoBehaviour
     private void Start()
     {
         MusakInitialise();
-        MuzakPlay();
+
+        if (!isNight)
+        {
+            MuzakPlay();
+        }
     }
 
     void Update()
