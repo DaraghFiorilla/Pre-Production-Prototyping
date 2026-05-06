@@ -8699,6 +8699,7 @@ GameObject:
   - component: {fileID: 173185074}
   - component: {fileID: 173185073}
   - component: {fileID: 173185072}
+  - component: {fileID: 173185075}
   m_Layer: 5
   m_Name: BottomLid
   m_TagString: Untagged
@@ -8785,6 +8786,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173185070}
   m_CullTransparentMesh: 1
+--- !u!114 &173185075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173185070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8344b916eee5b63438b9832be3c0d3df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EyelidClosed
+  manager: {fileID: 1010584179}
 --- !u!1 &173398396
 GameObject:
   m_ObjectHideFlags: 0
@@ -9558,6 +9572,10 @@ PrefabInstance:
       propertyPath: BeerUIText
       value: 
       objectReference: {fileID: 659595501}
+    - target: {fileID: 841695995640095234, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
+      propertyPath: alcoholDetailText
+      value: ???
+      objectReference: {fileID: 0}
     - target: {fileID: 2858842202118636779, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
       propertyPath: attenuationObject
       value: 
@@ -50420,7 +50438,22 @@ MonoBehaviour:
   - {fileID: 1778202615}
   - {fileID: 1506392709}
   - {fileID: 1826687295}
+  - {fileID: 1766484773}
   - {fileID: 117409741}
+  - {fileID: 1818596747}
+  - {fileID: 1735371824}
+  - {fileID: 866682440}
+  - {fileID: 1894237826}
+  - {fileID: 1742589027}
+  - {fileID: 1894237826}
+  - {fileID: 743080906}
+  - {fileID: 1644389566}
+  - {fileID: 782558175}
+  - {fileID: 336437560}
+  - {fileID: 1376028162}
+  - {fileID: 1519435582}
+  - {fileID: 1944271534}
+  - {fileID: 1438317182}
   objectsToEnable:
   - {fileID: 844651540}
   - {fileID: 2065824915}
@@ -50429,17 +50462,14 @@ MonoBehaviour:
   debug: 0
   maxBlinkingTimer: 15
   blinkingTimerIncrement: 0.4
-  timer: 15
-  animMultIncrement: 0.25
+  timer: 0
   interruptedTimer: 2
-  timesBlinked: 0
   eyelidAnimators:
   - {fileID: 1943090044}
   - {fileID: 173185072}
-  pauseBlink: 1
-  scriptedBlink: 1
-  maxTimesBlinked: 10
-  currentInputButton: E
+  pauseBlink: 0
+  scriptedBlink: 0
+  blinkPrompt: {fileID: 1162315815}
   lightControl: {fileID: 2007728999}
   muzakScript: {fileID: 2060835522}
 --- !u!114 &1010584180
@@ -50537,6 +50567,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
+  - eventName: Meat Chop Game
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2743796070456636922}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HELP THE BUTCHER
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Chop meat
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Chop Meat
+    addedTasks:
+    - targetCount: 0
+      displayText: Chop meat for the butcher
   - eventName: TalkToManager
     startingEvent:
       m_PersistentCalls:
@@ -50675,42 +50741,6 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Collect fresh stock from storage
-  - eventName: Meat Chop Game
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2743796070456636922}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: HELP THE BUTCHER
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Chop meat
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: Chop Meat
-    addedTasks:
-    - targetCount: 0
-      displayText: Chop meat for the butcher
   - eventName: BeerQuest
     startingEvent:
       m_PersistentCalls:
