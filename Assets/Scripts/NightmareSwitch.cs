@@ -22,7 +22,6 @@ public class NightmareSwitch : MonoBehaviour
     [SerializeField] private float maxBlinkingTimer;
 
     [Tooltip("How much the blinking timer will decrease upon a successful blink")]
-    [SerializeField] private float blinkingTimerIncrement;
     [SerializeField] private float timer = 15;
 
     [Tooltip("If paused, what to set the timer to on unpause")]
