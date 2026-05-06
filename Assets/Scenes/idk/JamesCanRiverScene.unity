@@ -85443,24 +85443,24 @@ PrefabInstance:
       objectReference: {fileID: 1579509241}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: Lights.Array.size
-      value: 203
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[1]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373669}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[2]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373668}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[3]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373667}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[4]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373666}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[5]'
       value: 
@@ -85560,15 +85560,15 @@ PrefabInstance:
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[30]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373668}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[31]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373667}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[32]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 496373666}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[33]'
       value: 
@@ -85878,7 +85878,47 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[111]'
+      value: 
+      objectReference: {fileID: 496373667}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[112]'
+      value: 
+      objectReference: {fileID: 496373666}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[113]'
+      value: 
+      objectReference: {fileID: 496373666}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[115]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[116]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[117]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[118]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[119]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
       propertyPath: 'Lights.Array.data[120]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[121]'
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+      propertyPath: 'Lights.Array.data[122]'
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3113284124337752099, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
@@ -86419,6 +86459,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37e63a5a918199345897012743253ce2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LightControl
+--- !u!114 &496373666 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5772958747477131978, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+  m_PrefabInstance: {fileID: 496373664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d0dec32c434e7478861ed19b143da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightingScript
+--- !u!114 &496373667 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3823336687712418267, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+  m_PrefabInstance: {fileID: 496373664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d0dec32c434e7478861ed19b143da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightingScript
+--- !u!114 &496373668 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2538730909442947933, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+  m_PrefabInstance: {fileID: 496373664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d0dec32c434e7478861ed19b143da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightingScript
+--- !u!114 &496373669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2243983943638014454, guid: 17f4fa717f4402440b6cdf707f647370, type: 3}
+  m_PrefabInstance: {fileID: 496373664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22d0dec32c434e7478861ed19b143da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LightingScript
 --- !u!1001 &496665524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -220178,8 +220262,8 @@ Transform:
   m_GameObject: {fileID: 1293448812}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.84, y: 1.392, z: 54.21}
-  m_LocalScale: {x: 20.795, y: 2.7687423, z: 1}
+  m_LocalPosition: {x: -5.19, y: 1.392, z: 54.71}
+  m_LocalScale: {x: 1.7, y: 2.7687423, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -220193,10 +220277,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1293448812}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c903066e03c3344dbe5b7e752185e4a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9ba5e368168b34d4c95ccf8e3938422f, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::StockroomTrigger
-  sceneBuildNumber: -1
+  m_EditorClassIdentifier: Assembly-CSharp::NextSceneCrap
 --- !u!1 &1294001378
 GameObject:
   m_ObjectHideFlags: 0
