@@ -18,7 +18,7 @@ public class StockCageScript : MonoBehaviour
 
 
     //public StockBoxes stockBoxType;
-    void Start()
+    void Awake()
     {
         //rbConstraints = RigidbodyConstraints.FreezePosition;
         tagText = ("GridBasedStockCage");
