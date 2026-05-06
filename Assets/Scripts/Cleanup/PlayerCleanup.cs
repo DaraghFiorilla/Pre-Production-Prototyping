@@ -26,14 +26,12 @@ public class PlayerCleanup : MonoBehaviour
                 }
                 else
                 {
-                    cleanupObj.StopSound();
                 }
             }
             else
             {
                 if (cleanupObj!= null)
                 {
-                    cleanupObj.StopSound();
                 }
                 interactPrompt.SetActive(false);
                 cleanupObj = null;
