@@ -41546,6 +41546,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2625852089064870822, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
+      propertyPath: isNight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6762413968998209485, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: m_Name
       value: Audio + Music

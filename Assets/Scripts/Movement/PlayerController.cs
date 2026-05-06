@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             GetComponent<CharacterController>();
         }
 
-       // playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
+       playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
     }
 
     // Update is called once per frame
