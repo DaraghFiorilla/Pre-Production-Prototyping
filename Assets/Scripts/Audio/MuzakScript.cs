@@ -6,14 +6,16 @@ using FMOD.Studio;
 
 public class MuzakScript : MonoBehaviour
 {
-
     public StudioEventEmitter emitter;
     private EventInstance nightMusic;
     private EventInstance titleMusic;
+    private EventInstance alarmSFX;
 
-    private bool isNight;
+    public bool isNight;
 
     public bool titleScreen;
+
+    public bool isEnd;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
@@ -61,14 +63,28 @@ public class MuzakScript : MonoBehaviour
 
         nightMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.nightMusic);
         titleMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.titleMusic);
+        alarmSFX = AudioManager.instance.CreateInstance(FMODEvents.instance.alarmSFX);
     }
 
     private void SoundUpdate()
     {
-        if (titleScreen)
+        if (isEnd)
+        {
+            PLAYBACK_STATE playbackState;
+            alarmSFX.getPlaybackState(out playbackState);
+            nightMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            titleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                alarmSFX.start();
+            }
+        }
+        else if (titleScreen)
         {
             PLAYBACK_STATE playbackState;
             titleMusic.getPlaybackState(out playbackState);
+            nightMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            alarmSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {
                 titleMusic.start();
@@ -78,6 +94,8 @@ public class MuzakScript : MonoBehaviour
         {
             PLAYBACK_STATE playbackState;
             nightMusic.getPlaybackState(out playbackState);
+            titleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            alarmSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
             {
                 nightMusic.start();
@@ -87,6 +105,7 @@ public class MuzakScript : MonoBehaviour
         {
             nightMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             titleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            alarmSFX.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
 
     }
