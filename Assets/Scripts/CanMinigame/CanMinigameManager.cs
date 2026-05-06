@@ -64,7 +64,7 @@ public class CanMinigameManager : MonoBehaviour
 
     public void Pause(bool isPaused)
     {
-        paused = isPaused;
+        //paused = isPaused;
     }
 
     Ray ray;
@@ -108,7 +108,7 @@ public class CanMinigameManager : MonoBehaviour
     public void StartMinigame()
     {
         Debug.Log("starting minigame");
-        mainManager.nightmareManager.PauseBlink();
+        //mainManager.nightmareManager.PauseBlink();
         Debug.Log("Enabling objs");
         foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
         maxCansNo = canLayout.cansNo;

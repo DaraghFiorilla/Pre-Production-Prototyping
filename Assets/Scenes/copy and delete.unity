@@ -75929,78 +75929,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
-  - eventName: Bakery MiniGame
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2743796070411647578}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Sort the pastries!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Bakery minigame
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: Bakery Game
-    addedTasks:
-    - targetCount: 0
-      displayText: Sort donut boxes(look around for the price)
-  - eventName: SortMiniGame
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 44607334}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Sort the fresh stock out!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Collect fresh stock from storage
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: Sort MiniGame
-    addedTasks:
-    - targetCount: 0
-      displayText: Collect fresh stock from storage
   - eventName: TalkToManager
     startingEvent:
       m_PersistentCalls:
@@ -76055,23 +75983,11 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 3
       displayText: Stack the cans
-  - eventName: CleanPuddles
+  - eventName: SortMiniGame
     startingEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: CLEAN THE PUDDLES
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: 1308000497}
+        - m_Target: {fileID: 44607334}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -76083,26 +75999,26 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-    eventDescription: Clean puddles
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Sort the fresh stock out!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Collect fresh stock from storage
     endFlags:
     - flag: 0
       tasklistID: 0
-      description: Clean puddle 1
-    - flag: 0
-      tasklistID: 0
-      description: Clean puddle 2
-    - flag: 0
-      tasklistID: 0
-      description: Clean puddle 3
-    - flag: 0
-      tasklistID: 0
-      description: Clean puddle 4
-    - flag: 0
-      tasklistID: 0
-      description: Clean puddle 5
+      description: Sort MiniGame
     addedTasks:
-    - targetCount: 5
-      displayText: Clean puddles
+    - targetCount: 0
+      displayText: Collect fresh stock from storage
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -76184,6 +76100,90 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Chop meat for the butcher
+  - eventName: Bakery MiniGame
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2743796070411647578}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Sort the pastries!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Bakery minigame
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Bakery Game
+    addedTasks:
+    - targetCount: 0
+      displayText: Sort donut boxes(look around for the price)
+  - eventName: CleanPuddles
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: CLEAN THE PUDDLES
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1308000497}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventDescription: Clean puddles
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Clean puddle 1
+    - flag: 0
+      tasklistID: 0
+      description: Clean puddle 2
+    - flag: 0
+      tasklistID: 0
+      description: Clean puddle 3
+    - flag: 0
+      tasklistID: 0
+      description: Clean puddle 4
+    - flag: 0
+      tasklistID: 0
+      description: Clean puddle 5
+    addedTasks:
+    - targetCount: 5
+      displayText: Clean puddles
   - eventName: BeerQuest
     startingEvent:
       m_PersistentCalls:
