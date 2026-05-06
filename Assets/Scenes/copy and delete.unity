@@ -14485,7 +14485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlcoCustomerAnswers
   isCorrect: 0
-  quizManager: {fileID: 0}
+  quizManager: {fileID: 286666421}
 --- !u!114 &241648128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17074,7 +17074,7 @@ MonoBehaviour:
   - {fileID: 241648125}
   - {fileID: 810617132}
   currentCustomerQuestion: 0
-  questionText: {fileID: 846421606}
+  questionText: {fileID: 1663753382}
   incorrectResponse: No that doesn't seem right at all! I would never drink lower
     class filth like that! Are you sure you know what you're doing?
 --- !u!136 &286666422
@@ -47184,7 +47184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlcoCustomerAnswers
   isCorrect: 0
-  quizManager: {fileID: 0}
+  quizManager: {fileID: 286666421}
 --- !u!114 &810617135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82637,7 +82637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlcoCustomerAnswers
   isCorrect: 0
-  quizManager: {fileID: 0}
+  quizManager: {fileID: 286666421}
 --- !u!114 &1430966116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -89093,7 +89093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlcoCustomerAnswers
   isCorrect: 0
-  quizManager: {fileID: 0}
+  quizManager: {fileID: 286666421}
 --- !u!114 &1533336109
 MonoBehaviour:
   m_ObjectHideFlags: 0
