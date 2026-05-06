@@ -7,17 +7,20 @@ public class DragHandler : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
     Image image;
     CanvasGroup group;
     public Transform parentItem;
+    Transform canvasTransform;
 
-    private void Start()
+    private void Awake()
     {
         image = GetComponent<Image>();
         group = GetComponent<CanvasGroup>();
+
+        canvasTransform = GetComponentInParent<Canvas>().transform;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         parentItem = transform.parent;
-        transform.SetParent(transform.root);
+        transform.SetParent(canvasTransform);
         transform.SetAsLastSibling();
 
         group.alpha = .5f;
