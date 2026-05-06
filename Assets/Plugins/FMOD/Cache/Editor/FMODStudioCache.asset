@@ -15,11 +15,38 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639124635866285788
+  lastModified: 639136997035459658
   FileSizes:
   - Name: Desktop
-    Value: 1320
+    Value: 1362
   Exists: 1
+--- !u!114 &-6438211226149283155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Title Music
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/Music/Title Music
+  Guid:
+    Data1: -1160902749
+    Data2: 1109351310
+    Data3: 1920888252
+    Data4: 583714151
+  Banks:
+  - {fileID: -2056886642999695595}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 128548
 --- !u!114 &-2056886642999695595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35,10 +62,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639136879254583713
+  lastModified: 639136997060982348
   FileSizes:
   - Name: Desktop
-    Value: 3382624
+    Value: 4518848
   Exists: 1
 --- !u!114 &-938034845625073643
 MonoBehaviour:
@@ -94,13 +121,14 @@ MonoBehaviour:
   - {fileID: 1161997856251786366}
   - {fileID: 5094745217613305522}
   - {fileID: 5694342978050406411}
+  - {fileID: -6438211226149283155}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1458850374318360133}
   StringsBanks:
   - {fileID: -7539208124665402461}
   cacheVersion: 131858
-  cacheTime: 639136879254583713
+  cacheTime: 639136997060982348
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -118,6 +146,8 @@ MonoBehaviour:
     index: 6
   - key: event:/Music/Nightmare Music
     index: 7
+  - key: event:/Music/Title Music
+    index: 8
 --- !u!114 &1161997856251786366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,7 +190,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639117903187754188
+  lastModified: 639136997035440475
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -180,7 +210,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639124635866301390
+  lastModified: 639122276545708080
   FileSizes:
   - Name: Desktop
     Value: 21056
@@ -308,7 +338,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639117903187738722
+  lastModified: 639122138926407634
   FileSizes:
   - Name: Desktop
     Value: 54848

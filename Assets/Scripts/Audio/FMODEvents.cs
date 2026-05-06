@@ -28,6 +28,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: SerializeField] public EventReference nightMusic { get; private set; }
 
+    [field: SerializeField] public EventReference titleMusic { get; private set; }
+
     public static FMODEvents instance { get; private set; }
 
     private void Awake()

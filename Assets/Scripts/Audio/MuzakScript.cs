@@ -9,15 +9,18 @@ public class MuzakScript : MonoBehaviour
 
     public StudioEventEmitter emitter;
     private EventInstance nightMusic;
+    private EventInstance titleMusic;
 
     private bool isNight;
+
+    public bool titleScreen;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Start()
     {
         MusakInitialise();
 
-        if (!isNight)
+        if (!isNight && !titleScreen)
         {
             MuzakPlay();
         }
@@ -57,11 +60,21 @@ public class MuzakScript : MonoBehaviour
         //emitter = AudioManager.instance.InitializeEventEmitter(FMODEvents.instance.dayMuzak, this.gameObject);
 
         nightMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.nightMusic);
+        titleMusic = AudioManager.instance.CreateInstance(FMODEvents.instance.titleMusic);
     }
 
     private void SoundUpdate()
     {
-        if (isNight)
+        if (titleScreen)
+        {
+            PLAYBACK_STATE playbackState;
+            titleMusic.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                titleMusic.start();
+            }
+        }
+        else if (isNight)
         {
             PLAYBACK_STATE playbackState;
             nightMusic.getPlaybackState(out playbackState);
@@ -73,6 +86,7 @@ public class MuzakScript : MonoBehaviour
         else
         {
             nightMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            titleMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
 
     }
