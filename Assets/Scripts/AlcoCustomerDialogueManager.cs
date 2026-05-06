@@ -11,6 +11,8 @@ public class AlcoCustomerDialogueManager : MonoBehaviour
     [SerializeField] public string correctProductType;
     [SerializeField] private int requiredAmount;
     [SerializeField] private int currentAmount;
+    [SerializeField] private EventProgress eventManager;
+    public int flagID;
     public string tagText;
 
     public GameObject alcoholUICanvas;
@@ -69,7 +71,7 @@ public class AlcoCustomerDialogueManager : MonoBehaviour
         alcoholUICanvas.SetActive(true);
         playerController.pitchLimit = 5;
         playerController.SetDialoguePitchLimit();
-        playerController.lookSensitvity.x = 0.1f;
+        playerController.lookSensitvity.x = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
@@ -116,6 +118,7 @@ public class AlcoCustomerDialogueManager : MonoBehaviour
             if (currentAmount == requiredAmount)
             {
                 Debug.Log(correctProductType + " Wine Snob satisfied");
+                eventManager.UpdateFlag(flagID);
                 Destroy(gameObject);
                 //rbConstraints = RigidbodyConstraints.None;
 
