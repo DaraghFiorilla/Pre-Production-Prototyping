@@ -9945,7 +9945,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Cereal
-  requiredAmount: 1
+  requiredAmount: 10
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -9994,8 +9994,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02223723, y: 0.02223315, z: 0.5522514}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.022237228, y: 0.022233153, z: 0.71672934}
+  m_Center: {x: -0.006619494, y: 0.000043087326, z: 0.13342361}
 --- !u!23 &175507224
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -91309,8 +91309,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.7178778}
-  m_Center: {x: -0.006619494, y: 0.00004308732, z: 0.13934982}
+  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.72169214}
+  m_Center: {x: -0.006619494, y: 0.00004308733, z: 0.13744263}
 --- !u!54 &1657352173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91351,7 +91351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Vegetable
-  requiredAmount: 1
+  requiredAmount: 6
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -91396,8 +91396,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5622514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.7185805}
+  m_Center: {x: -0.0066194953, y: 0.00004308732, z: 0.137498}
 --- !u!23 &1657352177
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -92821,7 +92821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Dairy
-  requiredAmount: 1
+  requiredAmount: 4
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -92864,8 +92864,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5152514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.69217414}
+  m_Center: {x: -0.0066194953, y: 0.00004308733, z: 0.12720118}
 --- !u!23 &1679157016
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -113785,7 +113785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Milk
-  requiredAmount: 1
+  requiredAmount: 7
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -113831,8 +113831,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.5612514}
-  m_Center: {x: -0.006619495, y: 0.000043087188, z: 0.2156625}
+  m_Size: {x: 0.02143723, y: 0.02173316, z: 0.70909643}
+  m_Center: {x: -0.0066194953, y: 0.000043087326, z: 0.1417402}
 --- !u!23 &2027366083
 MeshRenderer:
   m_ObjectHideFlags: 0

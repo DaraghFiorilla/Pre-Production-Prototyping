@@ -69,7 +69,7 @@ public class AlcoCustomerDialogueManager : MonoBehaviour
         alcoholUICanvas.SetActive(true);
         playerController.pitchLimit = 5;
         playerController.SetDialoguePitchLimit();
-        playerController.lookSensitvity.x = 0.1f;
+        playerController.lookSensitvity.x = 0f;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
