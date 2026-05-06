@@ -127,6 +127,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4598b2029632bc144a4adc9f8788a64f, type: 3}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.w
+      value: 79.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.x
+      value: 79.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.y
+      value: 41.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121024900951507024, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.z
+      value: 236.38
+      objectReference: {fileID: 0}
     - target: {fileID: 2321806258834748952, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -164,12 +192,28 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 687
+      value: 975
       objectReference: {fileID: 0}
     - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 200
+      value: 244
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524623592464651794, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5964390345575969741, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_UiScaleMode
@@ -208,12 +252,28 @@ PrefabInstance:
       value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 687.00006
+      value: 1020
       objectReference: {fileID: 0}
     - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -100
+      value: 119
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411945887602648151, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7471537881484566911, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       propertyPath: m_fontSize
@@ -307,9 +367,39 @@ PrefabInstance:
       propertyPath: m_Name
       value: StartMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1f0d706891cd4474c8fd05a9545b35d0, type: 3}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.w
+      value: 109.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.x
+      value: 78.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.y
+      value: 11.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170736739177604186, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+      propertyPath: m_RaycastPadding.z
+      value: 260.68
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4807443942432470539, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 8650901731331320549, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
+    - {fileID: 2433592208113785040, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1656183798076814489, guid: c17967591b52f6c42811dea9789c7b07, type: 3}
       insertIndex: 0
