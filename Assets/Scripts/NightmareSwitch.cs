@@ -44,13 +44,12 @@ public class NightmareSwitch : MonoBehaviour
 
     public MuzakScript muzakScript;
 
-    private void Awake()
+    private void Start()
     {
         mainManager = GetComponent<MainManager>();
         switchNightmareState += ChangeTextures;
         switchNightmareState += EnableObjs;
 
-        //Switch();
         if (!debug) timer = maxBlinkingTimer;
         else timer = 5;
 
@@ -58,6 +57,7 @@ public class NightmareSwitch : MonoBehaviour
         {
             ChangeTextures();
             EnableObjs();
+            Switch();
         }
     }
 
@@ -100,11 +100,11 @@ public class NightmareSwitch : MonoBehaviour
     {
         blinkActive = false;
         timer = maxBlinkingTimer;
-        Debug.Log("interact not pressed");
+        Debug.Log("Switch");
 
         if (nightmareState)
         {
-            nightmareState = false;
+            nightmareState = true;
             lightControl.TurnDay();
             RenderSettings.ambientIntensity = 1;
             RenderSettings.reflectionIntensity = 1;
@@ -114,7 +114,7 @@ public class NightmareSwitch : MonoBehaviour
         else 
         {
             lightControl.TurnNight();
-            nightmareState = true;
+            nightmareState = false;
             RenderSettings.ambientIntensity = 0.3f;
             RenderSettings.reflectionIntensity = 0.3f;
             Debug.Log("Switching to nightmare state");
@@ -134,9 +134,13 @@ public class NightmareSwitch : MonoBehaviour
 
     void EnableObjs()
     {
+        Debug.Log("enableobj called");
         foreach (GameObject go in objectsToEnable)
         {
-            go.SetActive(nightmareState);
+            if(go != null)
+            {
+                go.SetActive(true);
+            }
         }
     }
 
