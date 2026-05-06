@@ -57,6 +57,7 @@ public class NightmareSwitch : MonoBehaviour
         if (nightmareState)
         {
             ChangeTextures();
+            EnableObjs();
         }
     }
 
@@ -133,16 +134,9 @@ public class NightmareSwitch : MonoBehaviour
 
     void EnableObjs()
     {
-        foreach (GameObject obj in objectsToEnable)
+        foreach (GameObject go in objectsToEnable)
         {
-            if (obj.activeSelf) 
-            { 
-                obj.SetActive(false); 
-            }
-            else 
-            { 
-                obj.SetActive(true); 
-            }
+            go.SetActive(nightmareState);
         }
     }
 
