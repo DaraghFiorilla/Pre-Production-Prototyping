@@ -18540,15 +18540,15 @@ GameObject:
   - component: {fileID: 286666425}
   - component: {fileID: 286666424}
   - component: {fileID: 286666423}
-  - component: {fileID: 286666422}
   - component: {fileID: 286666421}
+  - component: {fileID: 286666426}
   m_Layer: 0
   m_Name: WineSnob
   m_TagString: AlcoCustomer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &286666421
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18604,29 +18604,6 @@ MonoBehaviour:
   questionText: {fileID: 1663753382}
   incorrectResponse: No that doesn't seem right at all! I would never drink lower
     class filth like that! Are you sure you know what you're doing?
---- !u!136 &286666422
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 286666420}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &286666423
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18691,14 +18668,34 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 286666420}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 32.67, y: 1.978, z: 35.35}
-  m_LocalScale: {x: 1.783918, y: 1.783918, z: 1.783918}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 2.77, y: -1.0083332, z: -0.6}
+  m_LocalScale: {x: 1.3513513, y: 8.333334, z: -7.1428547}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1523652107}
-  m_Father: {fileID: 553250845}
+  m_Children: []
+  m_Father: {fileID: 1523652107}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &286666426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 286666420}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.0500045, y: 2.0289314, z: 1.8179494}
+  m_Center: {x: -0.52500147, y: 0.014464346, z: 0.40897614}
 --- !u!1001 &287101212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21354,6 +21351,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3f49e36a9b2b42343b8faa1d24501e56, type: 3}
   m_PrefabInstance: {fileID: 330552234}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &333268204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 333268205}
+  - component: {fileID: 333268206}
+  m_Layer: 0
+  m_Name: milk spill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &333268205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333268204}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.39760613, y: -0.5847302, z: 0.5847302, w: 0.39760613}
+  m_LocalPosition: {x: 0, y: 0.18, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 737098728}
+  m_LocalEulerAnglesHint: {x: 90, y: -111.57, z: 0}
+--- !u!212 &333268206
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333268204}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4786f0a1727f24409096758280c62e1, type: 3}
+  m_Color: {r: 0.40161088, g: 0.7682083, b: 0.8962264, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.82, y: 12.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &336226039
 GameObject:
   m_ObjectHideFlags: 0
@@ -22206,7 +22293,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Vegetable
-  requiredAmount: 6
+  requiredAmount: 2
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -34186,7 +34273,7 @@ Transform:
   - {fileID: 816211901}
   - {fileID: 130450522}
   - {fileID: 777074115}
-  - {fileID: 286666425}
+  - {fileID: 1523652107}
   - {fileID: 1606471560}
   - {fileID: 1520099597}
   m_Father: {fileID: 0}
@@ -47072,6 +47159,10 @@ PrefabInstance:
       value: Puddle (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 19.774
       objectReference: {fileID: 0}
@@ -47119,9 +47210,14 @@ PrefabInstance:
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+    - {fileID: 6436617868044587901, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 333268205}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
 --- !u!4 &737098728 stripped
@@ -56764,7 +56860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Milk
-  requiredAmount: 7
+  requiredAmount: 2
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -66746,7 +66842,7 @@ MonoBehaviour:
   eyelidAnimators:
   - {fileID: 1943090044}
   - {fileID: 173185072}
-  pauseBlink: 0
+  pauseBlink: 1
   scriptedBlink: 0
   blinkPrompt: {fileID: 1162315815}
   lightControl: {fileID: 1992310670}
@@ -66846,10 +66942,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
-  - eventName: BeerQuest
+  - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 2041353104}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
         - m_Target: {fileID: 816211899}
           m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
           m_MethodName: SetText
@@ -66859,17 +66967,26 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: HELP CUSTOMERS!
+            m_StringArgument: Set up stock!
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: Beer quest
+    eventDescription: Stock stuff
     endFlags:
     - flag: 0
       tasklistID: 0
-      description: Customer 1
+      description: Stock up
+    - flag: 0
+      tasklistID: 1
+      description: Stock up
+    - flag: 0
+      tasklistID: 3
+      description: Stock up
+    - flag: 0
+      tasklistID: 4
+      description: Stock up
     addedTasks:
-    - targetCount: 0
-      displayText: Help the customers
+    - targetCount: 4
+      displayText: 'Stock up '
   - eventName: TalkToManager
     startingEvent:
       m_PersistentCalls:
@@ -66928,6 +67045,18 @@ MonoBehaviour:
     startingEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: CLEAN THE PUDDLES
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 1308000497}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -66939,18 +67068,6 @@ MonoBehaviour:
             m_FloatArgument: 0
             m_StringArgument: 
             m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Stack the cans!
-            m_BoolArgument: 0
           m_CallState: 2
     eventDescription: Clean puddles
     endFlags:
@@ -67044,6 +67161,42 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Chop meat for the butcher
+  - eventName: BeerQuest
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HELP CUSTOMERS!
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 286666420}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: HELP CUSTOMERS!
+            m_BoolArgument: 1
+          m_CallState: 2
+    eventDescription: Beer quest
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Customer 1
+    addedTasks:
+    - targetCount: 0
+      displayText: Help customers in the beer section
   - eventName: Bakery MiniGame
     startingEvent:
       m_PersistentCalls:
@@ -70316,7 +70469,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Dairy
-  requiredAmount: 4
+  requiredAmount: 2
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -81228,6 +81381,10 @@ PrefabInstance:
       value: Puddle (4)
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 31.72
       objectReference: {fileID: 0}
@@ -81275,9 +81432,14 @@ PrefabInstance:
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6436617868044587901, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+    - {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1513433755}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
 --- !u!4 &1226603455 stripped
@@ -86879,6 +87041,96 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1314718596}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1316495970
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316495971}
+  - component: {fileID: 1316495972}
+  m_Layer: 0
+  m_Name: milk spill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316495971
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316495970}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -1.12, y: 0.18, z: -0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1325635258}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &1316495972
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316495970}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4786f0a1727f24409096758280c62e1, type: 3}
+  m_Color: {r: 0, g: 0.6006255, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.82, y: 12.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1317365209
 GameObject:
   m_ObjectHideFlags: 0
@@ -87536,16 +87788,28 @@ PrefabInstance:
       value: Puddle (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.64
+      value: -19.59
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 32.92
+      value: 34.8
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalRotation.w
@@ -87583,9 +87847,14 @@ PrefabInstance:
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6436617868044587901, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+    - {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1316495971}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
 --- !u!4 &1325635258 stripped
@@ -98970,6 +99239,96 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0fe0445c502cba146b35ac733af2d731, type: 3}
   m_PrefabInstance: {fileID: 1512725451}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1513433754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513433755}
+  - component: {fileID: 1513433756}
+  m_Layer: 0
+  m_Name: milk spill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1513433755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513433754}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.29491583, y: -0.64267, z: 0.64267, w: -0.29491583}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1226603455}
+  m_LocalEulerAnglesHint: {x: 90, y: -229.3, z: 0}
+--- !u!212 &1513433756
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513433754}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4786f0a1727f24409096758280c62e1, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.82, y: 12.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1513768718
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -99977,12 +100336,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1523652106}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0.121, z: 0}
-  m_LocalScale: {x: 0.14, y: 0.12, z: -0.74}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 32.67, y: 2.193854, z: 35.35}
+  m_LocalScale: {x: 0.24974853, y: 0.21407016, z: -1.3200992}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 286666425}
+  m_Children:
+  - {fileID: 286666425}
+  m_Father: {fileID: 553250845}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!212 &1523652108
 SpriteRenderer:
@@ -101943,7 +102303,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Cereal
-  requiredAmount: 10
+  requiredAmount: 2
   currentAmount: 0
   tagText: GridBasedStockCage
   ArrayOfFillBoxes:
@@ -107044,6 +107404,96 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1624235511
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624235512}
+  - component: {fileID: 1624235513}
+  m_Layer: 0
+  m_Name: milk spill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1624235512
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624235511}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.6517122, y: -0.27435616, z: 0.27435616, w: 0.6517122}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2062546373}
+  m_LocalEulerAnglesHint: {x: 90, y: -45.66, z: 0}
+--- !u!212 &1624235513
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624235511}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: b4786f0a1727f24409096758280c62e1, type: 3}
+  m_Color: {r: 0, g: 0.74262595, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.82, y: 12.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &1626723535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134374,8 +134824,12 @@ PrefabInstance:
       value: Puddle (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 16.66
+      value: 8.62
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
@@ -134383,7 +134837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.81
+      value: 40.92
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalRotation.w
@@ -134421,9 +134875,14 @@ PrefabInstance:
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6436617868044587901, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+    - {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2033593479}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
 --- !u!4 &2023931682 stripped
@@ -134799,6 +135258,96 @@ Transform:
   - {fileID: 892261273}
   m_Father: {fileID: 135395953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2033593478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2033593479}
+  - component: {fileID: 2033593480}
+  m_Layer: 0
+  m_Name: blood spill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2033593479
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033593478}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2023931682}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!212 &2033593480
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033593478}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 143a3803bfd1ca44caae1b1eccdb8999, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 12.82, y: 12.77}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &2034278462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135997,6 +136546,10 @@ PrefabInstance:
       value: Puddle
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.03
       objectReference: {fileID: 0}
@@ -136040,9 +136593,21 @@ PrefabInstance:
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
-    m_RemovedComponents: []
+    - target: {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: -8362392543989881821, guid: d95e15817a8e8a64f96620cd044e0484, type: 3}
+    m_RemovedComponents:
+    - {fileID: 7513846705268583427, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1624235512}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
 --- !u!4 &2062546373 stripped
@@ -144533,10 +145098,10 @@ SceneRoots:
   - {fileID: 863459481}
   - {fileID: 1192939586}
   - {fileID: 636199759}
-  - {fileID: 296560152}
   - {fileID: 2041353105}
   - {fileID: 658346659}
   - {fileID: 1785936829}
   - {fileID: 1893102576}
   - {fileID: 815717426}
+  - {fileID: 296560152}
   - {fileID: 1522735365}
