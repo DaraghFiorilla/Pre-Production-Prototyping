@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639137030734076443
+  lastModified: 639137037335395014
   FileSizes:
   - Name: Desktop
-    Value: 1362
+    Value: 1410
   Exists: 1
 --- !u!114 &-6438211226149283155
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639137030734335752
+  lastModified: 639136997060982348
   FileSizes:
   - Name: Desktop
     Value: 4518848
@@ -122,13 +122,14 @@ MonoBehaviour:
   - {fileID: 5094745217613305522}
   - {fileID: 5694342978050406411}
   - {fileID: -6438211226149283155}
+  - {fileID: 2202076625602200994}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1458850374318360133}
   StringsBanks:
   - {fileID: -7539208124665402461}
   cacheVersion: 131858
-  cacheTime: 639137030734335752
+  cacheTime: 639137037335395014
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -148,6 +149,8 @@ MonoBehaviour:
     index: 7
   - key: event:/Music/Title Music
     index: 8
+  - key: event:/General SFX/Alarm Clock Sound
+    index: 9
 --- !u!114 &1161997856251786366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,11 +193,38 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639118655737310267
+  lastModified: 639137037335385067
   FileSizes:
   - Name: Desktop
     Value: 1074
   Exists: 1
+--- !u!114 &2202076625602200994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/General SFX/Alarm Clock Sound
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/General SFX/Alarm Clock Sound
+  Guid:
+    Data1: 2030095439
+    Data2: 1135331344
+    Data3: -152593749
+    Data4: 627044188
+  Banks:
+  - {fileID: 5983031402084639717}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 45165
 --- !u!114 &3527953277716223150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -210,7 +240,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639131597900159163
+  lastModified: 639122276545708080
   FileSizes:
   - Name: Desktop
     Value: 21056
@@ -338,10 +368,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639118655737300303
+  lastModified: 639137037335344404
   FileSizes:
   - Name: Desktop
-    Value: 54848
+    Value: 648288
   Exists: 1
 --- !u!114 &6830788408929272697
 MonoBehaviour:

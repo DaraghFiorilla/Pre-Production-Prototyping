@@ -10,6 +10,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: SerializeField] public EventReference mopSFX { get; private set; }
 
+    [field: SerializeField] public EventReference alarmSFX { get; private set; }
+
     [field: Header("Minigame SFX")]
 
     [field: SerializeField] public EventReference canDropped { get; private set; }
