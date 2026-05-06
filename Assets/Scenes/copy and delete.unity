@@ -16782,7 +16782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StockAreaScript
   correctAreaProductType: Cereal
   isStocked: 0
-  flagID: 1
+  flagID: 2
   eventManager: {fileID: 1010584182}
 --- !u!65 &254023462
 BoxCollider:
@@ -50450,7 +50450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   correctAreaProductType: Milk
   isStocked: 0
-  flagID: 2
+  flagID: 3
   eventManager: {fileID: 1010584182}
 --- !u!65 &784388571
 BoxCollider:
@@ -66974,16 +66974,16 @@ MonoBehaviour:
     endFlags:
     - flag: 0
       tasklistID: 0
-      description: Stock up
+      description: Stock up 1
     - flag: 0
-      tasklistID: 1
-      description: Stock up
+      tasklistID: 0
+      description: Stock up 2
     - flag: 0
-      tasklistID: 3
-      description: Stock up
+      tasklistID: 0
+      description: Stock up 3
     - flag: 0
-      tasklistID: 4
-      description: Stock up
+      tasklistID: 0
+      description: Stock up 4
     addedTasks:
     - targetCount: 4
       displayText: 'Stock up '
@@ -120284,7 +120284,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1785936829
 Transform:
   m_ObjectHideFlags: 0
@@ -127161,11 +127161,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSize
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3794126474043786766, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_fontSizeBase
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6374245211859602222, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}
       propertyPath: m_Pivot.x
@@ -140586,7 +140586,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   correctAreaProductType: Dairy
   isStocked: 0
-  flagID: 3
+  flagID: 1
   eventManager: {fileID: 1010584182}
 --- !u!65 &2122670975
 BoxCollider:
