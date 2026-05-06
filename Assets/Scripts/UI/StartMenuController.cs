@@ -9,6 +9,7 @@ public class StartMenuController : MonoBehaviour
     {
 
         SceneManager.LoadScene(1);
+        Debug.Log("Clicked");
 
     }
 
