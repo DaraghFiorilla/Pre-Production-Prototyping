@@ -9903,8 +9903,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.7224283}
+  m_Center: {x: -0.006619494, y: 0.000043087326, z: 0.13707438}
 --- !u!54 &175507220
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9945,9 +9945,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Cereal
-  requiredAmount: 10
+  requiredAmount: 1
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 249648997}
   - {fileID: 521399410}
@@ -9972,7 +9972,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 5
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 3
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &175507223
@@ -10870,6 +10870,10 @@ PrefabInstance:
       propertyPath: myCamera
       value: 
       objectReference: {fileID: 184037273}
+    - target: {fileID: 8361412540238467331, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
+      propertyPath: acceleration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     m_RemovedGameObjects: []
@@ -15286,8 +15290,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -15531,8 +15535,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 275513258}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &275513261
-BoxCollider:
+--- !u!64 &275513261
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -15549,9 +15553,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &275901210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21178,8 +21183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: -45}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: 500, y: -200}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &371128347
 MonoBehaviour:
@@ -23662,8 +23667,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 434175818}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &434175821
-BoxCollider:
+--- !u!64 &434175821
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -23680,9 +23685,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &434222275
 GameObject:
   m_ObjectHideFlags: 0
@@ -32905,8 +32911,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 595067294}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &595067297
-BoxCollider:
+--- !u!64 &595067297
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -32923,9 +32929,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &597193437
 GameObject:
   m_ObjectHideFlags: 0
@@ -35130,8 +35137,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 641319098}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &641319101
-BoxCollider:
+--- !u!64 &641319101
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35148,9 +35155,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &643432160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38868,8 +38876,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 250, y: 100}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: 500, y: 100}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &701270068
 GameObject:
@@ -39551,8 +39559,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 709018257}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &709018260
-BoxCollider:
+--- !u!64 &709018260
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -39569,9 +39577,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &709163250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40085,8 +40094,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -49993,8 +50002,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: -45}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: -500, y: -200}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &887694199 stripped
 GameObject:
@@ -67969,8 +67978,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -250, y: 100}
-  m_SizeDelta: {x: 340, y: 92.69}
+  m_AnchoredPosition: {x: -500, y: 100}
+  m_SizeDelta: {x: 600, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1218428259
 PrefabInstance:
@@ -73478,8 +73487,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -74962,7 +74971,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -17.36
+      value: -17.34
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalPosition.z
@@ -75132,8 +75141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 12.099945, y: 227.36998}
-  m_SizeDelta: {x: -24.200094, y: -341.68002}
+  m_AnchoredPosition: {x: 12.099976, y: 350}
+  m_SizeDelta: {x: -24.200094, y: -700}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1344213179
 MonoBehaviour:
@@ -75608,8 +75617,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -205.61502}
-  m_SizeDelta: {x: 0, y: -106.88996}
+  m_AnchoredPosition: {x: 0, y: -300}
+  m_SizeDelta: {x: 0, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352267986
 MonoBehaviour:
@@ -91300,8 +91309,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.7178778}
+  m_Center: {x: -0.006619494, y: 0.00004308732, z: 0.13934982}
 --- !u!54 &1657352173
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -91342,9 +91351,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Vegetable
-  requiredAmount: 6
+  requiredAmount: 1
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 1645102040}
   - {fileID: 205562959}
@@ -91365,7 +91374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 3
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 4
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1657352176
@@ -92770,8 +92779,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.7174876}
+  m_Center: {x: -0.006619494, y: 0.00004308732, z: 0.1395446}
 --- !u!54 &1679157012
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -92812,9 +92821,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Dairy
-  requiredAmount: 4
+  requiredAmount: 1
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 179475342}
   - {fileID: 1128811280}
@@ -92833,7 +92842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 5
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 3
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1679157015
@@ -94900,8 +94909,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 1704720167}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1704720170
-BoxCollider:
+--- !u!64 &1704720170
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94918,9 +94927,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &1708784753
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -100182,8 +100192,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 36
+  m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -106468,8 +106478,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 1907674582}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1907674585
-BoxCollider:
+--- !u!64 &1907674585
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -106486,9 +106496,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1 &1909418876
 GameObject:
   m_ObjectHideFlags: 0
@@ -112839,8 +112850,8 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
   m_PrefabInstance: {fileID: 2014603048}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2014603051
-BoxCollider:
+--- !u!64 &2014603051
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -112857,9 +112868,10 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.22015038, y: 0.02791369, z: 0.111902855}
-  m_Center: {x: 0.039712578, y: 0.0000845897, z: -0.045047905}
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -836257024928684479, guid: a47dd742b38100740ba39edb198df4e2, type: 3}
 --- !u!1001 &2014823098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -113731,8 +113743,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.023437232, y: 0.023733152, z: 0.56525135}
-  m_Center: {x: -0.006619495, y: 0.000043087184, z: 0.2156625}
+  m_Size: {x: 0.023437234, y: 0.023733152, z: 0.7118461}
+  m_Center: {x: -0.006619494, y: 0.00004308732, z: 0.14236525}
 --- !u!54 &2027366079
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -113773,9 +113785,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StockCageScript
   correctProductType: Milk
-  requiredAmount: 7
+  requiredAmount: 1
   currentAmount: 0
-  tagText: 
+  tagText: GridBasedStockCage
   ArrayOfFillBoxes:
   - {fileID: 502727878}
   - {fileID: 2050314679}
@@ -113797,7 +113809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 5
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 3
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &2027366082
@@ -114663,7 +114675,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1486
+      value: -0.065
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalRotation.w
@@ -116167,8 +116179,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 28
-  m_fontSizeBase: 28
+  m_fontSize: 48
+  m_fontSizeBase: 48
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -116235,8 +116247,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.2354, y: 0.6669}
-  m_SizeDelta: {x: 910.068, y: 75.3438}
+  m_AnchoredPosition: {x: 4.061, y: -22.7}
+  m_SizeDelta: {x: 1829.596, y: 177.184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2065253983
 PrefabInstance:
@@ -120496,7 +120508,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.1486
+      value: -0.064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a170d9170e5bd4f498b2f6c43f9fc762, type: 3}
       propertyPath: m_LocalRotation.w
