@@ -119,9 +119,9 @@ public class MoveStockCage : MonoBehaviour
                 }
                 else
                 {
-                    if (canDrop == true)
+                    if (canDrop == true && heldObj != null)
                     {
-                        StopClipping(); //prevents object from clipping through walls
+                        StopClipping();
                         DropObject();
                     }
                 }

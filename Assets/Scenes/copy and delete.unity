@@ -17357,7 +17357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 3
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 4
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &345285110
@@ -42793,7 +42793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 5
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 3
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &863524132
@@ -50567,22 +50567,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventProgress
   eventQueue:
-  - eventName: Meat Chop Game
+  - eventName: BeerQuest
     startingEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 2743796070456636922}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
         - m_Target: {fileID: 816211899}
           m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
           m_MethodName: SetText
@@ -50592,17 +50580,17 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: HELP THE BUTCHER
+            m_StringArgument: HELP CUSTOMERS!
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: Chop meat
+    eventDescription: Beer quest
     endFlags:
     - flag: 0
       tasklistID: 0
-      description: Chop Meat
+      description: Customer 1
     addedTasks:
     - targetCount: 0
-      displayText: Chop meat for the butcher
+      displayText: Help the customers
   - eventName: TalkToManager
     startingEvent:
       m_PersistentCalls:
@@ -50741,11 +50729,11 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Collect fresh stock from storage
-  - eventName: BeerQuest
+  - eventName: Meat Chop Game
     startingEvent:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 296560147}
+        - m_Target: {fileID: 2743796070456636922}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
           m_Mode: 6
@@ -50766,14 +50754,17 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: You better be on here on time tonight!
+            m_StringArgument: HELP THE BUTCHER
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: leaving store, trigger spawns
-    endFlags: []
+    eventDescription: Chop meat
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Chop Meat
     addedTasks:
     - targetCount: 0
-      displayText: Help the customer
+      displayText: Chop meat for the butcher
   - eventName: Bakery MiniGame
     startingEvent:
       m_PersistentCalls:
@@ -52807,7 +52798,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridBasedStockCage
   moveSpeed: 5
-  player: {fileID: 0}
+  player: {fileID: 184037274}
   force: 3
   playerPosition: {x: 0, y: 0, z: 0}
 --- !u!65 &1061328868
