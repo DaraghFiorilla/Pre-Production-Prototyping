@@ -3932,6 +3932,14 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -52950,6 +52958,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -67064,6 +67080,14 @@ PrefabInstance:
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: flagID
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -97424,6 +97448,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -101499,6 +101531,14 @@ PrefabInstance:
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: flagID
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager

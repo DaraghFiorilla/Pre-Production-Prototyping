@@ -53591,6 +53591,14 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -75942,42 +75950,6 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Talk to the manager
-  - eventName: SortMiniGame
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 44607334}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Sort the fresh stock out!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Collect fresh stock from storage
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: Sort MiniGame
-    addedTasks:
-    - targetCount: 0
-      displayText: Collect fresh stock from storage
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -76197,6 +76169,42 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 3
       displayText: Stack the cans
+  - eventName: SortMiniGame
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 44607334}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Sort the fresh stock out!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Collect fresh stock from storage
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: Sort MiniGame
+    addedTasks:
+    - targetCount: 0
+      displayText: Collect fresh stock from storage
   - eventName: Leave the store
     startingEvent:
       m_PersistentCalls:
@@ -91537,6 +91545,14 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -98540,6 +98556,14 @@ PrefabInstance:
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: flagID
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -151767,6 +151791,14 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
       value: 
       objectReference: {fileID: 1010584182}
@@ -154003,6 +154035,14 @@ PrefabInstance:
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: objHealth
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
+      propertyPath: cleanSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
