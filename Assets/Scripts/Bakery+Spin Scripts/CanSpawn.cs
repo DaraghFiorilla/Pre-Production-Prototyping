@@ -8,8 +8,13 @@ public class CanSpawn : MonoBehaviour
     
     [SerializeField] public float repeatTime = 2f;
 
+    public GameObject spawnController;
+
     public void SpawnAll()
     {
+        if (spawnController != null && !spawnController.activeInHierarchy)
+        return;
+
         foreach (Transform spawnPoint in spawnPoints)
         {
             int prefabIndex = Random.Range(0, itemPrefabs.Length);
