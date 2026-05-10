@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] CharacterController characterController;
 
     private EventInstance playerSteps;
+    private EventInstance fastPlayerSteps;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -83,6 +84,7 @@ public class PlayerController : MonoBehaviour
         }
 
        playerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.playerSteps);
+        fastPlayerSteps = AudioManager.instance.CreateInstance(FMODEvents.instance.fastPlayerSteps);
     }
 
     // Update is called once per frame
@@ -163,8 +165,9 @@ public class PlayerController : MonoBehaviour
 
     private void SoundUpdate()
     {
-        if (currenSpeed != 0 /*&& isGrounded*/)
+        if (currenSpeed != 0 && currenSpeed <= 4)
         {
+            fastPlayerSteps.stop(STOP_MODE.ALLOWFADEOUT);
             PLAYBACK_STATE playbackState;
             playerSteps.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
@@ -172,9 +175,20 @@ public class PlayerController : MonoBehaviour
                 playerSteps.start();
             }
         }
+        else if(currenSpeed >4 )
+        {
+            playerSteps.stop(STOP_MODE.ALLOWFADEOUT);
+            PLAYBACK_STATE playbackState;
+            fastPlayerSteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED))
+            {
+                fastPlayerSteps.start();
+            }
+        }
         else
         {
             playerSteps.stop(STOP_MODE.ALLOWFADEOUT);
+            fastPlayerSteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
 
     }

@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639137037335395014
+  lastModified: 639140157867745280
   FileSizes:
   - Name: Desktop
-    Value: 1410
+    Value: 1462
   Exists: 1
 --- !u!114 &-6438211226149283155
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639140129468995451
+  lastModified: 639140172050898504
   FileSizes:
   - Name: Desktop
     Value: 4518848
@@ -93,7 +93,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 20
-  Length: 800
+  Length: 790
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,13 +123,14 @@ MonoBehaviour:
   - {fileID: 5694342978050406411}
   - {fileID: -6438211226149283155}
   - {fileID: 2202076625602200994}
+  - {fileID: 8171045607940596995}
   EditorParameters: []
   MasterBanks:
   - {fileID: 1458850374318360133}
   StringsBanks:
   - {fileID: -7539208124665402461}
   cacheVersion: 131858
-  cacheTime: 639140135248357524
+  cacheTime: 639140173375003841
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -151,6 +152,8 @@ MonoBehaviour:
     index: 8
   - key: event:/General SFX/Alarm Clock Sound
     index: 9
+  - key: event:/General SFX/Fast Steps
+    index: 10
 --- !u!114 &1161997856251786366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,7 +196,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639137037335385067
+  lastModified: 639140157867735214
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -240,7 +243,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639140135248357524
+  lastModified: 639140173168039511
   FileSizes:
   - Name: Desktop
     Value: 21056
@@ -368,10 +371,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639140129466836021
+  lastModified: 639140173375003841
   FileSizes:
   - Name: Desktop
-    Value: 648288
+    Value: 651072
   Exists: 1
 --- !u!114 &6830788408929272697
 MonoBehaviour:
@@ -400,6 +403,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &8171045607940596995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/General SFX/Fast Steps
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorEventRef
+  Path: event:/General SFX/Fast Steps
+  Guid:
+    Data1: -77697800
+    Data2: 1202735259
+    Data3: -1867690111
+    Data4: -483022760
+  Banks:
+  - {fileID: 5983031402084639717}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 20
+  Length: 550
 --- !u!114 &8722029637788052838
 MonoBehaviour:
   m_ObjectHideFlags: 0

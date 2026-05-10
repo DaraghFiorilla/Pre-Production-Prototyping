@@ -102,6 +102,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{1ae16e66-92aa-4d6b-8ff7-2065637795ee}" />
 	<object class="MultiSound" id="{efef31e0-53e4-4008-a67b-22df8d0b3b2f}">
+		<property name="isAsync">
+			<value>true</value>
+		</property>
+		<property name="start">
+			<value>0.050000000000000003</value>
+		</property>
 		<property name="length">
 			<value>0.5</value>
 		</property>
@@ -118,7 +124,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{8b9ee20e-0b96-419d-a6f4-15744b5a3eec}">
 		<property name="volume">
-			<value>-24.5</value>
+			<value>-35</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -135,10 +141,10 @@
 	</object>
 	<object class="LoopRegion" id="{15c170d6-9bdb-446d-b4a9-dbbae13f7c60}">
 		<property name="position">
-			<value>0.059999999999999998</value>
+			<value>0</value>
 		</property>
 		<property name="length">
-			<value>0.7400000000000001</value>
+			<value>0.78999999999999992</value>
 		</property>
 		<relationship name="timeline">
 			<destination>{53784459-3113-4cfa-9e44-685e62890255}</destination>

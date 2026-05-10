@@ -213,6 +213,13 @@ MonoBehaviour:
       Data3: 1361365892
       Data4: 2143416509
     Path: event:/General SFX/Footsteps
+  <fastPlayerSteps>k__BackingField:
+    Guid:
+      Data1: -77697800
+      Data2: 1202735259
+      Data3: -1867690111
+      Data4: -483022760
+    Path: event:/General SFX/Fast Steps
   <mopSFX>k__BackingField:
     Guid:
       Data1: 355077179

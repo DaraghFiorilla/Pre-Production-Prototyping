@@ -23,19 +23,23 @@ public class PlayerCleanup : MonoBehaviour
                 {
                     Debug.Log("Interact held, cleaning");
                     cleanupObj.Clean();
+                    cleanupObj.SoundStart();
                 }
                 else
                 {
+                    cleanupObj.SoundEnd();
                 }
             }
             else
             {
                 if (cleanupObj!= null)
                 {
+                    cleanupObj.SoundEnd();
                 }
                 interactPrompt.SetActive(false);
                 cleanupObj = null;
             }
         }
+
     }
 }
