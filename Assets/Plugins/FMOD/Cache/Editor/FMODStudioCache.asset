@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639136997060982348
+  lastModified: 639140129468995451
   FileSizes:
   - Name: Desktop
     Value: 4518848
@@ -129,7 +129,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7539208124665402461}
   cacheVersion: 131858
-  cacheTime: 639137101329994943
+  cacheTime: 639140135248357524
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639122276545708080
+  lastModified: 639140135248357524
   FileSizes:
   - Name: Desktop
     Value: 21056
@@ -297,7 +297,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 20
+  MaxDistance: 85
   Length: 129750
 --- !u!114 &5694342978050406411
 MonoBehaviour:
@@ -368,7 +368,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639137101329994943
+  lastModified: 639140129466836021
   FileSizes:
   - Name: Desktop
     Value: 648288
