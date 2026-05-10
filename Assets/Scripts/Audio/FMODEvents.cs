@@ -8,6 +8,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: SerializeField] public EventReference playerSteps { get; private set; }
 
+    [field: SerializeField] public EventReference fastPlayerSteps { get; private set; }
+
     [field: SerializeField] public EventReference mopSFX { get; private set; }
 
     [field: SerializeField] public EventReference alarmSFX { get; private set; }

@@ -53593,11 +53593,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -91547,11 +91547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -98520,7 +98520,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
@@ -98560,11 +98560,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -151793,11 +151793,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -154039,11 +154039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
