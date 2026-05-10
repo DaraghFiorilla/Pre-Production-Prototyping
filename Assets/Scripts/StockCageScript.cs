@@ -65,6 +65,8 @@ public class StockCageScript : MonoBehaviour
             }
             Destroy(other.gameObject);
 
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.stockDrop, this.transform.position);
+
         }
         else
         {
