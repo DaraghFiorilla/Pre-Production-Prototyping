@@ -15,10 +15,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639140157867745280
+  lastModified: 639140939939830952
   FileSizes:
   - Name: Desktop
-    Value: 1462
+    Value: 1532
   Exists: 1
 --- !u!114 &-6438211226149283155
 MonoBehaviour:
@@ -62,7 +62,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 639140172050898504
+  lastModified: 639140947733684108
   FileSizes:
   - Name: Desktop
     Value: 4518848
@@ -130,7 +130,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: -7539208124665402461}
   cacheVersion: 131858
-  cacheTime: 639140173375003841
+  cacheTime: 639140947733684108
   SerializableEventsDict:
   - key: event:/General SFX/Mop SFX
     index: 0
@@ -196,10 +196,10 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639140157867735214
+  lastModified: 639140939939819721
   FileSizes:
   - Name: Desktop
-    Value: 1074
+    Value: 1378
   Exists: 1
 --- !u!114 &2202076625602200994
 MonoBehaviour:
@@ -243,7 +243,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/Minigame SFX.bank
   Name: Minigame SFX
   StudioPath: bank:/Minigame SFX
-  lastModified: 639140173168039511
+  lastModified: 639140947733205220
   FileSizes:
   - Name: Desktop
     Value: 21056
@@ -300,7 +300,7 @@ MonoBehaviour:
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
-  MaxDistance: 85
+  MaxDistance: 950
   Length: 129750
 --- !u!114 &5694342978050406411
 MonoBehaviour:
@@ -371,7 +371,7 @@ MonoBehaviour:
   Path: Assets/FMOD Files/Don't Blink Audio/Build/Desktop/General SFX.bank
   Name: General SFX
   StudioPath: bank:/General SFX
-  lastModified: 639140173375003841
+  lastModified: 639140943147011352
   FileSizes:
   - Name: Desktop
     Value: 651072

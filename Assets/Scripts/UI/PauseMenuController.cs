@@ -8,8 +8,13 @@ public class PauseMenuController : MonoBehaviour
 
     public GameObject pauseMenu;
     private MainManager mainManager;
+    public GameObject mainPause;
+    public GameObject settings;
 
     public bool inMain;
+
+    bool paused;
+    bool inSettings;
 
     void Awake()
     {
@@ -20,15 +25,23 @@ public class PauseMenuController : MonoBehaviour
 
         }
 
+        mainPause.SetActive(false);
+        settings.SetActive(false);
         pauseMenu.SetActive(false);
     }
 
     void Update()
     {
-        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && (!inMain || mainManager.canPause))
+        if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && (!inMain || mainManager.canPause) && !(inSettings || paused))
         {
 
             Pause();
+
+        }
+        else if (InputSystem.actions.FindAction("Pause").WasPressedThisFrame() && (!inMain || mainManager.canPause) && inSettings)
+        {
+
+            CloseSettings();
 
         }
     }
@@ -45,12 +58,15 @@ public class PauseMenuController : MonoBehaviour
         }
 
         pauseMenu.SetActive(true);
+        mainPause.SetActive(true);
+        settings.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         playerController.canMove = false;
 
+        paused = true;
     }
 
     public void Resume()
@@ -67,11 +83,15 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1;
 
         pauseMenu.SetActive(false);
+        mainPause.SetActive(false);
+        settings.SetActive(false);
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
         playerController.canMove = true;
+
+        paused = false;
     }
 
     public void Restart()
@@ -81,6 +101,26 @@ public class PauseMenuController : MonoBehaviour
         Time.timeScale = 1; //added as time was still set to 0 after restart
 
         SceneManager.LoadScene(0);
+    }
+
+    public void Settings()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
+
+        inSettings = true;
+
+        mainPause.SetActive(false);
+        settings.SetActive(true);
+    }
+
+    public void CloseSettings()
+    {
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.menuButton, this.transform.position);
+
+        inSettings = false;
+
+        mainPause.SetActive(true);
+        settings.SetActive(false);
     }
 
     public void Quit()

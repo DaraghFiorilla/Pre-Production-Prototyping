@@ -42864,6 +42864,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.02138515, y: 0.020000001, z: 0.022090169}
   m_Center: {x: -0.000692541, y: -4.9552074e-11, z: 0.0010450841}
+--- !u!1 &614773639 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9075380180002254091, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
+  m_PrefabInstance: {fileID: 5770971704686483606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &614906581
 GameObject:
   m_ObjectHideFlags: 0
@@ -52897,6 +52902,7 @@ MonoBehaviour:
   - {fileID: 184802485}
   - {fileID: 1871536233}
   repeatTime: 2
+  spawnController: {fileID: 0}
 --- !u!1001 &727091963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73607,6 +73613,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ExpireChecker
   counterText: {fileID: 824132145}
   camEnable: {fileID: 850655204}
+  disablePls: {fileID: 0}
   flagID: 0
   eventManager: {fileID: 1010584182}
   playerController: {fileID: 429724147}
@@ -76266,6 +76273,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuController
   playerController: {fileID: 429724147}
   pauseMenu: {fileID: 507607623}
+  mainPause: {fileID: 614773639}
+  settings: {fileID: 1129675149}
   inMain: 1
 --- !u!114 &1010584181
 MonoBehaviour:
@@ -76332,6 +76341,8 @@ MonoBehaviour:
   - {fileID: 1815411399}
   - {fileID: 1815411398}
   - {fileID: 1815411397}
+  activeObjectYay: {fileID: 0}
+  activeObjectTasklist: {fileID: 0}
   flagID: 0
   eventManager: {fileID: 1010584182}
 --- !u!114 &1010584182
@@ -84099,6 +84110,11 @@ Light:
   m_LightUnit: 1
   m_LuxAtDistance: 1
   m_EnableSpotReflector: 1
+--- !u!1 &1129675149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3016084395571242754, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
+  m_PrefabInstance: {fileID: 5770971704686483606}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1131121941
 GameObject:
   m_ObjectHideFlags: 0
@@ -162037,6 +162053,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1010584180}
+    - target: {fileID: 3428827114020683527, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1010584180}
+    - target: {fileID: 3428827114020683527, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: CloseSettings
+      objectReference: {fileID: 0}
     - target: {fileID: 4781422540523379988, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
