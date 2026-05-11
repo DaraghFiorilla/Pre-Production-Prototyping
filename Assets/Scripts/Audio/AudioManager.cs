@@ -9,15 +9,16 @@ public class AudioManager : MonoBehaviour
 
     [Header("Volume")]
     [Range(0, 1)]
-    public float masterVolume = 1.0f;
+    public float masterVolume = 0.5f;
     [Range(0, 1)]
-    public float muscVolume = 1.0f;
+    public float musicVolume = 0.5f;
     [Range(0, 1)]
-    public float ambienceVolume = 1.0f;
-    [Range(0, 1)]
-    public float SFXVolume = 1.0f;
+    public float sfxVolume = 0.5f;
 
     private Bus masterBus;
+    private Bus musicBus;
+    private Bus sfxBus;
+
 
     private List<EventInstance> eventInstances;
     private List<StudioEventEmitter> eventEmitters;
@@ -36,11 +37,15 @@ public class AudioManager : MonoBehaviour
         eventEmitters = new List<StudioEventEmitter>();
 
         masterBus = RuntimeManager.GetBus("bus:/");
+        musicBus = RuntimeManager.GetBus("bus:/Music");
+        sfxBus = RuntimeManager.GetBus("bus:/SFX");
     }
 
     private void Update()
     {
         masterBus.setVolume(masterVolume);
+        musicBus.setVolume(musicVolume);
+        sfxBus.setVolume(sfxVolume);
     }
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
