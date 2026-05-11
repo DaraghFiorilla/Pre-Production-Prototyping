@@ -23,6 +23,10 @@ public class NEWRhythm : MonoBehaviour
     [SerializeField] private GameObject playerObj;
     [SerializeField] private GameObject[] unchoppedMeats;
     [SerializeField] private GameObject[] choppedMeats;
+    [SerializeField] private GameObject activeObjectYay;
+    [SerializeField] private GameObject activeObjectTasklist;
+    
+
     private int currentIndex;
 
     private Vector3[] pathPoints = new Vector3[5];
@@ -179,9 +183,19 @@ public class NEWRhythm : MonoBehaviour
     public IEnumerator FinishMinigame()
     {
         mainManager.canPause = false;
+        mainManager.UpdateMeatMinigameNo();
+        mainManager.nightmareManager.PauseBlink();
+        //mainManager.canInteract = true;
+
         minigameStarted = false;
         finalText.gameObject.SetActive(true);
         textResultDisplay.gameObject.SetActive(false);
+
+        playerObj.GetComponent<PlayerController>().canMove = true;
+  
+
+        activeObjectYay.SetActive(false);
+        activeObjectTasklist.SetActive(true);
 
         // check score
         if (score >= totalInputs * 3)
@@ -209,13 +223,5 @@ public class NEWRhythm : MonoBehaviour
         }
 
         yield return new WaitForSeconds(2f);
-
-        mainManager.UpdateMeatMinigameNo();
-        mainManager.nightmareManager.PauseBlink();
-        Destroy(mainCanvas);
-        playerObj.GetComponent<PlayerController>().canMove = true;
-        mainManager.canPause = true;
-        //mainManager.canInteract = true;
-        Destroy(mainCanvas);
     }
 }

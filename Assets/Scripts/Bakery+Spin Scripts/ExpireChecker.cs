@@ -10,6 +10,7 @@ public class ExpireChecker : MonoBehaviour
     private int maxCount = 10;
 
     [SerializeField] GameObject camEnable;
+    [SerializeField] GameObject disablePls;
 
     [Header("Event Progress")]
     public int flagID;
@@ -58,7 +59,9 @@ public class ExpireChecker : MonoBehaviour
         if(count == 10)
         {
             eventManager.UpdateFlag(flagID);
+            
             camEnable.SetActive(true);
+            disablePls.SetActive(false);
 
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
