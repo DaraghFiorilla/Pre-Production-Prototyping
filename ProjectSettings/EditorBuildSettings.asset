@@ -6,25 +6,25 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/StartScreen.unity
+    path: Assets/Scenes/BuildScenes/StartScreen.unity
     guid: 4f951f584376815419af8b35a162be9e
   - enabled: 1
-    path: Assets/Scenes/MAINGAMESCENE.unity
+    path: Assets/Scenes/BuildScenes/MAINGAMESCENE.unity
     guid: 6b3ed1016e09fc34d9aa1276dde227b1
   - enabled: 1
-    path: Assets/Scenes/NIGHTMARE SCENE.unity
+    path: Assets/Scenes/BuildScenes/NIGHTMARE SCENE.unity
     guid: 1b8cbe01225389744945b783547e39ca
-  - enabled: 1
-    path: Assets/Scenes/idk/JamesMazeScene.unity
-    guid: 973ff5dde163a314c83c04d057562dbd
   - enabled: 1
     path: Assets/Scenes/idk/JamesCanRiverScene.unity
     guid: 351d6e89250f11242942e7c5dc2b3776
   - enabled: 1
-    path: Assets/Scenes/END SCENE.unity
+    path: Assets/Scenes/BuildScenes/JamesMazeScene.unity
+    guid: 973ff5dde163a314c83c04d057562dbd
+  - enabled: 1
+    path: Assets/Scenes/BuildScenes/END SCENE.unity
     guid: d4eeee53efdde9a4ead118c0df966d58
   - enabled: 0
-    path: Assets/Scenes/DemoScene.unity
+    path: Assets/Scenes/RedundantScenes/DemoScene.unity
     guid: 50307f99c970dc24dafe80e3480522c8
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

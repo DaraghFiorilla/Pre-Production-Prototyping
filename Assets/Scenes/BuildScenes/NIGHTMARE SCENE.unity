@@ -3893,7 +3893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 1380919177257186794, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3933,11 +3933,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -52965,11 +52965,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -67089,11 +67089,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -76189,7 +76189,6 @@ MonoBehaviour:
   - {fileID: 1846084429}
   - {fileID: 746401021}
   - {fileID: 418620848}
-  - {fileID: 0}
   eventManager: {fileID: 1010584182}
   playerController: {fileID: 429724147}
   canInteract: 1
@@ -97465,11 +97464,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
@@ -101550,11 +101549,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: objHealth
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: cleanSpeed
-      value: 100
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6296608963464845158, guid: 747255092a951e94ca49d0b5c77e8155, type: 3}
       propertyPath: eventManager
