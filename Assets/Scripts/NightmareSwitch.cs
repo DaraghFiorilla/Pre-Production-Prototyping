@@ -27,6 +27,12 @@ public class NightmareSwitch : MonoBehaviour
     [Tooltip("If paused, what to set the timer to on unpause")]
     [SerializeField] private float interruptedTimer;
 
+    [Header("Blink Warning")]
+    [SerializeField] private float blinkWarningDuration = 1f;
+
+    private bool warningActive;
+    private float warningTimer;
+
     [SerializeField] private Animator[] eyelidAnimators = new Animator[2];
 
     public bool pauseBlink;
@@ -67,14 +73,34 @@ public class NightmareSwitch : MonoBehaviour
         {
             if (!pauseBlink && !scriptedBlink)
             {
-                if (!blinkActive)
+                if (!blinkActive && !warningActive)
                 {
                     timer += Time.deltaTime;
                 }
 
-                if (timer >= maxBlinkingTimer && !blinkActive)
+                // Start warning
+                if (timer >= maxBlinkingTimer && !blinkActive && !warningActive)
                 {
-                    InitiateBlink();
+                    StartBlinkWarning();
+                }
+
+                // During warning phase
+                if (warningActive)
+                {
+                    warningTimer -= Time.deltaTime;
+
+                    // Player successfully prevents blink
+                    if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
+                    {
+                        CancelBlink();
+                    }
+
+                    // Player fails
+                    if (warningTimer <= 0f)
+                    {
+                        warningActive = false;
+                        InitiateBlink();
+                    }
                 }
 
                 if (blinkActive)
@@ -171,54 +197,75 @@ public class NightmareSwitch : MonoBehaviour
         blinkPrompt.SetActive(false);
         Debug.Log("interact pressed");
 
-
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");
 
         mainManager.canInteract = true;
         blinkActive = false;
+
+        timer = 0f;
     }
 
     public void EyesClosed()
     {
         blinkPrompt.SetActive(false);
+
         eyelidAnimators[0].SetTrigger("forceOpen");
         eyelidAnimators[1].SetTrigger("forceOpen");
+
         Debug.Log("EyesClosed");
+
         mainManager.canInteract = true;
+
         Switch();
+
+        timer = 0f;
     }
 
-    public void PauseBlink()
+    public void PauseBlink(bool paused)
     {
-        if (pauseBlink)
+        pauseBlink = paused;
+
+        if (!paused)
         {
             Debug.Log("Unpausing blink");
-            pauseBlink = false;
-            if (timer < interruptedTimer) { timer = interruptedTimer; }
-            foreach (Animator anim in eyelidAnimators)
-            {
-                /*if (anim.gameObject.name == "BottomLid")
-                {
-                    if (anim.GetCurrentAnimatorStateInfo(0).IsName("BottomLidClose"))
-                    {
 
-                    }
-                }*/
-                anim.speed = 1;
-                anim.GetComponent<Image>().enabled = true;
+            if (timer < interruptedTimer)
+            {
+                timer = interruptedTimer;
             }
         }
+        
         else
         {
-            //if (blinkPrompt.activeSelf) { blinkPrompt.SetActive(false); }
             Debug.Log("Pausing blink");
-            pauseBlink = true;
-            foreach (Animator anim in eyelidAnimators)
-            {
-                anim.speed = 0;
-                anim.GetComponent<Image>().enabled = false;
-            }
         }
+
+        foreach (Animator anim in eyelidAnimators)
+        {
+            anim.speed = paused ? 0 : 1;
+            anim.GetComponent<Image>().enabled = !paused;
+        }
+    }
+
+    void StartBlinkWarning()
+    {
+        warningActive = true;
+        warningTimer = blinkWarningDuration;
+
+        blinkPrompt.SetActive(true);
+        
+        Debug.Log("Blink warning");
+    }
+
+    void CancelBlink()
+    {
+        warningActive = false;
+
+        blinkPrompt.SetActive(false);
+
+        timer = 0f;
+
+        Debug.Log("Blink prevented");
     }
 }

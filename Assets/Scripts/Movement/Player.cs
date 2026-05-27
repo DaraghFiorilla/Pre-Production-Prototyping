@@ -25,14 +25,6 @@ public class Player : MonoBehaviour
         playerController.sprintInput = value.isPressed;
     }
 
-    void OnJump(InputValue value)
-    {
-        if (value.isPressed)
-        {
-            playerController.TryJump();
-        }
-    }
-
     private void OnValidate()
     {
         if (playerController == null)

@@ -15,7 +15,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI textMesh;
     [SerializeField] private GameObject textArrow;
     private NightmareSwitch nmManager;
-    private MainManager mainManager;
+
+    [SerializeField] private MainManager mainManager;
+
+
     private Camera mainCam;
     private bool canAdvance;
     [HideInInspector] public Transform speakingChar;
@@ -76,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         mainCam.transform.LookAt(new Vector3(speakingChar.transform.position.x, mainCam.transform.position.y, speakingChar.transform.position.z));
         dialogueBox.SetActive(true);
         mainManager.canInteract = false;
-        nmManager.PauseBlink();
+        mainManager.nightmareManager.PauseBlink(true);
         canAdvance = false;
         mainManager.playerController.canMove = false;
         UpdateText();
@@ -108,7 +111,7 @@ public class DialogueManager : MonoBehaviour
         if (canvasToDisable != null) { canvasToDisable.SetActive(true); }
         textMesh.text = "";
         dialogueBox?.SetActive(false);
-        nmManager.PauseBlink();
+        mainManager.nightmareManager.PauseBlink(false);
         mainManager.canInteract = true;
         mainManager.playerController.canMove = true;
 

@@ -153,7 +153,7 @@ public class NEWRhythm : MonoBehaviour
 
     public IEnumerator StartMinigame()
     {
-        mainManager.nightmareManager.PauseBlink();
+        mainManager.nightmareManager.PauseBlink(true);
         mainManager.canPause = false;
         //mainManager.canInteract = false;
         playerObj.GetComponent<PlayerController>().canMove = false;
@@ -184,7 +184,7 @@ public class NEWRhythm : MonoBehaviour
     {
         mainManager.canPause = false;
         mainManager.UpdateMeatMinigameNo();
-        mainManager.nightmareManager.PauseBlink();
+        mainManager.nightmareManager.PauseBlink(false);
         //mainManager.canInteract = true;
 
         minigameStarted = false;
