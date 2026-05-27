@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Video;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class StartScreenVideoRemove : MonoBehaviour
 {
@@ -26,6 +27,10 @@ public class StartScreenVideoRemove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
+        {
+            vidFinish(videoPlayer);
+            Debug.Log("video should be skipped");
+        }
     }
 }
