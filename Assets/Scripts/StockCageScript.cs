@@ -41,12 +41,18 @@ public class StockCageScript : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         StockBoxHandler stockBox = other.GetComponent<StockBoxHandler>();
-        
-        currentAmount++;
-            
+        if (other.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
+        {
+
+            currentAmount++;
+
+
+            Destroy(other.gameObject);
+        }
+
         int howManyNeededToFill = currentAmount;
 
-        for(int i = 0; i < ArrayOfFillBoxes.Length; i++)
+        for (int i = 0; i < ArrayOfFillBoxes.Length; i++)
         {
             ArrayOfFillBoxes[i].SetActive(i < howManyNeededToFill);
         }
@@ -63,7 +69,6 @@ public class StockCageScript : MonoBehaviour
 
         }
 
-        Destroy(other.gameObject);
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.stockDrop, this.transform.position);
     }
