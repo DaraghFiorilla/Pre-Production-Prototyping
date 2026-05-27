@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/BuildScenes/NIGHTMARE SCENE.unity
     guid: 1b8cbe01225389744945b783547e39ca
   - enabled: 1
-    path: Assets/Scenes/idk/JamesCanRiverScene.unity
+    path: Assets/Scenes/BuildScenes/JamesCanRiverScene.unity
     guid: 351d6e89250f11242942e7c5dc2b3776
   - enabled: 1
     path: Assets/Scenes/BuildScenes/JamesMazeScene.unity

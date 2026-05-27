@@ -112,6 +112,7 @@ MonoBehaviour:
   verticalVelocity: 0
   lookSensitvity: {x: 0.1, y: 0.1}
   pitchLimit: 85
+  dialoguePitchLimit: 5
   currentPitch: 0
   moveInput: {x: 0, y: 0}
   lookInput: {x: 0, y: 0}
@@ -424,6 +425,8 @@ MonoBehaviour:
   holdPos: {fileID: 8664380163917925869}
   throwForce: 500
   pickUpRange: 7
+  BeerUIText: {fileID: 0}
+  alcoholDetailText: 
 --- !u!114 &5008509827163860704
 MonoBehaviour:
   m_ObjectHideFlags: 0
