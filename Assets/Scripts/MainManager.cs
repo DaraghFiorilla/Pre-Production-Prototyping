@@ -29,9 +29,11 @@ public class MainManager : MonoBehaviour
 
     public void PauseMinigames()
     {
-        if (!nightmareManager.pauseBlink) { nightmareManager.PauseBlink(); }
+        nightmareManager.PauseBlink(true);
+
         meatManager.Pause(true);
         dialogueManager.Pause(true);
+
         foreach (CanMinigameManager manager in canManagers)
         {
             manager.Pause(true);
@@ -40,9 +42,11 @@ public class MainManager : MonoBehaviour
 
     public void UnpauseMinigames()
     {
-        if (nightmareManager.pauseBlink) { nightmareManager.PauseBlink(); }
+        nightmareManager.PauseBlink(false);
+
         meatManager.Pause(false);
         dialogueManager.Pause(false);
+
         foreach (CanMinigameManager manager in canManagers)
         {
             manager.Pause(false);

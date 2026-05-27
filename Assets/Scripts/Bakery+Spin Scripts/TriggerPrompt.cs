@@ -15,6 +15,8 @@ public class TriggerPrompt : MonoBehaviour
 
     bool playerInTrigger;
 
+    public MainManager mainManager;
+
     private void Update()
     {
         if (playerInTrigger)
@@ -29,6 +31,8 @@ public class TriggerPrompt : MonoBehaviour
                 Cursor.visible = true;
 
                 playerController.canMove = false;
+
+                mainManager.nightmareManager.PauseBlink(true);
                 
                 Destroy(breakTrigger);
             }

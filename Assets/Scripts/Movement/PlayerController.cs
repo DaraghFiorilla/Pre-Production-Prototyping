@@ -12,21 +12,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float walkSpeed = 3.5f;
     [SerializeField] float sprintSpeed = 7f;
 
-    [Space(15)]
-    [SerializeField] float jumpHeight = 2f;
 
     public Vector3 currentVelocity { get; private set; }
     public float currenSpeed { get; private set; }
 
     [Header("Physics Parameters")]
-    [SerializeField] float gravityScale = 3f; 
-
     public Vector3 CurrentVelocity { get; private set; }
     public float CurrentSpeed {  get; private set; }
-    
-    public bool isGrounded => characterController.isGrounded;
-
-    public float verticalVelocity = 0f;
 
     [Header("Looking Parameters")]
     public Vector2 lookSensitvity = new Vector2(0.1f, 0.1f);
@@ -100,16 +92,6 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public void TryJump()
-    {
-        if (isGrounded == false)
-        {
-            return;
-        }
-
-        verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * Physics.gravity.y * gravityScale);
-    }
-
     void MoveUpdate()
     {
         Vector3 motion = transform.forward * moveInput.y + transform.right * moveInput.x;
@@ -129,13 +111,8 @@ public class PlayerController : MonoBehaviour
             currentVelocity = Vector3.MoveTowards(currentVelocity, Vector3.zero, acceleration * Time.deltaTime);
         }
 
-   
 
-        verticalVelocity += Physics.gravity.y * gravityScale * Time.deltaTime;
-
-        Vector3 fullVelocity = new Vector3(currentVelocity.x, verticalVelocity, currentVelocity.z);
-
-        characterController.Move(fullVelocity * Time.deltaTime);
+        characterController.Move(currentVelocity * Time.deltaTime);
 
         currenSpeed = currentVelocity.magnitude;
     }
