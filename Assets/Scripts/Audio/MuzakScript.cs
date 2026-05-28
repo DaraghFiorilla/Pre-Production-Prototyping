@@ -109,4 +109,10 @@ public class MuzakScript : MonoBehaviour
         }
 
     }
+
+    public void CleanUp()
+    {
+        MuzakStop();
+        Destroy(this.gameObject);
+    }
 }

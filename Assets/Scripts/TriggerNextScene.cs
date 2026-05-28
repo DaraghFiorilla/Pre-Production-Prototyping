@@ -9,6 +9,8 @@ public class TriggerNextScene : MonoBehaviour
 
     bool playerInTrigger;
 
+    public MuzakScript music;
+
     private void Update()
     {
         if (playerInTrigger)
@@ -40,6 +42,7 @@ public class TriggerNextScene : MonoBehaviour
 
     void LoadNextScene()
     {
+        music.CleanUp();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
