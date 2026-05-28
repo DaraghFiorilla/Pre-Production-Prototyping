@@ -48427,6 +48427,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &278916902
 MeshFilter:
@@ -51784,6 +51785,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &299801181
 MeshFilter:
@@ -123386,6 +123388,11 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!4 &712653865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+  m_PrefabInstance: {fileID: 1343652399}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &713539416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142476,6 +142483,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &811321459
 MeshFilter:
@@ -174882,6 +174890,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1018567482
 MeshFilter:
@@ -178628,6 +178637,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1038813638
 MeshFilter:
@@ -220305,6 +220315,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1293448815
 MeshFilter:
@@ -220322,12 +220333,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1293448812}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.19, y: 1.392, z: 54.71}
-  m_LocalScale: {x: 1.7, y: 2.7687423, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalRotation: {x: 0.5, y: 0.5, z: 0.5, w: 0.5}
+  m_LocalPosition: {x: -0.0019, y: -0.00474, z: 0.0074}
+  m_LocalScale: {x: 0.0085, y: 0.013843711, z: 0.005}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 712653865}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1293448817
 MonoBehaviour:
@@ -229328,8 +229339,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.8084598
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
       propertyPath: m_LocalPosition.y
@@ -229367,13 +229390,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -90
       objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1293448816}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b893d9e7bee0b5247b76bfa9fe738395, type: 3}
 --- !u!1001 &1343863142
@@ -267613,6 +267643,7 @@ MonoBehaviour:
   maxBlinkingTimer: 5
   timer: 0
   interruptedTimer: 2
+  blinkWarningDuration: 1
   eyelidAnimators:
   - {fileID: 0}
   - {fileID: 0}
@@ -267979,12 +268010,13 @@ MonoBehaviour:
   score: 0
   totalInputs: 20
   paused: 0
-  sliceBar: {fileID: 0}
-  countdownText: {fileID: 0}
+  mainManager: {fileID: 0}
   textResultDisplay: {fileID: 0}
-  mainCanvas: {fileID: 0}
+  countdownText: {fileID: 0}
   finalText: {fileID: 0}
+  mainCanvas: {fileID: 0}
   playerObj: {fileID: 0}
+  sliceBar: {fileID: 0}
   unchoppedMeats:
   - {fileID: 0}
   - {fileID: 0}
@@ -268027,6 +268059,8 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  canvasOnPls: {fileID: 0}
+  selfDestruct: {fileID: 0}
   flagID: 0
   eventManager: {fileID: 1579509242}
 --- !u!114 &1579509244
@@ -268043,6 +268077,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuController
   playerController: {fileID: 0}
   pauseMenu: {fileID: 0}
+  mainPause: {fileID: 0}
+  settings: {fileID: 0}
   inMain: 1
 --- !u!114 &1579509245
 MonoBehaviour:
@@ -268060,6 +268096,7 @@ MonoBehaviour:
   scrollSpeed: 0.02
   textMesh: {fileID: 0}
   textArrow: {fileID: 0}
+  mainManager: {fileID: 0}
   speakingChar: {fileID: 0}
   canvasToDisable: {fileID: 0}
   interactPrompt: {fileID: 0}
@@ -273033,6 +273070,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1615198706
 MeshFilter:
@@ -288298,6 +288336,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1705060341
 MeshFilter:
@@ -343339,14 +343378,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2008587250}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 13
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -343391,7 +343430,7 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ForceVisible: 0
-  m_ShadowRadius: 0
+  m_ShapeRadius: 0
   m_ShadowAngle: 0
   m_LightUnit: 1
   m_LuxAtDistance: 1
@@ -366528,7 +366567,6 @@ SceneRoots:
   - {fileID: 1705060342}
   - {fileID: 278916903}
   - {fileID: 1018567483}
-  - {fileID: 1293448816}
   - {fileID: 1343652399}
   - {fileID: 811321460}
   - {fileID: 420807352}

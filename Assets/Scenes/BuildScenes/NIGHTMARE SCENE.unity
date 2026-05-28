@@ -14895,6 +14895,10 @@ PrefabInstance:
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 1138141286}
+    - target: {fileID: 5008509827163860704, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
+      propertyPath: raycastDistance
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8344759263811319908, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1

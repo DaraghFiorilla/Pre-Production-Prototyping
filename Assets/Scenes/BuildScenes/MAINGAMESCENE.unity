@@ -13907,6 +13907,10 @@ PrefabInstance:
       propertyPath: interactPrompt
       value: 
       objectReference: {fileID: 1138141286}
+    - target: {fileID: 5008509827163860704, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
+      propertyPath: raycastDistance
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8344759263811319908, guid: 91c483d41ed687c47b1883099c82b112, type: 3}
       propertyPath: m_RenderPostProcessing
       value: 1
@@ -71597,7 +71601,7 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 3
       displayText: Stack the cans
-  - eventName: MeatGame
+  - eventName: Chop Some Meat
     startingEvent:
       m_PersistentCalls:
         m_Calls:
@@ -71622,17 +71626,17 @@ MonoBehaviour:
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
-            m_StringArgument: The butcher needs some help
+            m_StringArgument: Go and help out at the butcher's!
             m_BoolArgument: 0
           m_CallState: 2
-    eventDescription: cut meat
+    eventDescription: Help the butcher chop some meat
     endFlags:
     - flag: 0
       tasklistID: 0
-      description: Sort MiniGame
+      description: 
     addedTasks:
     - targetCount: 0
-      displayText: Chop some meat for the butcher
+      displayText: Your shift is over, you may leave the store and return at night.
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
