@@ -78610,9 +78610,9 @@ MonoBehaviour:
   dialogueManager: {fileID: 0}
   meatManager: {fileID: 0}
   canManagers:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 347153754}
+  - {fileID: 1211959477}
+  - {fileID: 1046301540}
   eventManager: {fileID: 1010584182}
   playerController: {fileID: 429724147}
   canInteract: 1
