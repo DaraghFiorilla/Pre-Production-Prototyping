@@ -20291,7 +20291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerNextScene
   interactPrompt: {fileID: 714401374}
-  music: {fileID: 0}
+  music: {fileID: 317874277543285103}
 --- !u!65 &296560149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71560,6 +71560,42 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Talk to the manager
+  - eventName: Chop Some Meat
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1893102575}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Go and help out at the butcher's!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Help the butcher chop some meat
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: 
+    addedTasks:
+    - targetCount: 0
+      displayText: Chop some meat for the butcher
   - eventName: CanMiniGame
     startingEvent:
       m_PersistentCalls:
@@ -71602,42 +71638,6 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 3
       displayText: Stack the cans
-  - eventName: Chop Some Meat
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1893102575}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Go and help out at the butcher's!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Help the butcher chop some meat
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: 
-    addedTasks:
-    - targetCount: 0
-      displayText: Chop some meat for the butcher
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -71829,9 +71829,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a266a6c5676b0624bb56beec5441cbce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlagUpdateFast
-  eventManager: {fileID: 1010584182}
-  flagID: 0
-  requiredPresses: 4
+  debugFlag: {fileID: 4567635353581683376, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!1 &1011532635 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1590718412377631151, guid: 1da08aa08a5bb3247a86031bb419bd54, type: 3}

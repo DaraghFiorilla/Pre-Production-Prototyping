@@ -1,45 +1,30 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class FlagUpdateFast : MonoBehaviour
 {
-    [Header("Event Progress")]
-    [SerializeField] private EventProgress eventManager;
-    [SerializeField] private int flagID = 0;
+    [SerializeField] private InputActionReference debugFlag;
 
-    [Header("Quest Settings")]
-    [SerializeField] private int requiredPresses = 4;
-
-    private int currentProgress = 0;
-
-    private void Update()
+    private void OnEnable()
     {
-        if (InputSystem.actions.FindAction("DebugFlag").WasPressedThisFrame())
-        {
-            AddProgress();
-        }
+        debugFlag.action.performed += OnDebugFlag;
+        debugFlag.action.Enable();
     }
 
-    private void AddProgress()
+    private void OnDisable()
     {
-        if (currentProgress >= requiredPresses)
-            return;
-
-        currentProgress++;
-
-        eventManager.UpdateFlag(flagID);
-
-        Debug.Log($"Progress: {currentProgress}/{requiredPresses}");
-
-        if (currentProgress >= requiredPresses)
-        {
-            CompleteQuest();
-        }
+        debugFlag.action.performed -= OnDebugFlag;
+        debugFlag.action.Disable();
     }
 
-    private void CompleteQuest()
+    private void OnDebugFlag(InputAction.CallbackContext context)
     {
-        Debug.Log("Quest complete!");
-        // optional: trigger next event, reward, etc.
+        ReloadScene();
+    }
+
+    private void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
