@@ -14,7 +14,7 @@ public class NEWRhythm : MonoBehaviour
     [SerializeField] private bool paused;
 
     [Header("Object references")]
-    private MainManager mainManager;
+    public MainManager mainManager;
 
     [SerializeField] private TextMeshProUGUI textResultDisplay;
     [SerializeField] private TextMeshProUGUI countdownText;
@@ -173,9 +173,6 @@ public class NEWRhythm : MonoBehaviour
 
     public IEnumerator StartMinigame()
     {
-        mainManager.nightmareManager.PauseBlink(true);
-        mainManager.canPause = false;
-
         playerObj.GetComponent<PlayerController>().canMove = false;
 
         mainCanvas.gameObject.SetActive(true);
@@ -200,15 +197,10 @@ public class NEWRhythm : MonoBehaviour
         countdownText.gameObject.SetActive(false);
 
         minigameStarted = true;
-        mainManager.canPause = true;
     }
 
     public IEnumerator FinishMinigame()
     {
-        mainManager.canPause = false;
-        mainManager.UpdateMeatMinigameNo();
-        mainManager.nightmareManager.PauseBlink(false);
-
         minigameStarted = false;
 
         finalText.gameObject.SetActive(true);
@@ -245,5 +237,7 @@ public class NEWRhythm : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
         canvasOnPls.SetActive(true);
+
+        mainManager.nightmareManager.PauseBlink(false);
     }
 }

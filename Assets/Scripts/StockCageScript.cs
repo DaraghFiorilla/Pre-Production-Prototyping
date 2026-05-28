@@ -25,7 +25,7 @@ public class StockCageScript : MonoBehaviour
     {
         StockBoxHandler stockBox = other.GetComponent<StockBoxHandler>();
 
-        if (other.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
+        if (stockBox.stockTypeLabel == correctProductType)
         {
             int flagIndex = currentAmount;
 

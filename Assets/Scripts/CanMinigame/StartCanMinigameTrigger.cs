@@ -13,6 +13,8 @@ public class StartCanMinigameTrigger : MonoBehaviour
 
     [SerializeField] GameObject breakTrigger;
 
+    [SerializeField] private PlayerController playerController;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -38,8 +40,14 @@ public class StartCanMinigameTrigger : MonoBehaviour
             if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
             {
                 myManager.StartMinigame();
+                enabled = false;
                 myCanvasObj.SetActive(false);
                 playerDisableTrigger.SetActive(false);
+
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+
+                playerController.canMove = false;
 
                 mainManager.nightmareManager.PauseBlink(true);
 

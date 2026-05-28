@@ -27,6 +27,8 @@ public class MainManager : MonoBehaviour
         meatManager = GetComponent<NEWRhythm>();
     }
 
+    //mainManager.nightmareManager.PauseBlink(true);
+
     public void PauseMinigames()
     {
         nightmareManager.PauseBlink(true);
@@ -44,7 +46,6 @@ public class MainManager : MonoBehaviour
     {
         nightmareManager.PauseBlink(false);
 
-        meatManager.Pause(false);
         dialogueManager.Pause(false);
 
         foreach (CanMinigameManager manager in canManagers)
@@ -53,53 +54,4 @@ public class MainManager : MonoBehaviour
         }
     }
 
-    public void UpdateCanMinigameNo()
-    {
-        canMinigamesComplete++;
-        if (SwitchRequirementsMet())
-        {
-            nightmareManager.Switch();
-        }
-        else if (EndRequirementsMet())
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
-
-    public void UpdateMeatMinigameNo()
-    {
-        meatMinigamesComplete++;
-        if (SwitchRequirementsMet())
-        {
-            nightmareManager.Switch();
-        }
-        else if (EndRequirementsMet())
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-    }
-
-    public bool SwitchRequirementsMet()
-    {
-        if (canMinigamesComplete == canMinigamesBeforeSwitch && meatMinigamesComplete == meatMinigamesBeforeSwitch && !nightmareManager.nightmareState)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
-
-    public bool EndRequirementsMet()
-    {
-        if (canMinigamesComplete >= canMinigamesNo && meatMinigamesComplete >= meatMinigamesBeforeSwitch)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
 }

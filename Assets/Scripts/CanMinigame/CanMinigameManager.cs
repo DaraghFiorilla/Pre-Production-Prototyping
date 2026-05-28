@@ -11,6 +11,8 @@ public class CanMinigameManager : MonoBehaviour
     [SerializeField] public GameObject nextCanGame;
     [SerializeField] public GameObject playerCam;
 
+    [SerializeField] private PlayerController playerController;
+
     [Header("Event Progress")]
     public int flagID;
     [SerializeField] private EventProgress eventManager;
@@ -310,6 +312,8 @@ public class CanMinigameManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+  
+        playerController.canMove = true;
 
         foreach (GameObject can in activeCans)
         {
@@ -321,8 +325,6 @@ public class CanMinigameManager : MonoBehaviour
 
         if (!testing)
         {
-            mainManager.UpdateCanMinigameNo();
-
             gameObject.name = "CanTable";
 
             foreach (GameObject can in activeCans) { Destroy(can.GetComponent<Can>()); }

@@ -176,6 +176,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "DebugFlag",
+                    "type": "Button",
+                    "id": "f51318e9-bb97-4eb1-a174-67ac8d14774b",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -682,6 +691,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ToggleTasklist",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "77204349-70e4-4de1-9252-32c75a109c12",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "DebugFlag",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

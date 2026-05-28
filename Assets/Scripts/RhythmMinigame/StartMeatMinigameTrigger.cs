@@ -9,6 +9,9 @@ public class StartMeatMinigameTrigger : MonoBehaviour
     [SerializeField] GameObject disableTrigger;
     [SerializeField] GameObject disableTasklist;
 
+    public MainManager mainManager;
+
+
     bool playerInTrigger;
 
     private void Update()
@@ -21,6 +24,8 @@ public class StartMeatMinigameTrigger : MonoBehaviour
                 disableTasklist.SetActive(false);
                 interactPrompt.SetActive(false);
                 meatMinigame.TriggerStart();
+
+                mainManager.nightmareManager.PauseBlink(true);
             }
         }
     }
