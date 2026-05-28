@@ -20291,6 +20291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TriggerNextScene
   interactPrompt: {fileID: 714401374}
+  music: {fileID: 0}
 --- !u!65 &296560149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -71636,7 +71637,7 @@ MonoBehaviour:
       description: 
     addedTasks:
     - targetCount: 0
-      displayText: Your shift is over, you may leave the store and return at night.
+      displayText: Chop some meat for the butcher
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -71681,7 +71682,7 @@ MonoBehaviour:
       description: Stock up 4
     addedTasks:
     - targetCount: 4
-      displayText: 'Stock up '
+      displayText: 'Checkout storage and see if anyone needs help '
   - eventName: Bakery MiniGame
     startingEvent:
       m_PersistentCalls:
