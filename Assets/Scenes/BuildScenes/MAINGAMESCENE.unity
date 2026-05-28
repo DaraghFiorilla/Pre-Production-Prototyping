@@ -54612,6 +54612,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1010584180}
+    - target: {fileID: 7120267481368762285, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 7235021982851351732, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -71560,42 +71564,6 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 0
       displayText: Talk to the manager
-  - eventName: Chop Some Meat
-    startingEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1893102575}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 816211899}
-          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
-          m_MethodName: SetText
-          m_Mode: 5
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: Go and help out at the butcher's!
-            m_BoolArgument: 0
-          m_CallState: 2
-    eventDescription: Help the butcher chop some meat
-    endFlags:
-    - flag: 0
-      tasklistID: 0
-      description: 
-    addedTasks:
-    - targetCount: 0
-      displayText: Chop some meat for the butcher
   - eventName: CanMiniGame
     startingEvent:
       m_PersistentCalls:
@@ -71638,6 +71606,42 @@ MonoBehaviour:
     addedTasks:
     - targetCount: 3
       displayText: Stack the cans
+  - eventName: Chop Some Meat
+    startingEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1893102575}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 816211899}
+          m_TargetAssemblyTypeName: TextScroll, Assembly-CSharp
+          m_MethodName: SetText
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Go and help out at the butcher's!
+            m_BoolArgument: 0
+          m_CallState: 2
+    eventDescription: Help the butcher chop some meat
+    endFlags:
+    - flag: 0
+      tasklistID: 0
+      description: 
+    addedTasks:
+    - targetCount: 0
+      displayText: Chop some meat for the butcher
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -151816,15 +151820,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6304853099226979872, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: sfxVolume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6304853099226979872, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: musicVolume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6304853099226979872, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: masterVolume
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6762413968998209485, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: m_Name
