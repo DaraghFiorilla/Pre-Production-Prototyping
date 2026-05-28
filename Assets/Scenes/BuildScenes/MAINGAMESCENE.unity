@@ -53541,7 +53541,7 @@ MonoBehaviour:
   scrollSpeed: 0.08
   textMesh: {fileID: 984304959}
   displayCanvas: {fileID: 984304957}
-  rotateThis: 0
+  rotateThis: 1
 --- !u!212 &777074114
 SpriteRenderer:
   serializedVersion: 2
