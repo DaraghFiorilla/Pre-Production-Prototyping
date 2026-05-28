@@ -57,13 +57,19 @@ public class NightmareSwitch : MonoBehaviour
         switchNightmareState += EnableObjs;
 
         if (!debug) timer = 0f;
+
         else timer = 5;
 
         if (nightmareState)
         {
+
+            RenderSettings.ambientIntensity = 0.3f;
+            RenderSettings.reflectionIntensity = 0.3f;
+
+            muzakScript.MusicChange(true);
+
             ChangeTextures();
             EnableObjs();
-            Switch();
         }
     }
 
@@ -124,30 +130,23 @@ public class NightmareSwitch : MonoBehaviour
 
     public void Switch()
     {
+        if (nightmareState)
+            return;
+
         blinkActive = false;
         timer = maxBlinkingTimer;
-        Debug.Log("Switch");
 
-        if (nightmareState)
-        {
-            nightmareState = true;
-            lightControl.TurnDay();
-            RenderSettings.ambientIntensity = 1;
-            RenderSettings.reflectionIntensity = 1;
-            Debug.Log("Switching to regular state");
-            //music.enterDay();
-            muzakScript.MusicChange(false);
-        }
-        else 
-        {
-            lightControl.TurnNight();
-            nightmareState = false;
-            RenderSettings.ambientIntensity = 0.3f;
-            RenderSettings.reflectionIntensity = 0.3f;
-            Debug.Log("Switching to nightmare state");
-            //music.enterNight();
-            muzakScript.MusicChange(true);
-        }
+        nightmareState = true;
+
+        Debug.Log("Switching to nightmare state");
+
+        lightControl.TurnNight();
+
+        RenderSettings.ambientIntensity = 0.3f;
+        RenderSettings.reflectionIntensity = 0.3f;
+
+        muzakScript.MusicChange(true);
+
         switchNightmareState?.Invoke();
     }
 
