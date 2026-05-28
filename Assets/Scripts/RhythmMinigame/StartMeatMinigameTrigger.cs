@@ -17,10 +17,10 @@ public class StartMeatMinigameTrigger : MonoBehaviour
         {
             if (InputSystem.actions.FindAction("Interact").WasPressedThisFrame())
             {
-                interactPrompt.SetActive(false);
-                meatMinigame.TriggerStart();
                 disableTrigger.SetActive(false);
                 disableTasklist.SetActive(false);
+                interactPrompt.SetActive(false);
+                meatMinigame.TriggerStart();
             }
         }
     }
@@ -31,6 +31,7 @@ public class StartMeatMinigameTrigger : MonoBehaviour
         {
             playerInTrigger = true;
             interactPrompt.SetActive(true);
+            Debug.Log("playerIn");
         }
     }
 

@@ -14,21 +14,24 @@ public class NEWRhythm : MonoBehaviour
     [SerializeField] private bool paused;
 
     [Header("Object references")]
-    [SerializeField] private GameObject sliceBar;
-    [SerializeField] private TextMeshProUGUI countdownText;
     private MainManager mainManager;
+
     [SerializeField] private TextMeshProUGUI textResultDisplay;
-    [SerializeField] private GameObject mainCanvas;
+    [SerializeField] private TextMeshProUGUI countdownText;
     [SerializeField] private TextMeshProUGUI finalText;
+
+    [SerializeField] public GameObject mainCanvas;
     [SerializeField] private GameObject playerObj;
+
+    [SerializeField] private GameObject sliceBar;
+
     [SerializeField] private GameObject[] unchoppedMeats;
     [SerializeField] private GameObject[] choppedMeats;
-    [SerializeField] private GameObject activeObjectYay;
-    [SerializeField] private GameObject activeObjectTasklist;
-    
+
+    [SerializeField] public GameObject canvasOnPls;
+    [SerializeField] public GameObject selfDestruct;
 
     private int currentIndex;
-
     private Vector3[] pathPoints = new Vector3[5];
     private int currentTarget;
     private GameObject activeInput;
@@ -43,17 +46,18 @@ public class NEWRhythm : MonoBehaviour
     {
         mainManager = GetComponent<MainManager>();
         currentTarget = 0;
-
-        //StartCoroutine(StartMinigame());
+        // StartCoroutine(StartMinigame());
     }
 
     private void Update()
     {
         if (minigameStarted && !paused)
         {
-            //Debug.Log("Started");
-            //Debug.Log("Movetowards = " + sliceBar.transform.position + ", " + pathPoints[currentTarget] + ", " + sliceBarSpeed * Time.deltaTime);
-            sliceBar.transform.position = Vector2.MoveTowards(sliceBar.transform.position, pathPoints[currentTarget], sliceBarSpeed * Time.deltaTime);
+            sliceBar.transform.position = Vector2.MoveTowards(
+                sliceBar.transform.position,
+                pathPoints[currentTarget],
+                sliceBarSpeed * Time.deltaTime
+            );
 
             if (activeInput != null)
             {
@@ -61,13 +65,17 @@ public class NEWRhythm : MonoBehaviour
                 {
                     pressed = true;
                     CheckInputResult();
-                    AudioManager.instance.PlayOneShot(FMODEvents.instance.meatChop, this.transform.position);
+                    AudioManager.instance.PlayOneShot(
+                        FMODEvents.instance.meatChop,
+                        this.transform.position
+                    );
                 }
             }
 
             if (sliceBar.transform.position == pathPoints[currentTarget])
             {
                 currentTarget++;
+
                 if (currentTarget == 5)
                 {
                     StartCoroutine(FinishMinigame());
@@ -83,34 +91,37 @@ public class NEWRhythm : MonoBehaviour
 
     private void CheckInputResult()
     {
-        if (textResultDisplay.gameObject.activeSelf == false) { textResultDisplay.gameObject.SetActive(true); }
+        if (textResultDisplay.gameObject.activeSelf == false)
+        {
+            textResultDisplay.gameObject.SetActive(true);
+        }
+
         if (activeInput == null)
         {
-            //Debug.Log("Miss");
             textResultDisplay.text = "Miss!";
         }
         else
         {
-            float xDif = Mathf.Abs(sliceBar.transform.position.x - activeInput.transform.position.x);
-            //Debug.Log("xDif = Mathf.Abs(" + sliceBar.transform.position.x + " - " + activeInput.transform.position.x + ", result = " + xDif);
+            float xDif = Mathf.Abs(
+                sliceBar.transform.position.x - activeInput.transform.position.x
+            );
+
             if (xDif <= 12)
             {
-                //Debug.Log("Perf!");
                 textResultDisplay.text = "Perf!";
                 score += 3;
             }
             else if (xDif <= 20)
             {
-                //Debug.Log("Good!");
                 textResultDisplay.text = "Good!";
                 score += 2;
             }
             else
             {
-                //Debug.Log("Bad!");
                 textResultDisplay.text = "Bad!";
                 score++;
             }
+
             unchoppedMeats[currentIndex].SetActive(false);
             choppedMeats[currentIndex].SetActive(true);
         }
@@ -140,8 +151,17 @@ public class NEWRhythm : MonoBehaviour
         {
             activeInput = null;
             activeInputType = "";
-            if (!pressed) { CheckInputResult(); }
-            if (other.gameObject.activeSelf) { other.gameObject.SetActive(false); }
+
+            if (!pressed)
+            {
+                CheckInputResult();
+            }
+
+            if (other.gameObject.activeSelf)
+            {
+                other.gameObject.SetActive(false);
+            }
+
             pressed = false;
         }
     }
@@ -155,10 +175,12 @@ public class NEWRhythm : MonoBehaviour
     {
         mainManager.nightmareManager.PauseBlink(true);
         mainManager.canPause = false;
-        //mainManager.canInteract = false;
+
         playerObj.GetComponent<PlayerController>().canMove = false;
+
         mainCanvas.gameObject.SetActive(true);
         countdownText.gameObject.SetActive(true);
+
         currentIndex = 0;
 
         for (int i = 0; i < 5; i++)
@@ -176,6 +198,7 @@ public class NEWRhythm : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         countdownText.gameObject.SetActive(false);
+
         minigameStarted = true;
         mainManager.canPause = true;
     }
@@ -185,43 +208,42 @@ public class NEWRhythm : MonoBehaviour
         mainManager.canPause = false;
         mainManager.UpdateMeatMinigameNo();
         mainManager.nightmareManager.PauseBlink(false);
-        //mainManager.canInteract = true;
 
         minigameStarted = false;
+
         finalText.gameObject.SetActive(true);
         textResultDisplay.gameObject.SetActive(false);
 
         playerObj.GetComponent<PlayerController>().canMove = true;
-  
 
-        activeObjectYay.SetActive(false);
-        activeObjectTasklist.SetActive(true);
-
-        // check score
         if (score >= totalInputs * 3)
         {
             eventManager.UpdateFlag(flagID);
             finalText.text = "Perfect!\nWell done!";
-            // perfect you're awesome
+            mainCanvas.gameObject.SetActive(false);
         }
         else if (score >= totalInputs * 2)
         {
             eventManager.UpdateFlag(flagID);
             finalText.text = "Good!\nNice job!";
-            // good you're cool
+            mainCanvas.gameObject.SetActive(false);
         }
-        else if (score >= totalInputs * 1.5)
+        else if (score >= totalInputs * 1.5f)
         {
             eventManager.UpdateFlag(flagID);
             finalText.text = "OK!\nIt'll do!";
-            // ok you'll live
+            mainCanvas.gameObject.SetActive(false);
         }
         else
         {
             finalText.text = "FAIL!\nThat's awful!";
-            // FAIL!! YYOUR DEAD MATE
+            yield return new WaitForSeconds(2f);
+            mainCanvas.gameObject.SetActive(false);
+
+            eventManager.UpdateFlag(flagID);
         }
 
         yield return new WaitForSeconds(2f);
+        canvasOnPls.SetActive(true);
     }
 }

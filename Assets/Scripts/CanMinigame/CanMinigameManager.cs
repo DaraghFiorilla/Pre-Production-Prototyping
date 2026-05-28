@@ -7,6 +7,10 @@ using TMPro;
 
 public class CanMinigameManager : MonoBehaviour
 {
+    [Header("Can MiniGame Progression")]
+    [SerializeField] public GameObject nextCanGame;
+    [SerializeField] public GameObject playerCam;
+
     [Header("Event Progress")]
     public int flagID;
     [SerializeField] private EventProgress eventManager;
@@ -32,17 +36,18 @@ public class CanMinigameManager : MonoBehaviour
     [Header("Object references")]
     [SerializeField] private GameObject canPrefab;
     [SerializeField] private Camera myCam;
-    [SerializeField] private GameObject playerObj;
     [SerializeField] private GameObject[] layerTriggers;
     [SerializeField] private CanLayout canLayout;
     [SerializeField] private TextMeshProUGUI cansRemainingText;
     [SerializeField] private TextMeshProUGUI resultText;
     [SerializeField] private Transform cansParent;
-    [SerializeField] private MainManager mainManager;
+
     [SerializeField] private GameObject tableObj;
     [SerializeField] private GameObject canOverlay;
     [SerializeField] private GameObject[] objectsToEnable;
     [SerializeField] private GameObject undoButton;
+
+    public MainManager mainManager;
 
     private void Awake()
     {
@@ -109,10 +114,14 @@ public class CanMinigameManager : MonoBehaviour
     {
         Debug.Log("starting minigame");
         Debug.Log("Enabling objs");
+
         foreach (GameObject obj in objectsToEnable) { obj.SetActive(true); }
+
         maxCansNo = canLayout.cansNo;
+
         cansRemainingText.text = "x" + maxCansNo.ToString();
-        if (!testing) { playerObj.SetActive(false); }
+
+        if (!testing) { playerCam.SetActive(false); }
         
         minigameActive = true;
         Cursor.visible = true;
@@ -294,19 +303,28 @@ public class CanMinigameManager : MonoBehaviour
 
         eventManager.UpdateFlag(flagID);
 
+        nextCanGame.SetActive(true);
+        playerCam.SetActive(true);
+
+        mainManager.nightmareManager.PauseBlink(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
         foreach (GameObject can in activeCans)
         {
             Rigidbody rb = can.GetComponent<Rigidbody>();
             rb.constraints = RigidbodyConstraints.FreezeAll;
         }
+
         yield return new WaitForSeconds(finishTime);
+
         if (!testing)
         {
             mainManager.UpdateCanMinigameNo();
-            playerObj.SetActive(true);
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+
             gameObject.name = "CanTable";
+
             foreach (GameObject can in activeCans) { Destroy(can.GetComponent<Can>()); }
             foreach (GameObject obj in objectsToEnable) { Destroy(obj); }
             Destroy(this);

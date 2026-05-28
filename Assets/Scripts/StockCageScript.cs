@@ -2,92 +2,53 @@ using UnityEngine;
 
 public class StockCageScript : MonoBehaviour
 {
-    //public int moveSpeed = 5;
-    // public Transform movePoint;
-    // public GameObject playerObject;
-    // Rigidbody rb;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     [SerializeField] public string correctProductType;
+
     [SerializeField] private int requiredAmount;
     [SerializeField] private int currentAmount;
-    public string tagText;
-    Rigidbody rb;
-    //RigidbodyConstraints rbConstraints;
+
     [SerializeField] public GameObject[] ArrayOfFillBoxes;
 
-    //public StockBoxes stockBoxType;
+    [Header("Event Progress")]
+    public int flagID;
+    [SerializeField] private EventProgress eventManager;
     
     void Awake()
     {
-        //rbConstraints = RigidbodyConstraints.FreezePosition;
-        tagText = ("GridBasedStockCage");
-        rb = GetComponent<Rigidbody>();
-        rb.useGravity = false;
         for (int i = 0; i < ArrayOfFillBoxes.Length; ++i)
         {
             ArrayOfFillBoxes[i].SetActive(false);
         }
     }
-
-
-    // Update is called once per frame
-    void Update()
-    { 
-
-    }
     
-
     private void OnTriggerEnter(Collider other)
     {
         StockBoxHandler stockBox = other.GetComponent<StockBoxHandler>();
+
         if (other.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
         {
+            int flagIndex = currentAmount;
 
             currentAmount++;
 
-
             Destroy(other.gameObject);
-        }
 
-        int howManyNeededToFill = currentAmount;
+            eventManager.UpdateFlag(flagID + flagIndex);
+        }
 
         for (int i = 0; i < ArrayOfFillBoxes.Length; i++)
         {
-            ArrayOfFillBoxes[i].SetActive(i < howManyNeededToFill);
+            ArrayOfFillBoxes[i].SetActive(i < currentAmount);
         }
 
         if (currentAmount == requiredAmount)
         {
             Debug.Log(correctProductType + " Stock Cage Full");
 
-            this.gameObject.tag = tagText;
             this.gameObject.GetComponent<Collider>().isTrigger = false;
-
-            //rbConstraints = RigidbodyConstraints.None;
-            rb.useGravity = true;
-
         }
-
 
         AudioManager.instance.PlayOneShot(FMODEvents.instance.stockDrop, this.transform.position);
     }
-} 
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<StockBoxHandler>().stockTypeLabel == correctProductType)
-        {
-            currentAmount++;
-            Destroy(collision.gameObject);
-            if (currentAmount == requiredAmount)
-            {
-                Debug.Log(correctProductType + " Stock Cage Full");
-                this.gameObject.tag = tagText;
-                this.gameObject.GetComponent<Collider>().isTrigger = false;
-                rb.useGravity = true;
-
-            }
-        }
-    }*/
+}
 

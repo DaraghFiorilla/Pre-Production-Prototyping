@@ -7,6 +7,12 @@ public class StartCanMinigameTrigger : MonoBehaviour
     [SerializeField] GameObject myCanvasObj;
     private bool playerInTrigger;
 
+    public MainManager mainManager;
+
+    public GameObject playerDisableTrigger;
+
+    [SerializeField] GameObject breakTrigger;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -33,7 +39,11 @@ public class StartCanMinigameTrigger : MonoBehaviour
             {
                 myManager.StartMinigame();
                 myCanvasObj.SetActive(false);
-                Destroy(gameObject);
+                playerDisableTrigger.SetActive(false);
+
+                mainManager.nightmareManager.PauseBlink(true);
+
+                Destroy(breakTrigger);
             }
         }
     }
