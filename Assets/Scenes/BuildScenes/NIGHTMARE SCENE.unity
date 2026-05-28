@@ -79002,8 +79002,8 @@ MonoBehaviour:
   - {fileID: 777074111}
   nightmareState: 0
   debug: 0
-  maxBlinkingTimer: 20
-  timer: 20
+  maxBlinkingTimer: 15
+  timer: 15
   interruptedTimer: 2
   blinkWarningDuration: 0
   eyelidAnimators:
@@ -79248,7 +79248,7 @@ MonoBehaviour:
     endFlags: []
     addedTasks:
     - targetCount: 0
-      displayText: Go to stock room
+      displayText: Check out storage
   activeTasks:
   - {fileID: 6263371809057443365}
   tasklistParentObj: {fileID: 1067432331}

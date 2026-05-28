@@ -71431,7 +71431,7 @@ MonoBehaviour:
   - {fileID: 357745245}
   nightmareState: 0
   debug: 0
-  maxBlinkingTimer: 60
+  maxBlinkingTimer: 40
   timer: 0
   interruptedTimer: 2
   blinkWarningDuration: 0.2
@@ -71632,7 +71632,7 @@ MonoBehaviour:
       description: Sort MiniGame
     addedTasks:
     - targetCount: 0
-      displayText: See what the butcher needs
+      displayText: Chop some meat for the butcher
   - eventName: Stock Game
     startingEvent:
       m_PersistentCalls:
@@ -71713,7 +71713,8 @@ MonoBehaviour:
       description: Bakery Game
     addedTasks:
     - targetCount: 0
-      displayText: Look around for donut prices
+      displayText: Look around for donut prices, sort a donut box out after in the
+        bakery
   - eventName: CleanPuddles
     startingEvent:
       m_PersistentCalls:
@@ -71806,7 +71807,7 @@ MonoBehaviour:
     endFlags: []
     addedTasks:
     - targetCount: 0
-      displayText: Leave the store
+      displayText: Your shift is over, you may leave the store and return at night.
   activeTasks:
   - {fileID: 6263371809057443365}
   tasklistParentObj: {fileID: 1067432331}
