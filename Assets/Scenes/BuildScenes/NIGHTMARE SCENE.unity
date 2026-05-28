@@ -44138,11 +44138,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1826135243922332810, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 39.37587
+      value: 14.69
       objectReference: {fileID: 0}
     - target: {fileID: 1826135243922332810, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.54463
+      value: 10.83
       objectReference: {fileID: 0}
     - target: {fileID: 1826135243922332810, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: m_LocalPosition.z
@@ -44178,7 +44178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2625852089064870822, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: isNight
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6304853099226979872, guid: cab9fcce09bc5374f8998a3d36394195, type: 3}
       propertyPath: sfxVolume
