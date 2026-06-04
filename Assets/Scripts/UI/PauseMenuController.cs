@@ -55,6 +55,8 @@ public class PauseMenuController : MonoBehaviour
 
             mainManager.PauseMinigames();
 
+            playerController.canMove = false;
+
         }
 
         pauseMenu.SetActive(true);
@@ -64,7 +66,6 @@ public class PauseMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        playerController.canMove = false;
 
         paused = true;
     }
@@ -75,6 +76,8 @@ public class PauseMenuController : MonoBehaviour
         {
 
             mainManager.UnpauseMinigames();
+
+            playerController.canMove = true;
 
         }
 
@@ -89,7 +92,6 @@ public class PauseMenuController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
 
-        playerController.canMove = true;
 
         paused = false;
     }

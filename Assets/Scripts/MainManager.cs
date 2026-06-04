@@ -13,7 +13,7 @@ public class MainManager : MonoBehaviour
 
     [HideInInspector] public NightmareSwitch nightmareManager;
     [HideInInspector] public DialogueManager dialogueManager;
-    [HideInInspector] public NEWRhythm meatManager;
+    //[HideInInspector] public NEWRhythm meatManager;
     [SerializeField] private CanMinigameManager[] canManagers;
 
     public EventProgress eventManager;
@@ -26,14 +26,14 @@ public class MainManager : MonoBehaviour
     {
         nightmareManager = GetComponent<NightmareSwitch>();
         dialogueManager = GetComponent<DialogueManager>();
-        meatManager = GetComponent<NEWRhythm>();
+        //meatManager = GetComponent<NEWRhythm>();
     }
 
     public void PauseMinigames()
     {
         nightmareManager.PauseBlink(true);
 
-        meatManager.Pause(true);
+        //meatManager.Pause(true);
         dialogueManager.Pause(true);
 
         foreach (CanMinigameManager manager in canManagers)

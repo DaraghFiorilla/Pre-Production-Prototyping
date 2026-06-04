@@ -70589,7 +70589,6 @@ MonoBehaviour:
   meatMinigamesBeforeSwitch: 1
   nightmareManager: {fileID: 0}
   dialogueManager: {fileID: 0}
-  meatManager: {fileID: 0}
   canManagers:
   - {fileID: 7877926764325599919}
   - {fileID: 7877926765369185567}
@@ -165413,7 +165412,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1010584180}
         m_TargetAssemblyTypeName: PauseMenuController, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

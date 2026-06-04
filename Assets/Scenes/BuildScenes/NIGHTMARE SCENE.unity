@@ -22801,6 +22801,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba5e368168b34d4c95ccf8e3938422f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NextSceneCrap
+  music: {fileID: 596234312}
 --- !u!1 &296765109
 GameObject:
   m_ObjectHideFlags: 0
@@ -62839,10 +62840,11 @@ MonoBehaviour:
   - YOU'RE NOT ON TIME MISSY!
   - GET WORKING ASAP!
   - Or else you're FIRED!
-  canvasToDisable: {fileID: 100934312}
   dialogueManager: {fileID: 1010584177}
   mainManager: {fileID: 1010584178}
   interactPrompt: {fileID: 714401374}
+  canvasToDisable: {fileID: 100934312}
+  breakTrigger: {fileID: 0}
   active: 1
 --- !u!65 &816211898
 BoxCollider:
@@ -79029,7 +79031,6 @@ MonoBehaviour:
   meatMinigamesBeforeSwitch: 1
   nightmareManager: {fileID: 0}
   dialogueManager: {fileID: 0}
-  meatManager: {fileID: 0}
   canManagers:
   - {fileID: 347153754}
   - {fileID: 1211959477}
@@ -167221,7 +167222,7 @@ PrefabInstance:
       objectReference: {fileID: 1010584180}
     - target: {fileID: 7120267481368762285, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
+      value: Quit
       objectReference: {fileID: 0}
     - target: {fileID: 7235021982851351732, guid: c52adbf595e7c0f478ab62f4f431111c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
