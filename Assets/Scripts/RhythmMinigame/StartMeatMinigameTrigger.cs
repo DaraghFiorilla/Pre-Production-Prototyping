@@ -24,6 +24,7 @@ public class StartMeatMinigameTrigger : MonoBehaviour
                 disableTasklist.SetActive(false);
                 interactPrompt.SetActive(false);
                 meatMinigame.TriggerStart();
+                
 
                 mainManager.nightmareManager.PauseBlink(true);
             }

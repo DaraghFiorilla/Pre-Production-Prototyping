@@ -46,7 +46,8 @@ public class NEWRhythm : MonoBehaviour
     {
         mainManager = GetComponent<MainManager>();
         currentTarget = 0;
-        // StartCoroutine(StartMinigame());
+        StartCoroutine(StartMinigame());
+        Debug.Log("chop start");
     }
 
     private void Update()
@@ -169,6 +170,7 @@ public class NEWRhythm : MonoBehaviour
     public void TriggerStart()
     {
         StartCoroutine(StartMinigame());
+        Debug.Log("chop meat trigger");
     }
 
     public IEnumerator StartMinigame()

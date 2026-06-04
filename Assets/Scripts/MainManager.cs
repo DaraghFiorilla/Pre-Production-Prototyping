@@ -15,8 +15,10 @@ public class MainManager : MonoBehaviour
     [HideInInspector] public DialogueManager dialogueManager;
     [HideInInspector] public NEWRhythm meatManager;
     [SerializeField] private CanMinigameManager[] canManagers;
+
     public EventProgress eventManager;
     public PlayerController playerController;
+
     public bool canInteract;
     public bool canPause;
 
@@ -26,8 +28,6 @@ public class MainManager : MonoBehaviour
         dialogueManager = GetComponent<DialogueManager>();
         meatManager = GetComponent<NEWRhythm>();
     }
-
-    //mainManager.nightmareManager.PauseBlink(true);
 
     public void PauseMinigames()
     {

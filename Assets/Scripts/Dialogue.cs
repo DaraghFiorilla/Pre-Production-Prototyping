@@ -6,10 +6,15 @@ using UnityEngine.InputSystem;
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private List<string> dialogueSentences;
-    [SerializeField] private GameObject canvasToDisable;
+
     [SerializeField] private DialogueManager dialogueManager;
     [SerializeField] private MainManager mainManager;
+
     [SerializeField] private GameObject interactPrompt;
+    [SerializeField] private GameObject canvasToDisable;
+    
+    [SerializeField] private Collider breakTrigger;
+
     private bool playerInTrigger;
     private bool paused;
     public bool active;
@@ -28,6 +33,8 @@ public class Dialogue : MonoBehaviour
         if (playerInTrigger && InputSystem.actions.FindAction("Interact").WasPressedThisFrame() && !paused && active)
         {
             StartDialogue();
+
+            breakTrigger.enabled = false;
         }
     }
 
